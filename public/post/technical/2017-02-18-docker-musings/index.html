@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Docker Musings &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.66.0" />
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/css/nix.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-90858024-1', 'auto');
+	  ga('send', 'pageview');
+
+</script>
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+      <a class="navbar-brand" id="green-terminal" href='/'>
+        zanetworker@adelzaalouk.me ~ $
+      </a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href='/' id="green-terminal">/home/zanetworker</a>
+        </li>
+        
+				
+				
+				<li class="dropdown">
+                    
+            		<a href="/about" id="green-terminal">~/about</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+                        <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        
+                    		<li>
+                    		<a href="/post">~/all posts</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/categories">~/categories</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/tags">~/tags</a>
+				    		</li>
+                		
+            		</ul>
+            		
+        		</li>
+        		
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="/post/technical/2017-02-18-docker-musings/">Docker Musings</a></h1>
+            <span class="post-date">2017-02-18 </span>
+            <div class="post-content">
+                <p>As you might know already Docker is now the defacto standard for containers. It is being used as the run-time for many clustering frameworks. Therefore, I thought about summarizing some of the important commands that you might need in your day-to-day docker life.</p>
+<p>I hope this post will be useful for you.</p>
+<h3 id="general-docker-commands">General Docker Commands</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">## Tagging an image</span>
+docker tage &lt;image_id&gt; name_of_the_image
+
+<span style="color:#75715e">#real time logs</span>
+docker logs --tail <span style="color:#ae81ff">1</span> --follow cbceaaea0ef5
+
+<span style="color:#75715e"># Forcing a rebuild</span>
+docker build --no-cache
+
+<span style="color:#75715e"># publish a port even if it was not expose in the dockerfile</span>
+docker run -p &lt;port&gt;
+
+<span style="color:#75715e"># publish all ports that were explosed in the docker file</span>
+docker run -P
+
+<span style="color:#75715e"># Setting up environment variables</span>
+docker run -e WEBAPP_PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">8000</span> -e WEBAPP_HOST<span style="color:#f92672">=</span>www.example.com
+
+<span style="color:#75715e"># Renaming a container</span>
+docker rename &lt;old_name&gt; &lt;new_name&gt;
+
+<span style="color:#75715e">## using jq with Docker</span>
+docker inspect &lt;container_name&gt; | jq .<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> | jq keys
+
+<span style="color:#f92672">[</span>
+  <span style="color:#e6db74">&#34;Architecture&#34;</span>,
+  <span style="color:#e6db74">&#34;Author&#34;</span>,
+  <span style="color:#e6db74">&#34;Comment&#34;</span>,
+  <span style="color:#e6db74">&#34;Config&#34;</span>,
+  <span style="color:#e6db74">&#34;Container&#34;</span>,
+  <span style="color:#e6db74">&#34;ContainerConfig&#34;</span>,
+  <span style="color:#e6db74">&#34;Created&#34;</span>,
+  <span style="color:#e6db74">&#34;DockerVersion&#34;</span>,
+  <span style="color:#e6db74">&#34;GraphDriver&#34;</span>,
+  <span style="color:#e6db74">&#34;Id&#34;</span>,
+  <span style="color:#e6db74">&#34;Os&#34;</span>,
+  <span style="color:#e6db74">&#34;Parent&#34;</span>,
+  <span style="color:#e6db74">&#34;RepoDigests&#34;</span>,
+  <span style="color:#e6db74">&#34;RepoTags&#34;</span>,
+  <span style="color:#e6db74">&#34;RootFS&#34;</span>,
+  <span style="color:#e6db74">&#34;Size&#34;</span>,
+  <span style="color:#e6db74">&#34;VirtualSize&#34;</span>
+<span style="color:#f92672">]</span>
+
+docker inspect &lt;container_name&gt; | jq .<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> | jq .DockerVersion
+<span style="color:#e6db74">&#34;1.12.3&#34;</span>
+
+<span style="color:#75715e"># using format with docker</span>
+docker inspect --format <span style="color:#e6db74">&#39;{{ json .Created }}&#39;</span> &lt;container_id&gt;
+
+<span style="color:#75715e"># find the port mapping for a container e.g. port 80</span>
+docker port &lt;containerID&gt; <span style="color:#ae81ff">80</span>
+
+<span style="color:#75715e"># manual allocation of port</span>
+docker run -d -p host_port:container_port &lt;container&gt;
+
+<span style="color:#75715e"># Finding the container IP address using format (you can use jq)</span>
+docker inspect --format <span style="color:#e6db74">&#39;{{ .NetworkSettings.IPAddress }}&#39;</span> &lt;ContainerID&gt;
+
+docker inspect &lt;ContainerID&gt; | jq .<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> | jq .NetworkSetting.IPAddress
+
+<span style="color:#75715e"># Removing a docker container</span>
+docker rm -f &lt;container_name&gt;
+
+<span style="color:#75715e"># Create a custm network</span>
+docker network create &lt;network name&gt;
+
+<span style="color:#75715e">##some useful options</span>
+--internal <span style="color:#75715e"># no communication with the outside worlds</span>
+--gateway <span style="color:#75715e"># specify the gateway of choice</span>
+--subnet <span style="color:#75715e"># choose the subnet to use e.g., --subnet 192.168.1.0/24</span>
+--ip-range <span style="color:#75715e"># specify which IPs from the subnet to use</span>
+--aux-address <span style="color:#75715e"># specify reserved addresses not to be used by the network</span>
+
+<span style="color:#75715e"># Create an Overlay network</span>
+docker network create mynet --driver overlay
+
+<span style="color:#75715e"># Create a container link</span>
+docker run -it --link datastore:redis alpine ping redis
+
+<span style="color:#75715e"># connecting a volume on the host to the container</span>
+docker run -d -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/src username/application_name
+
+<span style="color:#75715e"># create  a volume from anothe container (data-containers usecase)</span>
+docker run --volumes-from &lt;source_container&gt; &lt;destination_container&gt; &lt;commands&gt;
+<span style="color:#75715e"># list available volume</span>
+docker volumes ls
+
+<span style="color:#75715e"># craete named volumes</span>
+docker volume create --name &lt;volume_name&gt;
+
+</code></pre></div><h2 id="writing-a-docker-file">Writing a Docker File</h2>
+<p>Exampole of a Docker File:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Fetch an image called node</span>
+FROM node
+<span style="color:#75715e"># Maintainer</span>
+MAINTAINER maintainer@email.com
+<span style="color:#75715e"># Run commands inside the container (typicall used for installing packages)</span>
+<span style="color:#75715e"># Each RUN command adds a new Docker layer, so make sure to use them wisely (use RUN Command1 &amp;&amp; Command2 &amp;&amp; .. CommandN to save layers and storage)</span>
+RUN git clone -q https://github.com/docker-practice/test.git <span style="color:#f92672">&amp;&amp;</span> npm install &gt; /dev/null
+<span style="color:#75715e"># Change to a directory called test (this is where CMD commands will be executed )</span>
+WORKDIR ~/test
+<span style="color:#75715e"># Expose port 8000 inside the container (that will be mapped by default to another host port)</span>
+EXPOSE <span style="color:#ae81ff">8000</span>
+<span style="color:#75715e"># CMD defines the command to be executed when the container is started</span>
+CMD <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;start&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#75715e"># ENTRY point sets the default container command</span>
+ENTRYPOINT <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;npm&#34;</span><span style="color:#f92672">]</span>
+
+<span style="color:#75715e">#Note_1: Use ENTRY Point when you need to run your container as an executable and use CMD to provide arguments to ENTRYPOINT commands.</span>
+
+<span style="color:#75715e">#Note_2: you can only use one CMD and one ENTRYPOINT per Dockerfile</span>
+</code></pre></div><h2 id="what-are-the-components-of-a-compose-file">What are the components of a compose file?</h2>
+<p>The core components are:</p>
+<ul>
+<li><strong>version</strong>: mandatory</li>
+<li><strong>services</strong>: mandatory</li>
+<li><strong>networks</strong>: optional (defines the networks that container can utilize)</li>
+<li><strong>volumes</strong>: optional (defines the volumes to be used and shared by containers)</li>
+</ul>
+<p>Example compose file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">version: <span style="color:#e6db74">&#39;2&#39;</span>
+services:
+  web:
+    build: .
+    ports:
+    - <span style="color:#e6db74">&#34;5000:5000&#34;</span>
+    volumes:
+    - .:/code
+    - logvolume01:/var/log
+    links:
+    - redis
+  redis:
+    image: redis
+volumes:
+  logvolume01: <span style="color:#f92672">{}</span>
+</code></pre></div><h2 id="how-to-install-docker-compose">How to install Docker-compose?</h2>
+<p>Download it and add it to the bin path:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo curl -L https://github.com/docker/compose/releases/download/1.11.1/docker-compose-<span style="color:#e6db74">`</span>uname -s<span style="color:#e6db74">`</span>-<span style="color:#e6db74">`</span>uname -m<span style="color:#e6db74">`</span> &gt; /usr/local/bin/docker-compose
+</code></pre></div><p>Then enable execute permissions:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod +x /usr/local/bin/docker-compose
+
+</code></pre></div><p>Finally, check that it is correctly installed by typing <code>docker-coompose --version</code></p>
+<h2 id="how-to-use-docker-compose">How to use Docker compose?</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">##Build your compose setup</span>
+docker-compose build
+
+<span style="color:#75715e">## Run it</span>
+docker-compose up
+
+<span style="color:#75715e">## Run it in detached mode</span>
+docker-compose up -d
+
+<span style="color:#75715e">## Check the status of the compose containers</span>
+docker-compose ps
+
+<span style="color:#75715e">## kill / remove your compose setup</span>
+docker-compose kill
+docker-compose rm
+</code></pre></div><h2 id="how-to-create-container-link">How to create container link?</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -it --link datastore:redis alpine ping redis
+</code></pre></div><h2 id="what-is-a-network-alias">What is a network alias</h2>
+<p>Imagine the case where you have more than one container doing the webserver duty and you want to give them the same name on the network (e.g., for loadbalancing). The solution your looking for might be network alias.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Creating Network Alias</span>
+docker run -d --name prod-es-1 --net-alias search --net prod elasticsearch
+docker run -d --name prod-es-2 --net-alias search --net prod elasticsearch
+
+</code></pre></div><ul>
+<li>Docker network alias only work with custom networks</li>
+<li>Docker automates the creation of network alias</li>
+<li>Starting Docker 1.12, swarm mode contains advanced features for load-balancing</li>
+</ul>
+<h2 id="how-to-enable-multi-host-communication-communication">How to enable multi-host communication communication?</h2>
+<p>Use overlay networking. To configure overlay networking, do the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker network create mynet --driver overlay
+</code></pre></div><h2 id="how-to-upload-images-to-dockerhub">How to upload images to Dockerhub</h2>
+<p>Here are the steps required for uploading Images to Dockerhub</p>
+<ul>
+<li>Create a dockerhub account</li>
+<li>tag the image with &ldquo;username/imagename&rdquo;
+<ul>
+<li><code>docker tag &lt;image_id&gt; username/imagename</code></li>
+</ul>
+</li>
+<li>Push your image to docker hub
+<ul>
+<li><code>docker push username/imagename</code></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            
+            <div class="post-comments">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "adelzaalouk-me" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2020 Adel Zaalouk -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

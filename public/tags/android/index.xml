@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on </title>
+    <link>/tags/android/</link>
+    <description>Recent content in Android on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 05 Oct 2012 15:04:23 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Streaming a Video File on Android</title>
+      <link>/post/technical/2012-10-05-streaming-android/</link>
+      <pubDate>Fri, 05 Oct 2012 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2012-10-05-streaming-android/</guid>
+      <description>Well,
+I have been through multiple forums looking for the best way that works for me to play a streamed video file from a server or from my local machine, and I found an easy way to do that, here is how:
+public void onCreate(Bundle icicle) { super.onCreate(icicle); getWindow().setFormat(PixelFormat.TRANSLUCENT);&amp;lt;/code&amp;gt; yourVideoView = new VideoView(this); yourVideoView.setMediaController(new MediaController(this)); setContentView(yourVideoView); // This works fine for almost all MPEG-4 and H.264 containers you find out there  // If you have the video file on your sdk card  yourVideoView.</description>
+    </item>
+    
+    <item>
+      <title>How to Get A MAP API Key for Android</title>
+      <link>/post/technical/2011-09-03-map-api-key-android/</link>
+      <pubDate>Wed, 06 Jul 2011 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2011-09-03-map-api-key-android/</guid>
+      <description>Steps to get your key:
+  you need to get an MD5 finger print
+ go to C:\Program Files\Java\jdk1.6.0_24\bin copy the file &amp;ldquo;debug.keystore&amp;rdquo; you will find this in C:\Users\User.android&amp;lt;/li&amp;gt; Type the following command:  keytool.exe -list -alias androiddebugkey -keystore &amp;#34;C:\android\debug.keystore&amp;#34; -storepass android -keypass android   Now you should be getting a finger print like this:
+  A5:83:11:BB:56:EE:3E:87:58:6D:49:D3:90:E6:61:11  Now go to this page: http://code.google.com/android/maps-api-signup.html Insert your MD5 finger print and get your key: 0uNikOV3dR5gYi2qwuoNRrfR1OZRmM0uG5Arbvg  </description>
+    </item>
+    
+    <item>
+      <title>Adding a view within your ListActivity</title>
+      <link>/post/technical/2010-06-26-adding-view-from-list-activity/</link>
+      <pubDate>Sat, 26 Jun 2010 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2010-06-26-adding-view-from-list-activity/</guid>
+      <description>I spent some time trying to find out how to put other views in the same place with a ListActivity and I figured out 2 different ways :
+First, you can create a new XML file that should contain a listViewlike this for example:
+android:orientation=&amp;#34;vertical&amp;#34; android:layout_width=&amp;#34;fill_parent&amp;#34; android:layout_height=&amp;#34;fill_parent&amp;#34; android:background=&amp;#34;@color/black&amp;#34;&amp;gt; android:layout_width=&amp;#34;wrap_content&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:src=&amp;#34;@drawable/home&amp;#34; /&amp;gt; android:layout_width=&amp;#34;fill_parent&amp;#34; android:layout_height=&amp;#34;fill_parent&amp;#34; android:drawSelectorOnTop=&amp;#34;false&amp;#34; /&amp;gt; Then, in your activity type the following
+setContentView(&amp;#34;xmlFile&amp;#34;); Here for example, I would like to put that image within my ListActivity.</description>
+    </item>
+    
+    <item>
+      <title>Changing the Background Colour or Image of a ListActivity</title>
+      <link>/post/technical/2010-06-20-background-color/</link>
+      <pubDate>Sun, 20 Jun 2010 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2010-06-20-background-color/</guid>
+      <description>I was stuck for like three hours trying to figure out how to change the background of a ListActivity because I have used an adapter with a layout for each item so when I change the background at the layout, only the item&amp;rsquo;s background is changed, but at the end I figured that it was very easy here is how I did it :-
+inside your onCreate() preferably before setting any adapters or putting any views, you insert the following line : getListView().</description>
+    </item>
+    
+    <item>
+      <title>How to Change the Color of an image when Clicked in Android ?</title>
+      <link>/post/technical/2010-05-10-change-clicked-image/</link>
+      <pubDate>Mon, 10 May 2010 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2010-05-10-change-clicked-image/</guid>
+      <description>In advanced mobile applications or normal ones , a developer should communicate with the user using some feed backs so changing the color of an image or label when clicked gives the user the feedback that he has really clicked something, here how it is done. In your onClick() method , use the following method :
+setColorFilter(&amp;#34;color in hexa&amp;#34; , &amp;#34;mode&amp;#34;) In my case I use
+button.setColorFilter(0x77000000,Mode.SRC_ATOP); doing this you will change the Colour but if you pressed the back button , you will find it stuck on the colour you changed ,to return things as they were you can either use</description>
+    </item>
+    
+  </channel>
+</rss>

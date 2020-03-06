@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Functional on </title>
+    <link>/tags/functional/</link>
+    <description>Recent content in Functional on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 11 Aug 2012 15:04:23 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/functional/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Why Learn a Functional Programming Language</title>
+      <link>/post/technical/2012-08-11-learn-functional/</link>
+      <pubDate>Sat, 11 Aug 2012 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2012-08-11-learn-functional/</guid>
+      <description>Okay, I have to admit I wasn’t a big fan of functional programming languages, but looking at the benefits that it introduces, it might not be a very bad idea to put it under the microscope for a while.
+So, in this blog post I am going to list some of the benefits that are introduced by functional programming language.
+  “Polymorphic Type Systems” : Functional programing languages usually lets you use functions for many types (belonging to the same class), thus making use of the concepts of generecity and tragically reducing the software maintenance costs.</description>
+    </item>
+    
+  </channel>
+</rss>

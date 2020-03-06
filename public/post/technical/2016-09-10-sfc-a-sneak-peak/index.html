@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Neutron-SFC: A Sneak-Peak &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.66.0" />
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/css/nix.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-90858024-1', 'auto');
+	  ga('send', 'pageview');
+
+</script>
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+      <a class="navbar-brand" id="green-terminal" href='/'>
+        zanetworker@adelzaalouk.me ~ $
+      </a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href='/' id="green-terminal">/home/zanetworker</a>
+        </li>
+        
+				
+				
+				<li class="dropdown">
+                    
+            		<a href="/about" id="green-terminal">~/about</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+                        <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        
+                    		<li>
+                    		<a href="/post">~/all posts</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/categories">~/categories</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/tags">~/tags</a>
+				    		</li>
+                		
+            		</ul>
+            		
+        		</li>
+        		
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="/post/technical/2016-09-10-sfc-a-sneak-peak/">Neutron-SFC: A Sneak-Peak</a></h1>
+            <span class="post-date">2016-09-10 </span>
+            <div class="post-content">
+                <p>In today&rsquo;s virtual network architecture, NFV is paving the way to become to defacto standard for providing network services in the cloud. NFV relies on Service Function Chaining (SFC), to stitch services together to provide a service-path for packets to traverse.</p>
+<p>OpenStack, one of the more successful open cloud platforms is considered a good base to start building services for NFV related functions.  In this post, we will be having a sneak-peak over the components exposed by <strong>neutron-sfc</strong>, the service chaining API exposed by OpenStack.</p>
+<p>There are several parts involved for the creation of service chain API:</p>
+<ul>
+<li>Port-Pair</li>
+<li>Port-Pair Group</li>
+<li>Flow calssifier</li>
+<li>Port-Chain</li>
+</ul>
+<h3 id="a-port-pair">A Port-pair</h3>
+<p>A port pair is created for each service function</p>
+<p>options allowed when created a service function port-pair</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">neutron port-pair-create <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span>
+        <span style="color:#f92672">[</span>--description &lt;description&gt;<span style="color:#f92672">]</span>
+        --ingress &lt;port-id&gt;
+        --egress &lt;port-id&gt;
+        <span style="color:#75715e"># example, the encapsulation mechanism for service function parameters</span>
+        <span style="color:#f92672">[</span>--service-function-parameters &lt;parameter&gt;<span style="color:#f92672">]</span> PORT-PAIR-NAME
+</code></pre></div><h3 id="port-pair-group">Port-Pair group</h3>
+<p>To group VMs with the same network function together for load-distribution purposes for example. A port-pair-group can have more than one port-pair created within (e.g., multiple VMs doing the same function).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">neutron port-pair-group-create <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span>
+        <span style="color:#f92672">[</span>--description &lt;description&gt;<span style="color:#f92672">]</span>
+        --port-pairs &lt;port-pair-id&gt;
+        <span style="color:#f92672">[</span>--port-pair-group-parameters &lt;parameter&gt;<span style="color:#f92672">]</span> PORT-PAIR-GROUP-NAME
+</code></pre></div><h3 id="flow-classifier">Flow-Classifier</h3>
+<p>We can use any of the following options to specify a flow for a chain. i.e., all the traffic matching a flow-classifier needs to go through a chain.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">neutron flow-classifier-create <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span>
+        <span style="color:#f92672">[</span>--description &lt;description&gt;<span style="color:#f92672">]</span>
+        <span style="color:#f92672">[</span>--protocol &lt;protocol&gt;<span style="color:#f92672">]</span>
+        <span style="color:#f92672">[</span>--ethertype &lt;Ethertype&gt;<span style="color:#f92672">]</span>
+        <span style="color:#f92672">[</span>--source-port &lt;Minimum source protocol port&gt;:&lt;Maximum source protocol port&gt;<span style="color:#f92672">]</span>
+        <span style="color:#f92672">[</span>--destination-port &lt;Minimum destination protocol port&gt;:&lt;Maximum destination protocol port&gt;<span style="color:#f92672">]</span>
+        <span style="color:#f92672">[</span>--source-ip-prefix &lt;Source IP prefix&gt;<span style="color:#f92672">]</span>
+        <span style="color:#f92672">[</span>--destination-ip-prefix &lt;Destination IP prefix&gt;<span style="color:#f92672">]</span>
+        <span style="color:#f92672">[</span>--logical-source-port &lt;Neutron source port&gt;<span style="color:#f92672">]</span>
+        <span style="color:#f92672">[</span>--logical-destination-port &lt;Neutron destination port&gt;<span style="color:#f92672">]</span>
+        <span style="color:#f92672">[</span>--l7-parameters &lt;L7 parameter&gt;<span style="color:#f92672">]</span> FLOW-CLASSIFIER-NAME
+</code></pre></div><h3 id="port-chain">Port-Chain</h3>
+<p>You can associate flow-classifiers to port chains if you want them to be active. Otherwise, the port-chain will not be active.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">neutron port-chain-create <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span>
+        <span style="color:#f92672">[</span>--description &lt;description&gt;<span style="color:#f92672">]</span>
+         --port-pair-group &lt;port-pair-group-id&gt;
+        <span style="color:#f92672">[</span>--flow-classifier &lt;classifier-id&gt;<span style="color:#f92672">]</span>
+        <span style="color:#f92672">[</span>--chain-parameters &lt;chain-parameter&gt;<span style="color:#f92672">]</span> PORT-CHAIN-NAME
+</code></pre></div><h3 id="encapsulation-of-a-service-chain">Encapsulation of a service chain</h3>
+<p>MPLS labels are leaverged to support chain IDs.  This MPLS has noting to do with the MPLS transport because OVS does not support Network Service Channel Header (NSH) header.</p>
+<h3 id="final-notes">Final Notes</h3>
+<p>Eventually, having defined the above constructs, you should be able to start pushing packets across your service chain. It is important to take into consideration that SFC requires <code>ip forwarding</code> as each network functions acts as a middle-box forwarding packets to other functions.</p>
+<p>For more information check-out the below references:</p>
+<ul>
+<li><a href="http://git.openstack.org/cgit/openstack/networking-sfc">Source Code</a></li>
+<li><a href="https://launchpad.net/networking-sfc">SFC Overview</a></li>
+<li><a href="https://wiki.openstack.org/wiki/Neutron/ServiceInsertionAndChaining">Wiki</a></li>
+</ul>
+
+            </div>
+            
+            <div class="post-comments">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "adelzaalouk-me" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2020 Adel Zaalouk -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

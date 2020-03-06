@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Microservices in a nutshell &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.66.0" />
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/css/nix.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-90858024-1', 'auto');
+	  ga('send', 'pageview');
+
+</script>
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+      <a class="navbar-brand" id="green-terminal" href='/'>
+        zanetworker@adelzaalouk.me ~ $
+      </a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href='/' id="green-terminal">/home/zanetworker</a>
+        </li>
+        
+				
+				
+				<li class="dropdown">
+                    
+            		<a href="/about" id="green-terminal">~/about</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+                        <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        
+                    		<li>
+                    		<a href="/post">~/all posts</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/categories">~/categories</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/tags">~/tags</a>
+				    		</li>
+                		
+            		</ul>
+            		
+        		</li>
+        		
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="/post/technical/2017-01-27-microservices-in-a-nutshell/">Microservices in a nutshell</a></h1>
+            <span class="post-date">2017-01-27 </span>
+            <div class="post-content">
+                <p>In this post we will walk through the definitions, Properties and patterns for building Microservices.</p>
+<h2 id="what-are-microservices">What are Microservices?</h2>
+<p>A microservice is really just a service that adheres to a slightly looser definition of the
+<strong>Single Responsibility Principle (SRP)</strong> that arose from patterns for object-oriented design. <em>It is
+a service that does one thing</em>.</p>
+<h3 id="properties-of-microservices">Properties of Microservices</h3>
+<ul>
+<li>Small, and Focused on Doing One Thing Well</li>
+<li><strong>Autonomus</strong>To do decoupling well, you’ll need to model your services right and get the APIs right. I’ll
+be talking about that a lot</li>
+<li><strong>Technology Heterogeneity</strong>: each service should be able to use its own technology stack without affecting other services</li>
+<li><strong>Resilience</strong> A key concept in resilience engineering is the bulkhead. If one component of a system
+fails, but that failure doesn’t cascade, you can isolate the problem and the rest of the
+system can carry on working. Service boundaries become your obvious bulkheads. In a
+monolithic service, if the service fails, everything stops working. With a monolithic
+system, we can run on multiple machines to reduce our chance of failure, but with
+Microservices, we can build systems that handle the total failure of services and degrade
+functionality accordingly.</li>
+<li><strong>Scaling</strong>: easier to scale a smaller piece when needed than scaling a large monolith.</li>
+<li><strong>Ease of Deployment</strong>: A one-line change to a million-line-long monolithic application requires the whole
+application to be deployed in order to release the change</li>
+<li><strong>Composability</strong> a larger service can composed of these services</li>
+<li><strong>Optimizing for Replaceability</strong> Don&rsquo;t get too emotionally attached to your services.</li>
+<li><strong>Loose Coupling</strong> Changes on one service should not affect other services</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="what-is-the-difference-between-soa-and-microservices">What is the difference between SOA and Microservices?</h3>
+<ul>
+<li><strong>Service Oriented Archiecture (SOA)</strong> : Service-oriented architecture (SOA) is a design approach where multiple services
+collaborate to provide some end set of capabilities
+<ul>
+<li>communication happens across the network rather than method calls</li>
+<li>developed to combat the idea of a monolith</li>
+<li>However,
+<ul>
+<li>no clear way of how to achieve, how to split a monolith into smaller entities.</li>
+<li>no way to ensure that services are not strongly coupled.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Microservices</strong>: an approach to implement SOA based on real-world use-cases, it follows clear patterns.</li>
+</ul>
+<h3 id="what-is-not-an-implementation-of-micro-services">What is NOT an implementation of Micro-services?</h3>
+<ul>
+<li>
+<p><strong>Shared libraries:</strong></p>
+<ul>
+<li>technology dependant (e.g., java library / python libraries &hellip;)</li>
+<li>risks redeployment of the entire process when usinga new library</li>
+<li>not enough support for enusring safety and system resieliency.</li>
+<li>can become the point of coupling</li>
+</ul>
+</li>
+<li>
+<p><strong>Modules:</strong></p>
+<ul>
+<li>OSGI (tries to plump java by introducing the concept of plugins but does not do a good job)</li>
+<li>Erlang modules support Lifecycle management, modules can be stopped, restarted, upgraded without issue. <em>However the modules can become tightely coupled quite fast if we are not careful</em>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="how-to-find-the-right-language-to-program-microservices">How to find the right language to program Microservices?</h3>
+<p>Microservices should be language dependandt, however, when writing your services the language preferably should be:</p>
+<ul>
+<li>Simple:
+<ul>
+<li>No compiling intermediary bytecode like Java or .NET, the ability to
+produce native binaries.</li>
+</ul>
+</li>
+<li>Open Source</li>
+<li>Open libraries</li>
+<li>Should with the right abstractions</li>
+</ul>
+<h3 id="continious-integration--delivery--deployment">Continious Integration / Delivery / Deployment</h3>
+<p>How to make sure your micro-services are continiously integrated?</p>
+<ul>
+<li>
+<p><strong>Easy to fetch services</strong> — provide a place where you can fetch your deployed services (i.e., deliverables)</p>
+</li>
+<li>
+<p><strong>Public display of test results</strong> — changes to a specific decomposed serivce should pass the pre-defined tests and notify stake-holders of the output to take actions immediately.</p>
+</li>
+<li>
+<p><strong>Automate deployment</strong> — Once you have a set of passing tests, the service should automatically self-deploy and be fetch-able on demand.</p>
+</li>
+</ul>
+<h3 id="reference">Reference</h3>
+<ul>
+<li>Building Microservices: Designing Fine-Grained Systems by Sam Newman</li>
+</ul>
+
+            </div>
+            
+            <div class="post-comments">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "adelzaalouk-me" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2020 Adel Zaalouk -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

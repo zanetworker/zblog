@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenStack on </title>
+    <link>/tags/openstack/</link>
+    <description>Recent content in OpenStack on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 10 Sep 2016 15:04:23 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/openstack/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Neutron-SFC: A Sneak-Peak</title>
+      <link>/post/technical/2016-09-10-sfc-a-sneak-peak/</link>
+      <pubDate>Sat, 10 Sep 2016 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2016-09-10-sfc-a-sneak-peak/</guid>
+      <description>In today&amp;rsquo;s virtual network architecture, NFV is paving the way to become to defacto standard for providing network services in the cloud. NFV relies on Service Function Chaining (SFC), to stitch services together to provide a service-path for packets to traverse.
+OpenStack, one of the more successful open cloud platforms is considered a good base to start building services for NFV related functions. In this post, we will be having a sneak-peak over the components exposed by neutron-sfc, the service chaining API exposed by OpenStack.</description>
+    </item>
+    
+    <item>
+      <title>The Software-Defined Stack | EII OpenStack Networking</title>
+      <link>/post/technical/2016-04-28-openstack-a-brief-networking-tour/</link>
+      <pubDate>Thu, 28 Apr 2016 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2016-04-28-openstack-a-brief-networking-tour/</guid>
+      <description>&lt;p&gt;In this post, we are going take a quick look at how OpenStack does networking, along the process we are going to mention the important agents involved.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    
+    <item>
+      <title>The Software-Defiend Stack | EI</title>
+      <link>/post/technical/2016-04-28-openstack-introduction/</link>
+      <pubDate>Sun, 28 Feb 2016 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2016-04-28-openstack-introduction/</guid>
+      <description>Welcome to the Software-Define Stack Series, this will be an extensive series, exploring the software-defined aspects behind OpenStack and digging deeper into the structure of OpenStack and its internal anatomy.
+Before I start to talk about OpenStack specifically, let me explain why this series is called the “Software-Defined” series. The term Software-Defined was first used to describe networks which follow these following patterns:
+What we will be looking at in this series is how OpenStack really applies the Software-Defined paradigms (i.</description>
+    </item>
+    
+  </channel>
+</rss>

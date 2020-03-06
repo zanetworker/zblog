@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Getting Back to C&#43;&#43; | Public, Private, and Protected (PPP)  &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.66.0" />
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/css/nix.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-90858024-1', 'auto');
+	  ga('send', 'pageview');
+
+</script>
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+      <a class="navbar-brand" id="green-terminal" href='/'>
+        zanetworker@adelzaalouk.me ~ $
+      </a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href='/' id="green-terminal">/home/zanetworker</a>
+        </li>
+        
+				
+				
+				<li class="dropdown">
+                    
+            		<a href="/about" id="green-terminal">~/about</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+                        <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        
+                    		<li>
+                    		<a href="/post">~/all posts</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/categories">~/categories</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/tags">~/tags</a>
+				    		</li>
+                		
+            		</ul>
+            		
+        		</li>
+        		
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="/post/technical/2012-04-15-getting-back-to-c/">Getting Back to C&#43;&#43; | Public, Private, and Protected (PPP) </a></h1>
+            <span class="post-date">2012-04-15 </span>
+            <div class="post-content">
+                <p>I have been away for a while now but every time I think I won’t need to lay a hand on C++ or any object oriented programming language I find my self mandated to do so. So I thought It would be helpful for people like me to look at this post if they got lost and forgot some of the basic concepts.</p>
+<p>In this post, I will talk specifically about the difference between public, private and protected key words. To explain this I will use the House analogy. This House analogy I came across long time ago when I was looking for the difference between those keywords. Anyhow, let’s get into business.</p>
+<p>For you to picture this correctly, think about three things that you have in your house,</p>
+<ul>
+<li>Your Post box</li>
+<li>Your Washing machine</li>
+<li>Your safe where you keep your money</li>
+</ul>
+<p>Now let’s say that the house represent  s the Class that you are working on. Then what does those three items presented above represents ?</p>
+<ul>
+<li>
+<p>Normally, the post box is accessible to Everyone, anyone can put post in that box and let’s assume that everyone can take post out of it (Just saying :D), this maps exactly  to the public keyword. Declaring a variable as public means that is is accessible from anywhere outside the class but withing the program.</p>
+</li>
+<li>
+<p>The washing machine in my house is accessible for me and my let’s say “future children” :D. In this case my Washing machine is protected  because no body from outside my house (the class) can access it except the children and friends.</p>
+</li>
+<li>
+<p>Finally the “Safe” who dares to enter my domain and access my safe ? No body is allowed to access my safe from outside my house. This is where the I declare the safe as private so by declaring the safe as private no body from outside the class can access it. I might some times give the key to my best friend to access the safe in case something bad happened to me so friends can have access if you allow them :D.</p>
+</li>
+</ul>
+<p>I know this example might not be perfectly valid compared to really life, but I hope at least that the message is conveyed.</p>
+<p>Thanks for viewing.</p>
+
+            </div>
+            
+            <div class="post-comments">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "adelzaalouk-me" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2020 Adel Zaalouk -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

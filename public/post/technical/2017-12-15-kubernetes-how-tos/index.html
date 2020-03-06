@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Kubernetes How-Tos &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.66.0" />
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/css/nix.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-90858024-1', 'auto');
+	  ga('send', 'pageview');
+
+</script>
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+      <a class="navbar-brand" id="green-terminal" href='/'>
+        zanetworker@adelzaalouk.me ~ $
+      </a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href='/' id="green-terminal">/home/zanetworker</a>
+        </li>
+        
+				
+				
+				<li class="dropdown">
+                    
+            		<a href="/about" id="green-terminal">~/about</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+                        <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        
+                    		<li>
+                    		<a href="/post">~/all posts</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/categories">~/categories</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/tags">~/tags</a>
+				    		</li>
+                		
+            		</ul>
+            		
+        		</li>
+        		
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="/post/technical/2017-12-15-kubernetes-how-tos/">Kubernetes How-Tos</a></h1>
+            <span class="post-date">2017-12-15 </span>
+            <div class="post-content">
+                <p>Kubernetes has been taking over the container orchesteration stage for sometime now, it has a large community and a great set of tooling and contributers backing it. Along those lines, picking up kubernetes skills can be a little daunting at first, but fear not, as documentation is rich and concepts are well elaborated in not one but many places.</p>
+<p>In this post, I won&rsquo;t attempt to re-explain kubernetes concepts (pods, deployments, services, replicasets, &hellip;etc) since as I said, a lot of great people did that job already, and did it very well (if you still have doubts about some of the concepts, I would be glad to help clear smoke up). Instead, I will be adding a set of How-Tos for common tasks that you might encounter when working with kubernetes, the post might be updated every now and then to include more. Shall we begin?!</p>
+<p><strong>N.B:</strong> The How-Tos take the form of Q&amp;A.</p>
+<h3 id="how-to-access-k8s-api-from-the-command-line">How to access K8s API from the command line</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># First Get the Token and the API server address</span>
+APISERVER<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl config view | grep server | cut -f 2- -d <span style="color:#e6db74">&#34;:&#34;</span> | tr -d <span style="color:#e6db74">&#34; &#34;</span><span style="color:#66d9ef">)</span>
+TOKEN<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl describe secret <span style="color:#66d9ef">$(</span>kubectl get secrets | grep default | cut -f1 -d <span style="color:#e6db74">&#39; &#39;</span><span style="color:#66d9ef">)</span> | grep -E <span style="color:#e6db74">&#39;^token&#39;</span> | cut -f2 -d<span style="color:#e6db74">&#39;:&#39;</span> | tr -d <span style="color:#e6db74">&#39;\t&#39;</span><span style="color:#66d9ef">)</span>
+
+<span style="color:#75715e"># Now use the token and the address to call the API</span>
+curl $APISERVER/api --header <span style="color:#e6db74">&#34;Authorization: Bearer </span>$TOKEN<span style="color:#e6db74">&#34;</span> --insecure
+<span style="color:#f92672">{</span>
+  <span style="color:#e6db74">&#34;kind&#34;</span>: <span style="color:#e6db74">&#34;APIVersions&#34;</span>,
+  <span style="color:#e6db74">&#34;versions&#34;</span>: <span style="color:#f92672">[</span>
+    <span style="color:#e6db74">&#34;v1&#34;</span>
+  <span style="color:#f92672">]</span>,
+  <span style="color:#e6db74">&#34;serverAddressByClientCIDRs&#34;</span>: <span style="color:#f92672">[</span>
+    <span style="color:#f92672">{</span>
+      <span style="color:#e6db74">&#34;clientCIDR&#34;</span>: <span style="color:#e6db74">&#34;0.0.0.0/0&#34;</span>,
+      <span style="color:#e6db74">&#34;serverAddress&#34;</span>: <span style="color:#e6db74">&#34;10.0.1.149:443&#34;</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#f92672">]</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="how-to-get-access-to-the-dashboard">How to get access to the dashboard</h3>
+<ul>
+<li>First  get the token.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">APISERVER<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl config view | grep server | cut -f 2- -d <span style="color:#e6db74">&#34;:&#34;</span> | tr -d <span style="color:#e6db74">&#34; &#34;</span><span style="color:#66d9ef">)</span>
+TOKEN<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl describe secret <span style="color:#66d9ef">$(</span>kubectl get secrets | grep default | cut -f1 -d <span style="color:#e6db74">&#39; &#39;</span><span style="color:#66d9ef">)</span> | grep -E <span style="color:#e6db74">&#39;^token&#39;</span> | cut -f2 -d<span style="color:#e6db74">&#39;:&#39;</span> | tr -d <span style="color:#e6db74">&#39;\t&#39;</span><span style="color:#66d9ef">)</span>
+</code></pre></div></li>
+<li>Then create a secure channel to your kubernetes cluster using <code>kubectl proxy</code></li>
+<li>Finally, visit http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/  and use the token as an input when prompted.</li>
+</ul>
+<p>For more Info check the documentation and the repo <a href="https://github.com/kubernetes/dashboard">here</a></p>
+<p>If you want to access the dashboard from outside, you need to modify the service with a <code>NodePort</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n kube-system edit service kubernetes-dashboard
+</code></pre></div><p>if you want to get access without a token or kube-config for the dashboard, apply the following <a href="https://gist.githubusercontent.com/jpetazzo/fb0fd5c5233486e5b17c194b304a8905/raw/0dca3976cffa0c9f46c9a88549cdf9efd9cbf02e/k8s-admin-dashboard.yaml">yaml</a> to give the cluster-admin role:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#66d9ef">apiVersion</span>: rbac.authorization.k8s.io/v1beta1
+<span style="color:#66d9ef">kind</span>: ClusterRoleBinding
+<span style="color:#66d9ef">metadata</span>:
+  <span style="color:#66d9ef">name</span>: kubernetes-dashboard
+  <span style="color:#66d9ef">labels</span>:
+    <span style="color:#66d9ef">k8s-app</span>: kubernetes-dashboard
+<span style="color:#66d9ef">roleRef</span>:
+  <span style="color:#66d9ef">apiGroup</span>: rbac.authorization.k8s.io
+  <span style="color:#66d9ef">kind</span>: ClusterRole
+  <span style="color:#66d9ef">name</span>: cluster-admin
+<span style="color:#66d9ef">subjects</span>:
+- <span style="color:#66d9ef">kind</span>: ServiceAccount
+  <span style="color:#66d9ef">name</span>: kubernetes-dashboard
+  <span style="color:#66d9ef">namespace</span>: kube-system
+</code></pre></div><h3 id="how-to-do-health-checks-with-kubernetes">How to do health-checks with kubernetes</h3>
+<p>There are two options to do health checks:</p>
+<ul>
+<li><strong>Liveness Probes:</strong> Many applications running for long periods of time eventually transition to broken states, and cannot recover except by being restarted. Kubernetes provides liveness probes to detect and remedy such situations.</li>
+<li><strong>Readiness Probes:</strong> it’s used to check the start-up phase of a container in the pod. Imagine a container that loads some data from external storage such as S3 or a database that needs to initialize some tables. In this case you want to signal when the container is ready to serve traffic.</li>
+</ul>
+<p>For more information check <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/">documentation</a></p>
+<h3 id="what-kind-of-selectors-can-be-applied">What kind of selectors can be applied</h3>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key=value</td>
+<td>key is set to value</td>
+</tr>
+<tr>
+<td>key!=value</td>
+<td>key is not set to value</td>
+</tr>
+<tr>
+<td>key in (value1, value2)</td>
+<td>key is either value1 or value2</td>
+</tr>
+<tr>
+<td>key notin (value1, value2)</td>
+<td>key is not one of value1 or value2</td>
+</tr>
+<tr>
+<td>key</td>
+<td>key is set</td>
+</tr>
+<tr>
+<td>!key</td>
+<td>key is not set</td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-to-delete-replicationsets-without-deleting-pods">How to delete replicationsets without deleting pods</h3>
+<p>This can be achieved by setting the <code>--cascade</code> option to false at the end of the delete command, example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl delete rs rs_name --cascade<span style="color:#f92672">=</span>false
+</code></pre></div><h3 id="how-to-list-pod-names-only">How to list pod names only</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -o go-template --template <span style="color:#e6db74">&#39;{{range .items}}{{.metadata.name}}{{&#34;\n&#34;}}{{end}}&#39;</span>
+</code></pre></div><p>OR</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -o jsonpath --template <span style="color:#e6db74">&#39;{.items[*].metadata.name}&#39;</span>
+</code></pre></div><p>if you want to delete all pods you can do it in a loop:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> pod in <span style="color:#66d9ef">$(</span>kubectl get pods -o go-template --template <span style="color:#e6db74">&#39;{{range .items}}{{.metadata.name}}{{&#34;\n&#34;}}{{end}}&#39;</span><span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> kubectl delete pod $pod; <span style="color:#66d9ef">done</span>
+</code></pre></div><p>OR</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> pod in <span style="color:#66d9ef">$(</span>kubectl get pods -o jsonpath --template <span style="color:#e6db74">&#39;{.items[*].metadata.name}&#39;</span><span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> kubectl delete pod $pod; sleep 60; <span style="color:#66d9ef">done</span>
+</code></pre></div>
+            </div>
+            
+            <div class="post-comments">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "adelzaalouk-me" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2020 Adel Zaalouk -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

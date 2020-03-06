@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Demystifying Moby: From OCI to Linuxkit &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.66.0" />
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/css/nix.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-90858024-1', 'auto');
+	  ga('send', 'pageview');
+
+</script>
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+      <a class="navbar-brand" id="green-terminal" href='/'>
+        zanetworker@adelzaalouk.me ~ $
+      </a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href='/' id="green-terminal">/home/zanetworker</a>
+        </li>
+        
+				
+				
+				<li class="dropdown">
+                    
+            		<a href="/about" id="green-terminal">~/about</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+                        <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        
+                    		<li>
+                    		<a href="/post">~/all posts</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/categories">~/categories</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/tags">~/tags</a>
+				    		</li>
+                		
+            		</ul>
+            		
+        		</li>
+        		
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="/post/technical/2017-05-03-moby-linuxkit/">Demystifying Moby: From OCI to Linuxkit</a></h1>
+            <span class="post-date">2017-05-03 </span>
+            <div class="post-content">
+                <p>OCI, Containerd, runC, Moby, linuxkit are all relatively new components that work together for building containers.
+In this post we will explain each component and how these components relate to one another.</p>
+<ul>
+<li><a href="#lets-start-with-the-basics-oci-runc-containerd">Lets Start with the Basics (OCI, runC, Containerd)</a>
+<ul>
+<li><a href="#so-what-is-the-open-container-initiative-oci">So what is the Open Container Initiative (OCI)?</a></li>
+</ul>
+</li>
+<li><a href="#what-are-runc-and-containerd">What are runC and Containerd?</a></li>
+<li><a href="#demistyfing-moby--the-linuxkit">Demistyfing Moby &amp; The LinuxKit</a></li>
+<li><a href="#linuxkit-test-drive">Linuxkit Test-Drive</a></li>
+<li><a href="#important-references">Important References</a></li>
+</ul>
+<h2 id="lets-start-with-the-basics-oci-runc-containerd">Lets Start with the Basics (OCI, runC, Containerd)</h2>
+<p>Before jumping in and talking about Moby and Linuxkit, it is important to establish some basic
+knowledge first, this will make understanding Linuxkit much easier.</p>
+<h3 id="so-what-is-the-open-container-initiative-oci">So what is the Open Container Initiative (OCI)?</h3>
+<p>The OCI is an initiative to define common standards for container frameworks to build containers. Container engines such as <em>Docker</em> and <em>rkt</em> provided an easy way to run containers by just providing the container image name and the version, for example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run repo_name/image_name:tag_name
+rkt run rep_name/image_name,version<span style="color:#f92672">=</span>version_tag
+
+</code></pre></div><p>To keep supporting this easy way of building containers, OCI needs to define an image format that provide information such as (commands, env variables, arguments, etc) for the container to use later and so they did, so now we have two specifications by OCI:</p>
+<ul>
+<li><strong>Image Format Specification</strong>: Contains the image manifest, file-system layers, and the image configuration (similar to how you do it user a Dockerfile)</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;created&#34;</span>:<span style="color:#e6db74">&#34;2015-10-31&#34;</span>,
+  <span style="color:#f92672">&#34;author&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,
+  <span style="color:#f92672">&#34;architecture&#34;</span>:<span style="color:#e6db74">&#34;amd64&#34;</span>,
+  <span style="color:#f92672">&#34;os&#34;</span>:<span style="color:#e6db74">&#34;linux&#34;</span>,
+  <span style="color:#f92672">&#34;config&#34;</span>:{
+    <span style="color:#f92672">&#34;User&#34;</span>:<span style="color:#e6db74">&#34;alice&#34;</span>,
+    <span style="color:#f92672">&#34;ExposedPorts&#34;</span>:{  },
+    <span style="color:#f92672">&#34;Env&#34;</span>:[  ],
+    <span style="color:#f92672">&#34;Entrypoint&#34;</span>:[
+      <span style="color:#e6db74">&#34;/bin/my-app-binary&#34;</span>
+    ],
+    <span style="color:#f92672">&#34;Cmd&#34;</span>:[  ],
+    <span style="color:#f92672">&#34;Volumes&#34;</span>:{  },
+    <span style="color:#f92672">&#34;WorkingDir&#34;</span>:<span style="color:#e6db74">&#34;/home/alice&#34;</span>,
+    <span style="color:#f92672">&#34;Labels&#34;</span>:{  }
+  },
+  <span style="color:#f92672">&#34;rootfs&#34;</span>:{  },
+  <span style="color:#f92672">&#34;history&#34;</span>:[  ]
+}
+</code></pre></div><ul>
+<li><strong>Runtime Specification</strong>: specified the configuration, execution environment, PID, and lifecycle of a container (e.g., running, created, stopped, etc). Below is an example of runtime and configuration:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;ociVersion&#34;</span>:<span style="color:#e6db74">&#34;1.0.0-rc5-dev&#34;</span>,
+  <span style="color:#f92672">&#34;platform&#34;</span>:{
+    <span style="color:#f92672">&#34;os&#34;</span>:<span style="color:#e6db74">&#34;linux&#34;</span>,
+    <span style="color:#f92672">&#34;arch&#34;</span>:<span style="color:#e6db74">&#34;amd64&#34;</span>
+  },
+  <span style="color:#f92672">&#34;process&#34;</span>:{  },
+  <span style="color:#f92672">&#34;root&#34;</span>:{
+    <span style="color:#f92672">&#34;path&#34;</span>:<span style="color:#e6db74">&#34;rootfs&#34;</span>
+  },
+  <span style="color:#f92672">&#34;mounts&#34;</span>:[
+    {
+      <span style="color:#f92672">&#34;destination&#34;</span>:<span style="color:#e6db74">&#34;/sys&#34;</span>,
+      <span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;sysfs&#34;</span>,
+      <span style="color:#f92672">&#34;source&#34;</span>:<span style="color:#e6db74">&#34;sysfs&#34;</span>,
+      <span style="color:#f92672">&#34;options&#34;</span>:[
+        <span style="color:#e6db74">&#34;nosuid&#34;</span>,
+        <span style="color:#e6db74">&#34;noexec&#34;</span>,
+        <span style="color:#e6db74">&#34;nodev&#34;</span>
+      ]
+    }
+  ],
+  <span style="color:#f92672">&#34;linux&#34;</span>:{
+    <span style="color:#f92672">&#34;resources&#34;</span>:{
+      <span style="color:#f92672">&#34;disableOOMKiller&#34;</span>:<span style="color:#66d9ef">false</span>
+    },
+    <span style="color:#f92672">&#34;namespaces&#34;</span>:[
+      {
+        <span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;pid&#34;</span>
+      },
+      {
+        <span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;ipc&#34;</span>
+      },
+      {
+        <span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;uts&#34;</span>
+      },
+      {
+        <span style="color:#f92672">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;mount&#34;</span>
+      }
+    ]
+  }
+}
+</code></pre></div><p>With OCI, we will have a bundle that contains configuration files for the runtime to act upon.  I hope this gave you a better idea on what OCI is.  Time to move to runC and Containerd.</p>
+<h2 id="what-are-runc-and-containerd">What are runC and Containerd?</h2>
+<p>Now we have a standard that dictates how to run containers, and a bundle with configuration, so how will we use this standard to run them now. lets <strong>runC</strong>.</p>
+<p>runC is a container runtime that knows how to deal with OCI defined speicifcations. To use runC you need to have a <code>rootfs</code> and an OCI <code>config.json</code> which can be created using <code>runc spec</code>.</p>
+<p>Now that we have all what we need, we can start a container:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">runC run container-name <span style="color:#75715e"># runs the container</span>
+runC list <span style="color:#75715e"># to see the containers</span>
+</code></pre></div><p>Alright, so now we have a runtime for containers that understands and talks OCI, yay! are we done now? well, you can stop here and go run containers with <code>runC</code>, but I might not be interested in using runC in the future, so I will go learn how to use <code>Containerd</code>, this way even if I want to use another container runtime (that supports OCI), I will not have to understand how this runtime works, I will instead rely on Containerd.</p>
+<p><strong>Containerd</strong> is daemon to manage the complete container lifecycle, it abstracts <strong>runC</strong> details and provides a <strong>gRPC</strong> compataible API that can be used natively or from a command terminal (ctr).</p>
+<p>Lets have a look at the entire picture so far!
+<img src="/assets/linuxkit_post/containerd.png" alt=""></p>
+<p>Looks good right? So now that we are armed with this knowledge lets free Moby!</p>
+<h2 id="demistyfing-moby--the-linuxkit">Demistyfing Moby &amp; The LinuxKit</h2>
+<p>So recently a project called Moby was announced at Dockercon, the announcement raised alot of concerns about how the current docker framework will be used compared to Moby. But worry not, there is no need for confusion.</p>
+<p>Based on my understanding, Moby is a project that gathers together all the tools used internally by the docker teams and makes it public for developers and contributers to share a common repository to innovate. It basically contains all the lego pieces needed to build containers, swarms, etc. Moby is thought of as an assembly factory, you can create an assemly using different parts and you have a product at the end. Another analogy is a juice mixer, you put all the fruits you want in the mixer and you get a nice smoothie (yumm).</p>
+<p><img src="/assets/linuxkit_post/MobyProject.PNG" alt=""></p>
+<p>One of major announcements in Dockercon was Linuxkit, which falls under the Moby Project as a core component for building minimal, customizable, user-case oriented images that can run on many platforms, with isolation as a bonus side-effect.</p>
+<p><img src="/assets/linuxkit_post//linuxkit.png" alt=""></p>
+<h2 id="linuxkit-test-drive">Linuxkit Test-Drive</h2>
+<p>Alright, lets put this knowledge into practice. Here is what you will need to get a bootable linuxkit customizable image at the end:</p>
+<ul>
+<li>Clone the <a href="https://github.com/linuxkit/linuxkit">linuxkit repository</a></li>
+<li>Inside the linuxkit repo run <code>make clean &amp;&amp; make &amp;&amp; make install</code> or you can run <code>make</code> and copy all the contents of bin/* to your PATH</li>
+</ul>
+<p>Now you have moby (the tool for building images), and linuxkit for deploying them. So how do you define your images? we use a .yml config file. Lets have a look at the important bits of the yaml file for building a docker linuxkit image (which you can find in the <code>examples/</code> directory):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">
+<span style="color:#66d9ef">kernel</span>:
+  <span style="color:#75715e">#This section defines the kernel configuration,  The image field specifies the Docker image, which should contain a bzImage (for amd64 architecture, others may vary) and a file called kernel.tar</span>
+  <span style="color:#66d9ef">image</span>: <span style="color:#e6db74">&#34;linuxkit/kernel:4.9.x&#34;</span>
+  <span style="color:#66d9ef">cmdline</span>: <span style="color:#e6db74">&#34;console=ttyS0 console=tty0 page_poison=1&#34;</span>
+</code></pre></div><p><img src="/assets/linuxkit_post/extracting.PNG" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">init</span>:
+  <span style="color:#75715e">#This section currently just lists images that is used for the init system and are unpacked directly into the root filesystem</span>
+  - linuxkit/init:63eed9ca7a09d2ce4c0c5e7238ac005fa44f564b
+  - linuxkit/runc:b0fb122e10dbb7e4e45115177a61a3f8d68c19a9
+  - linuxkit/containerd:18eaf72f3f4f9a9f29ca1951f66df701f873060b
+  - linuxkit/ca-certificates:e091a05fbf7c5e16f18b23602febd45dd690ba2f
+</code></pre></div><p><img src="/assets/linuxkit_post/init_containers.PNG" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">onboot</span>:
+  <span style="color:#75715e">#These containers are run to completion sequentially, using runc before anything else is started</span>
+  - <span style="color:#66d9ef">name</span>: sysctl
+    <span style="color:#66d9ef">image</span>: <span style="color:#e6db74">&#34;linuxkit/sysctl:1f5ec5d5e6f7a7a1b3d2ff9dd9e36fd6fb14756a&#34;</span>
+    <span style="color:#66d9ef">net</span>: host
+    <span style="color:#66d9ef">pid</span>: host
+    <span style="color:#66d9ef">ipc</span>: host
+    <span style="color:#66d9ef">capabilities</span>:
+     - CAP_SYS_ADMIN
+    <span style="color:#66d9ef">readonly</span>: <span style="color:#66d9ef">true</span>
+...
+</code></pre></div><p><img src="/assets/linuxkit_post/onboot_containers.PNG" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">services</span>:
+  <span style="color:#75715e">#These containers are started with containerd and are expected to remain running</span>
+  - <span style="color:#66d9ef">name</span>: docker
+    <span style="color:#66d9ef">image</span>: <span style="color:#e6db74">&#34;linuxkit/docker-ce:a82b61b151f6d6a3606e66f284c927b4c83b50f5&#34;</span>
+    <span style="color:#66d9ef">capabilities</span>:
+     - all
+    <span style="color:#66d9ef">net</span>: host
+    <span style="color:#66d9ef">mounts</span>:
+     - <span style="color:#66d9ef">type</span>: cgroup
+       <span style="color:#66d9ef">options</span>: [<span style="color:#e6db74">&#34;rw&#34;</span>,<span style="color:#e6db74">&#34;nosuid&#34;</span>,<span style="color:#e6db74">&#34;noexec&#34;</span>,<span style="color:#e6db74">&#34;nodev&#34;</span>,<span style="color:#e6db74">&#34;relatime&#34;</span>]
+    <span style="color:#66d9ef">binds</span>:
+     - /var/lib/docker:/var/lib/docker
+     - /lib/modules:/lib/modules
+...
+</code></pre></div><p><img src="/assets/linuxkit_post/service_containers.PNG" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">files</span>:
+  - <span style="color:#66d9ef">path</span>: etc/docker/daemon.json
+    <span style="color:#66d9ef">contents</span>: <span style="color:#e6db74">&#39;{&#34;debug&#34;: true}&#39;</span>
+</code></pre></div><p><img src="/assets/linuxkit_post/add_files.PNG" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">trust</span>:
+  <span style="color:#75715e">#his section specifies which build components are to be cryptographically verified with Docker Content Trust prior to pulling</span>
+  <span style="color:#66d9ef">image</span>:
+    - linuxkit/kernel
+    - linuxkit/binfmt
+    - linuxkit/rngd
+<span style="color:#66d9ef">outputs</span>:
+  - <span style="color:#66d9ef">format</span>: kernel+initrd
+</code></pre></div><p><img src="/assets/linuxkit_post/Create_Output.PNG" alt=""></p>
+<p>To build the linuxkit image we use <code>moby</code> the tool:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">moby build docker.yml
+</code></pre></div><p>Finally to deploy the image, use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  linuxkit run docker
+</code></pre></div><p>The end result should look like this:</p>
+<p><img src="/assets/linuxkit_post/docker_linux_lit.PNG" alt=""></p>
+<p>As you can see, docker running as a runc container inside the linuxkit image.</p>
+<h2 id="important-references">Important References</h2>
+<ul>
+<li><a href="https://github.com/opencontainers/runtime-spec/blob/master/config.md">OCI Runtime-Spec</a></li>
+<li><a href="https://github.com/opencontainers/image-spec/blob/master/spec.md">OCI Image-Spec</a></li>
+<li><a href="https://runc.io/">runc.io</a></li>
+<li><a href="https://blog.docker.com/2015/12/containerd-daemon-to-control-runc/"> Containerd to Control runc</a></li>
+<li><a href="https://containerd.io">containerd.io</a></li>
+</ul>
+
+            </div>
+            
+            <div class="post-comments">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "adelzaalouk-me" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2020 Adel Zaalouk -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

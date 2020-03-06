@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Docktorino: Building Containers with Confidence &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.66.0" />
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/css/nix.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-90858024-1', 'auto');
+	  ga('send', 'pageview');
+
+</script>
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+      <a class="navbar-brand" id="green-terminal" href='/'>
+        zanetworker@adelzaalouk.me ~ $
+      </a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href='/' id="green-terminal">/home/zanetworker</a>
+        </li>
+        
+				
+				
+				<li class="dropdown">
+                    
+            		<a href="/about" id="green-terminal">~/about</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+                        <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        
+                    		<li>
+                    		<a href="/post">~/all posts</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/categories">~/categories</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/tags">~/tags</a>
+				    		</li>
+                		
+            		</ul>
+            		
+        		</li>
+        		
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="/post/technical/2018-04-01-docktorino/">Docktorino: Building Containers with Confidence</a></h1>
+            <span class="post-date">2018-04-01 </span>
+            <div class="post-content">
+                <p>Docktorino is a real-time continious testing tool for your docker builds, helping you containerize with confidence!</p>
+<p>When building Docker images it is sometimes tricky to assert the image behavior, for example, whether the contents of the image you built is correct, or that commands can execute correctly inside your container ( maybe you forgot to set your binary&rsquo;s PATH).</p>
+<p>Docktrino makes these types of assertions easy to define when building your Docker images. It then listens to your Docker builds and triggers these tests on the spot to notify you if you have done something wrong, or if your container image is misbehaving.</p>
+<p>The outline for this post is as follows:</p>
+<!-- raw HTML omitted -->
+<h3 id="step-stones">Step Stones</h3>
+<p>In the previous post, I talked about <a href="https://github.com/zanetworker/dockument"><strong>Dockument</strong></a>, a tool that helps you auto-generate documentation for your Dockerfiles and Docker images the way you would an API. Docktorino  <em>uses Dockument as a library to fetch important data from Docker images</em>.</p>
+<p>Furthermore, it uses the fetched information, in particular <strong>testing</strong> information which follows the <a href="https://github.com/GoogleCloudPlatform/container-structure-test"><strong>container-structure-test</strong></a> style as previously explained in the <a href="http://www.adelzaalouk.me/2018/dockument/">Dockument blog post</a> and produces testing results triggered by a build to the target image. The ouput again conforms with the <code>container-structure-test</code> output.</p>
+<h3 id="usecases">Usecases</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:alpine as builder</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">LABEL</span> api.TEST.fileExistence<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.fileExistence.name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Dockumentation Check&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.fileExistence.path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/dockumentation.md&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.fileExistence.shouldExist<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.fileExistence.permissions<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ADD</span> dockumentation.md /dockumentation.md<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">LABEL</span> api.TEST.command<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.command.name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;go version&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.command.command<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;go&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.command.args<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;version&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.command.expectedOutput<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;go version&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">LABEL</span> api.TEST.metadata<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.metadata.env<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;GOPATH=/go,PATH=/go/bin:/usr/local/go/bin:</span>$PATH<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.metadata.exposedPorts<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.metadata.volumes<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.metadata.cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.metadata.workdir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> PATH /go/bin:/usr/local/go/bin:$PATH<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> GOPATH /go<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>Consider the above Dockerfile, it defines three tests to assert the behavior of your Docker image:</p>
+<ul>
+<li>Tests the the file <code>dockumentation.md</code> that we add exists in the image (as intended) via a <code>fileExistence test</code></li>
+<li>Tests that go is successufully installed via a <code>command test</code></li>
+<li>Tests that the environment variables we defined (PATH and GOPATH) have the right values.</li>
+</ul>
+<p>We can also tests the content of a file via <code>fileContent tests</code>. For example, if we are to build a debian image, we can check the <code>sources.list</code> file contents as follows:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.TEST.fileContent<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.fileContent.name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Debian Sources&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.fileContent.path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/etc/apt/sources.list&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.fileContent.expectedContents<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[&#39;.*httpredir\\.debian\\.org.*&#39;]&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.fileContent.excludedContents<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[&#39;.*gce_debian_mirror.*&#39;]&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p><strong>Important To Note</strong></p>
+<p>Multiple environment variables can be checked as shown in the meta-data tests, all what we need to do is separate env definitions with a &ldquo;,&rdquo; (e.g., <code>api.TEST.metadata.env=&quot;GOPATH=/go,PATH=/go/bin:/usr/local/go/bin:$PATH&quot;</code>), same goes for ARGs in our command tests, we can have multiple args to the command tests, we just need to add a &ldquo;,&rdquo; to separate the args.</p>
+<h3 id="demo">Demo</h3>
+<!-- raw HTML omitted -->
+<h3 id="getting-started">Getting Started</h3>
+<p>To get started, please visit the git repo of Docktorino <a href="https://github.com/zanetworker/docktorino">here</a>, and download the corresponding binaries, or build it yourself.</p>
+
+            </div>
+            
+            <div class="post-comments">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "adelzaalouk-me" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2020 Adel Zaalouk -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

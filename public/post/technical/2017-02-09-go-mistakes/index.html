@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Go Recipes For the Lost &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.66.0" />
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/css/nix.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-90858024-1', 'auto');
+	  ga('send', 'pageview');
+
+</script>
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+      <a class="navbar-brand" id="green-terminal" href='/'>
+        zanetworker@adelzaalouk.me ~ $
+      </a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href='/' id="green-terminal">/home/zanetworker</a>
+        </li>
+        
+				
+				
+				<li class="dropdown">
+                    
+            		<a href="/about" id="green-terminal">~/about</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+                        <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        
+                    		<li>
+                    		<a href="/post">~/all posts</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/categories">~/categories</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/tags">~/tags</a>
+				    		</li>
+                		
+            		</ul>
+            		
+        		</li>
+        		
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="/post/technical/2017-02-09-go-mistakes/">Go Recipes For the Lost</a></h1>
+            <span class="post-date">2017-02-09 </span>
+            <div class="post-content">
+                <p>Welcome to &ldquo;Go Recipes For the Lost&rdquo; post, this is a live post, it won&rsquo;t ever be done as long as I am writing go code. The intention here is to share with you some fast resolution for common Go coding problems. Let&rsquo;s begin.</p>
+<h3 id="undefined-function-even-though-it-is-declared-in-another-file">Undefined function even though it is declared in another file!</h3>
+<p>When you would like to use functions defined in another go file, and you are using the &ldquo;run&rdquo; command. Make sure to pass all the file names to it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">├── main.go
+└── utils.go
+
+go run main.go utils.go
+</code></pre></div><p>It is preferrable to use <code>go build</code> or <code>go install</code> instead of &ldquo;run&rdquo;.</p>
+<h3 id="cant-cast-an-slice-of-interfaces-to-a-slice-of-another-type">Can&rsquo;t cast an slice of interfaces to a slice of another type!</h3>
+<p>Since I don&rsquo;t have a better answer, I copied this answer from <a href="http://stackoverflow.com/questions/12753805/type-converting-slices-of-interfaces-in-go">Stephen Weinberg&rsquo;s answer on  stackoverflow</a>:</p>
+<pre><code>In Go, there is a general rule that syntax should not hide complex/costly operations. Converting a string to an interface{} is done in O(1) time. Converting a []string to an interface{} is also done in O(1) time since a slice is still one value. However, converting a []string to an []interface{} is O(n) time because each element of the slice must be converted to an interface{}.
+
+The one exception to this rule is converting strings. When converting a string to and from a []byte or a []rune, Go does O(n) work even though conversions are &quot;syntax&quot;.
+
+ There is no standard library function that will do this conversion for you. You could make one with reflect, but it would be slower than the three line option.
+</code></pre><p>Example with reflection:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">InterfaceSlice</span>(<span style="color:#a6e22e">slice</span> <span style="color:#66d9ef">interface</span>{}) []<span style="color:#66d9ef">interface</span>{} {
+    <span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">reflect</span>.<span style="color:#a6e22e">ValueOf</span>(<span style="color:#a6e22e">slice</span>)
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">Kind</span>() <span style="color:#f92672">!=</span> <span style="color:#a6e22e">reflect</span>.<span style="color:#a6e22e">Slice</span> {
+        panic(<span style="color:#e6db74">&#34;InterfaceSlice() given a non-slice type&#34;</span>)
+    }
+
+    <span style="color:#a6e22e">ret</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">interface</span>{}, <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">Len</span>())
+
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">:=</span><span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span>&lt;<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">Len</span>(); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+        <span style="color:#a6e22e">ret</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">Index</span>(<span style="color:#a6e22e">i</span>).<span style="color:#a6e22e">Interface</span>()
+    }
+
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>
+}
+</code></pre></div><p>Your best option though is just to use those three lines of code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">b</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">interface</span>{}, len(<span style="color:#a6e22e">a</span>))
+<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">a</span> {
+    <span style="color:#a6e22e">b</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]
+}
+</code></pre></div><h3 id="godep-command-is-not-found">Godep command is not found</h3>
+<p>If you are wondering why you can&rsquo;t execute Godep, it is because you did not
+export &ldquo;GOBIN&rdquo;. Here is what you need to do:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GOBIN<span style="color:#f92672">=</span>$GOPATH/bin
+export PATH<span style="color:#f92672">=</span>$GOPATH:$GOBIN:$PATH
+</code></pre></div><p>you can now execute <code>godep save</code> and immendiately find the &ldquo;Godeps/&rdquo; directory there.</p>
+<h3 id="why-are-my-structs-not-being-correctly-marshalled-into-json">Why are my structs not being correctly marshalled into json?</h3>
+<p>When marshalling structs, you should export your struct parameters by making them
+public. For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Test</span> <span style="color:#66d9ef">struct</span>{
+  <span style="color:#a6e22e">a</span> <span style="color:#66d9ef">string</span>
+  <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">int</span>
+  }
+
+<span style="color:#75715e">//That wont work
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">test</span>{<span style="color:#a6e22e">a</span>: <span style="color:#e6db74">&#34;hello&#34;</span>, <span style="color:#a6e22e">b</span>: <span style="color:#ae81ff">10</span>})
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Test</span> <span style="color:#66d9ef">struct</span>{
+  <span style="color:#a6e22e">A</span> <span style="color:#66d9ef">string</span> <span style="color:#75715e">//Public
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">B</span> <span style="color:#66d9ef">int</span>  <span style="color:#75715e">//Public
+</span><span style="color:#75715e"></span>  }
+
+<span style="color:#75715e">//This would work
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">test</span>{<span style="color:#a6e22e">A</span>: <span style="color:#e6db74">&#34;hello&#34;</span>, <span style="color:#a6e22e">B</span>: <span style="color:#ae81ff">10</span>})
+</code></pre></div><h3 id="what-is-go-get-library-">What is go get <!-- raw HTML omitted --> &hellip;?</h3>
+<p>Using go get will download the library you are asking for, usually it fetches that from github, gitlab, or similar project hosting sites. The <code>...</code> asks go to get in subsidary projects recursively.</p>
+<h3 id="how-to-resize-a-slice-for-reception">How to resize a slice for reception?</h3>
+<p>Sometimes when you are writing networking application, you are not sure about the size of the data
+received, as a result your fixed capacity will result in an error. So how to fix that? Do the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">bytestToReceive</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">1024</span>)
+<span style="color:#a6e22e">yourModel</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">models</span>.<span style="color:#a6e22e">structToUnmarshalTo</span>{}
+
+<span style="color:#75715e">// Now get the size of the your data
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">size</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">yourConnection</span>.<span style="color:#a6e22e">Read</span>(<span style="color:#a6e22e">bytestToReceive</span>)
+
+<span style="color:#75715e">//resize your receiver byte array
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">bytestToReceiveResized</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">bytestToReceive</span>[:<span style="color:#a6e22e">size</span>]
+
+<span style="color:#75715e">//Unmarshal your stuff for e.g.,
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Unmarshal</span>(<span style="color:#a6e22e">bytestToReceiveResized</span>,<span style="color:#a6e22e">yourModel</span>)
+</code></pre></div><h3 id="how-to-do-a-delete-rest-request-ing-go">How to do a DELETE REST request ing Go?</h3>
+<p>The http library does not support a DELETE function. However, it provides a &ldquo;NewRequest&rdquo; call that you can utilize
+to issue a delete request with the help of the http.Client library, here is how:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">request</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">NewRequest</span>(<span style="color:#e6db74">&#34;DELETE&#34;</span>, <span style="color:#a6e22e">url</span>, <span style="color:#66d9ef">nil</span>)
+<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span><span style="color:#f92672">!=</span><span style="color:#66d9ef">nil</span>{
+<span style="color:#75715e">//Handle Error
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#a6e22e">netClient</span><span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Client</span>{<span style="color:#75715e">//configure your options}
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">netClient</span>.<span style="color:#a6e22e">Do</span>(<span style="color:#a6e22e">request</span>)
+<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span><span style="color:#f92672">!=</span><span style="color:#66d9ef">nil</span>{
+<span style="color:#75715e">//Handle Error
+</span><span style="color:#75715e"></span>}
+</code></pre></div><h3 id="how-to-use-glide-for-dependency-management">How to use glide for dependency management?</h3>
+<p>You need to follow these steps:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">glide init // this will create a glide.yml and a .lock file which contains all your dependencies
+glide up // you updated your code with new dependencies, run this <span style="color:#66d9ef">if</span> you want .lock file to be updated
+glide install //this reads all your dependencies from the .lock file and installs them
+</code></pre></div>
+            </div>
+            
+            <div class="post-comments">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "adelzaalouk-me" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2020 Adel Zaalouk -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

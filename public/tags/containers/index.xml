@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Containers on </title>
+    <link>/tags/containers/</link>
+    <description>Recent content in Containers on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 01 Apr 2018 15:04:23 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/containers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docktorino: Building Containers with Confidence</title>
+      <link>/post/technical/2018-04-01-docktorino/</link>
+      <pubDate>Sun, 01 Apr 2018 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2018-04-01-docktorino/</guid>
+      <description>Docktorino is a real-time continious testing tool for your docker builds, helping you containerize with confidence!
+When building Docker images it is sometimes tricky to assert the image behavior, for example, whether the contents of the image you built is correct, or that commands can execute correctly inside your container ( maybe you forgot to set your binary&amp;rsquo;s PATH).
+Docktrino makes these types of assertions easy to define when building your Docker images.</description>
+    </item>
+    
+    <item>
+      <title>DOCKument: Auto-generating Documentation for Dockerfiles and Images</title>
+      <link>/post/technical/2018-03-19-dockument/</link>
+      <pubDate>Mon, 19 Mar 2018 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2018-03-19-dockument/</guid>
+      <description>DOCKument is a tool that helps you auto-generate documentation for your Dockerfiles and Docker images the way you would an API.
+Matthias Lübken gave an example on how to use &amp;ldquo;API&amp;rdquo; like labels to describe important information in the Dockerfile (e.g., resources used, exposed ports, dependencies, etc) here. This project makes use of similar label patterns to fetch important data in Dockerfiles / Docker images and create Dockumentation for it automagically.</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes How-Tos</title>
+      <link>/post/technical/2017-12-15-kubernetes-how-tos/</link>
+      <pubDate>Fri, 15 Dec 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-12-15-kubernetes-how-tos/</guid>
+      <description>Kubernetes has been taking over the container orchesteration stage for sometime now, it has a large community and a great set of tooling and contributers backing it. Along those lines, picking up kubernetes skills can be a little daunting at first, but fear not, as documentation is rich and concepts are well elaborated in not one but many places.
+In this post, I won&amp;rsquo;t attempt to re-explain kubernetes concepts (pods, deployments, services, replicasets, &amp;hellip;etc) since as I said, a lot of great people did that job already, and did it very well (if you still have doubts about some of the concepts, I would be glad to help clear smoke up).</description>
+    </item>
+    
+    <item>
+      <title>eBPF, Microservices, Docker, and Cilium: From Novice to Seasoned </title>
+      <link>/post/technical/2017-09-06-security-bpf-docker-cillium/</link>
+      <pubDate>Wed, 06 Sep 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-09-06-security-bpf-docker-cillium/</guid>
+      <description>In this post we will be covering eBPF concepts, as well as challenges faced when applying network policies for microservices and how these challenges can be tackled. Finally, we will have a look at Cilium to see how it makes eBPF simple and easy to utilize.
+  Introduction - What is eBPF - The bpf() system call - Important use-cases for eBPF - How to create an eBPF program?</description>
+    </item>
+    
+  </channel>
+</rss>

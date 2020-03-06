@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VMware on </title>
+    <link>/tags/vmware/</link>
+    <description>Recent content in VMware on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 18 Jan 2016 15:04:23 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/vmware/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VMware vRealize Automation Capsule</title>
+      <link>/post/technical/2016-01-18-vrealize-capsule/</link>
+      <pubDate>Mon, 18 Jan 2016 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2016-01-18-vrealize-capsule/</guid>
+      <description>Okay, so recently I have had the chance to play around with vRealize Automation (vRA). Therefore, I am using this chance to share with you the outcomes of this interesting endeavor of mine. I have formulated this article to be in the form of questions and answers, so feel free to jump around to any question you feel like you want an answer to. The questions are:
+ What are the core components of vRA?</description>
+    </item>
+    
+    <item>
+      <title>NSX: A Morning Capsule</title>
+      <link>/post/technical/2015-08-22-nsx-capsule/</link>
+      <pubDate>Sat, 22 Aug 2015 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2015-08-22-nsx-capsule/</guid>
+      <description>I have recently had the chance to do some reading on VMware NSX. I come from a networking background Intertwined with software, previously I have had a chance to research on some of the underpinnings of NSX but never had the time to look at the big picture, so in this writing, I am going to briefly describe the NSX architecture.
+What is NSX? Management Plane Control Plane Data Plane In summary, I found NSX pretty decent compared to other Software-Defined solutions out there.</description>
+    </item>
+    
+  </channel>
+</rss>

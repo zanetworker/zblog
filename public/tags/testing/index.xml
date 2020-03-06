@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testing on </title>
+    <link>/tags/testing/</link>
+    <description>Recent content in Testing on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 01 Apr 2018 15:04:23 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docktorino: Building Containers with Confidence</title>
+      <link>/post/technical/2018-04-01-docktorino/</link>
+      <pubDate>Sun, 01 Apr 2018 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2018-04-01-docktorino/</guid>
+      <description>Docktorino is a real-time continious testing tool for your docker builds, helping you containerize with confidence!
+When building Docker images it is sometimes tricky to assert the image behavior, for example, whether the contents of the image you built is correct, or that commands can execute correctly inside your container ( maybe you forgot to set your binary&amp;rsquo;s PATH).
+Docktrino makes these types of assertions easy to define when building your Docker images.</description>
+    </item>
+    
+  </channel>
+</rss>

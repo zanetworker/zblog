@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> DOCKument: Auto-generating Documentation for Dockerfiles and Images &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.66.0" />
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/css/nix.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-90858024-1', 'auto');
+	  ga('send', 'pageview');
+
+</script>
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+      <a class="navbar-brand" id="green-terminal" href='/'>
+        zanetworker@adelzaalouk.me ~ $
+      </a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href='/' id="green-terminal">/home/zanetworker</a>
+        </li>
+        
+				
+				
+				<li class="dropdown">
+                    
+            		<a href="/about" id="green-terminal">~/about</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+                        <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        
+                    		<li>
+                    		<a href="/post">~/all posts</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/categories">~/categories</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/tags">~/tags</a>
+				    		</li>
+                		
+            		</ul>
+            		
+        		</li>
+        		
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="/post/technical/2018-03-19-dockument/">DOCKument: Auto-generating Documentation for Dockerfiles and Images</a></h1>
+            <span class="post-date">2018-03-19 </span>
+            <div class="post-content">
+                <p>DOCKument is a tool that helps you auto-generate documentation for your Dockerfiles and Docker images the way you would an API.</p>
+<p>Matthias Lübken gave an example on how to use &ldquo;API&rdquo; like labels to describe important information in the Dockerfile (e.g., resources used, exposed ports, dependencies, etc) <a href="https://github.com/luebken/currentweather/blob/master/Dockerfile">here</a>. This project makes use of similar label patterns to fetch important data in Dockerfiles / Docker images and create Dockumentation for it automagically. Furthermore, it improves on the work done by Matthias to expose various kinds of information that can be fetched from Docker images.</p>
+<p>In this post we will go through the usecase, usage, pre-reqs, getting started, and a little teaser for the next post.</p>
+<!-- raw HTML omitted -->
+<ul>
+<li><a href="#usecases">Usecases</a></li>
+<li><a href="#how-to-use-it">How to Use it</a></li>
+<li><a href="#pre-reqs">Pre-reqs</a></li>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#next-post">Next Post</a></li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="usecases">Usecases</h3>
+<p>Dockument on its own is just a tool that gives you the ability to fetch information out of Dockerfiles or built images. You can choose to create a Markdown output of your Dockerfile  and Docker image or you can cherry pick on what to fetch from the image and visualize it&rsquo;s content. Although this is not the main strength point of Dockument, it can come in handy when trying to share your Dockerfile on a public repo, it instantly allows the readers to understand the highlights of your Dockerfile / image (e.g., resources exposed, environment variables, dependencies, tests, and much more).</p>
+<p>The use-case above reflects the usage of Dockument only as a <strong>tool</strong>. What we can also do with Dockument, which I personally consider to be the main strength point, is using it as a framework for fetching important information out Docker images. If used in this manner, other tools can use this information to provide useful utilities as will be described in my next post about <code>Docktorino</code> the contious testing tool for Docker images.</p>
+<h3 id="how-to-use-it">How to Use it</h3>
+<p>With DOCKument you have the option to fetch important information about your Dockerfile or Docker images direcly from the command line <strong>OR</strong> create a markdown document that you can add to your git REPO or share with other developers.</p>
+<p>For example, if you type <code>dockument deps -d &quot;../examples/Dockerfile&quot;</code>, you will get the following output which describes the dependencies of this container image:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">### Dependency RABBIT ###</span>
+	Application: rabbit
+	Image: <span style="color:#e6db74">&#34;rabbit:latest&#34;</span>
+	Description: <span style="color:#e6db74">&#34;The rabbit&#34;</span>
+	Ports: <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;5271&#34;</span><span style="color:#f92672">]</span>
+	Required: <span style="color:#e6db74">&#34;true&#34;</span>
+
+<span style="color:#75715e">### Dependency REDIS ###</span>
+	Application: redis
+	Image: <span style="color:#e6db74">&#34;redis:latest&#34;</span>
+	Description: <span style="color:#e6db74">&#34;For caching results from OWM API.&#34;</span>
+	Ports: <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;6379&#34;</span><span style="color:#f92672">]</span>
+	Required: <span style="color:#e6db74">&#34;true&#34;</span>
+</code></pre></div><p>On the other hand, to create a markdown DOCKument, you can use <code>dockument create --dockerfile &quot;../examples/Dockerfile&quot; -o &quot;$HOME/dockumentation.md&quot;</code> or <code>dockument create --image &quot;repo/name:tag&quot; -o &quot;$HOME/dockumentation.md&quot;</code> . The output will be a file similar to the one <a href="%22https://github.com/zanetworker/dockument/blob/master/examples/dockumentation.md%22">here</a></p>
+<h3 id="pre-reqs">Pre-reqs</h3>
+<p>There are two types of labels that <code>Dockument</code> supports, these are:</p>
+<ul>
+<li><strong>Misc Lables</strong>: these are random / non-standard  labels defined in your Docker image, basically any label that does not follow the pattern described below.</li>
+<li><strong>Standardized Labels</strong>: These are the gems of <code>Dockument</code>, these labels are the ones used to expose the important information about your Dockerfile / Docker image. They follow a pattern, always prefiexed with <strong>api.Type.</strong>*</li>
+</ul>
+<p>You can use <code>Dockument</code> to print or create a documentation of random metadata in your Dockerfile or Docker images, however, that is not very useful. To utilize the fully-fledged functionality of Dockument, define labels in your Docker images that follow the below pattern.</p>
+<p><strong>For Dependencies</strong>:</p>
+<p>Will this containerized application have dependencies on other applications?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.DEPENDENCY.redis<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.DEPENDENCY.redis.image<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;redis:latest&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.DEPENDENCY.redis.port<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;6379&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.DEPENDENCY.redis.about<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;For caching results from OWM API.&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.DEPENDENCY.redis.mandatory<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p><strong>For Important ENVs</strong>:</p>
+<p>What are the environment variables that this container image defines?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.ENV.OPENWEATHERMAP_APIKEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.ENV.OPENWEATHERMAP_APIKEY.about<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Access key for OpenWeatherMap. See http://openweathermap.org/appid for details.&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.ENV.OPENWEATHERMAP_APIKEY.mandatory<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p><strong>For Exposed Ports</strong>:</p>
+<p>Do we expose any ports?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.EXPOSE.1337<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.EXPOSE.1337.scheme<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tcp&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>	api.EXPOSE.1337.protocol<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.EXPOSE.1337.about<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;The main endpoint of this service.&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p><strong>For resources used by the container image</strong>:</p>
+<p>What resources are required by my application to run in a smooth and performant manner?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.RESOURCES.Memory<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3gb&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.RESOURCES.CPU<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p><strong>For Important Tags</strong></p>
+<p>What are some important tags that I want my Dockerfile to expose?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.TAGS.go<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.9&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p><strong>For Container Tests</strong></p>
+<p>Tests help you make sure that your container image conforms with what you actually wants it to do. To this end, we decided to support the <a href="https://github.com/GoogleCloudPlatform/container-structure-test">container-structured-test</a> style. There are four types that are supported by Dockument:</p>
+<ul>
+<li><strong>Command Tests:</strong> &ldquo;Command tests ensure that certain commands run properly in the target image&rdquo;.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.TEST.command<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.command.name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;go version&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.command.command<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;go&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.command.args<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;version&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.command.expectedOutput<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;go version&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><ul>
+<li><strong>File Existence Tests:</strong> &ldquo;File existence tests check to make sure a specific file (or directory) exist within the file system of the image.&rdquo;</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.TEST.fileExistence<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.fileExistence.name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Dockumentation Check&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.fileExistence.path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/dockumentation.md&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.fileExistence.shouldExist<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.fileExistence.permissions<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><ul>
+<li><strong>File Content Tests:</strong> &ldquo;File content tests open a file on the file system and check its contents.&rdquo;</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.TEST.fileContent<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.fileContent.name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Debian Sources&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.fileContent.path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/etc/apt/sources.list&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.fileContent.expectedContents<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[&#39;.*httpredir\\.debian\\.org.*&#39;]&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.fileContent.excludedContents<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[&#39;.*gce_debian_mirror.*&#39;]&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><ul>
+<li><strong>Meta data tests</strong>: &ldquo;The Metadata test ensures the container is configured correctly&rdquo;.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.TEST.metadata<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.metadata.env<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;GOPATH:/go&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.metadata.exposedPorts<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.metadata.volumes<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.metadata.cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      api.TEST.metadata.workdir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>By now, I am guessing you might have an idea of how labels are defined and what Dockument does, but you are missing a little demo to get the gist of it, so lets do just that.</p>
+<!-- raw HTML omitted -->
+<p>For a complete example, please have a look at <a href="https://github.com/zanetworker/dockument/blob/master/examples/Dockerfile">this Dockerfile</a> or <a href="https://github.com/luebken/currentweather/blob/master/Dockerfile">this Dockerfile by luebken</a></p>
+<h3 id="getting-started">Getting Started</h3>
+<p>To get started, visit the <a href="https://github.com/zanetworker/dockument">github repo for DOCKument</a> and download the corresponding binaries, or build it yourself :)</p>
+<h3 id="next-post">Next Post</h3>
+<p>As mentioned earlier in this post, Dockument can be either used as a tool or as a framework that other tools can capitalize on. In the next post, we will be taking about <code>Docktorino</code>, a real-time continious testing tool for your docker builds that will help you containerize with confidence!</p>
+
+            </div>
+            
+            <div class="post-comments">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "adelzaalouk-me" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2020 Adel Zaalouk -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

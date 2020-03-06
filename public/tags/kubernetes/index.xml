@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on </title>
+    <link>/tags/kubernetes/</link>
+    <description>Recent content in Kubernetes on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 15 Dec 2017 15:04:23 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Kubernetes How-Tos</title>
+      <link>/post/technical/2017-12-15-kubernetes-how-tos/</link>
+      <pubDate>Fri, 15 Dec 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-12-15-kubernetes-how-tos/</guid>
+      <description>Kubernetes has been taking over the container orchesteration stage for sometime now, it has a large community and a great set of tooling and contributers backing it. Along those lines, picking up kubernetes skills can be a little daunting at first, but fear not, as documentation is rich and concepts are well elaborated in not one but many places.
+In this post, I won&amp;rsquo;t attempt to re-explain kubernetes concepts (pods, deployments, services, replicasets, &amp;hellip;etc) since as I said, a lot of great people did that job already, and did it very well (if you still have doubts about some of the concepts, I would be glad to help clear smoke up).</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes Kubeadm with Flannel Up &amp; Running</title>
+      <link>/post/technical/2016-10-01-kubeadm-with-flannel/</link>
+      <pubDate>Sat, 01 Oct 2016 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2016-10-01-kubeadm-with-flannel/</guid>
+      <description>Okay, so I am going to try and make this brief and to the point for you to get going. You need a Kubernetes cluster working with Kubeadm? good you are in the right place.
+First, lets get over the problems first. What you need to see at the end is the following:
+kube-system dummy-2088944543-1x359 1/1 Running 1 1d kube-system etcd-master 1/1 Running 1 1d kube-system kube-apiserver-master 1/1 Running 0 1d kube-system kube-controller-manager-master 1/1 Running 1 1d kube-system kube-discovery-1769846148-1khb9 1/1 Running 1 1d kube-system kube-dns-2924299975-pg660 4/4 Running 4 1d kube-system kube-flannel-ds-25l4t 2/2 Running 2 1d kube-system kube-flannel-ds-9jtd5 2/2 Running 2 1d kube-system kube-flannel-ds-lvskl 2/2 Running 8 1d kube-system kube-proxy-l1hn5 1/1 Running 1 1d kube-system kube-proxy-p1kbt 1/1 Running 1 1d kube-system kube-proxy-x2b1m 1/1 Running 1 1d kube-system kube-scheduler-master 1/1 Running 1 1d Not this &amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>

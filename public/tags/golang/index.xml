@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on </title>
+    <link>/tags/golang/</link>
+    <description>Recent content in Golang on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 10 Feb 2017 15:04:23 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GoSayan: Become an expert in Golang in your freetime</title>
+      <link>/post/technical/2017-02-10-gosayan/</link>
+      <pubDate>Fri, 10 Feb 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-02-10-gosayan/</guid>
+      <description>I have received many questions about a new project that I have created called GoSayan, so I decided to write a blog post about it.
+What is GoSayan? Needless to say that GoSayan is a project I started to work on as a hobby in my free time.
+So I am a &amp;ldquo;learn by doing&amp;rdquo; kind of person, even when I was learning Golang, I tried coding as many stub projects as I could, however, there is a limit to the amount of knowledge I can acquire because I have another life to live :D.</description>
+    </item>
+    
+    <item>
+      <title>Go Recipes For the Lost</title>
+      <link>/post/technical/2017-02-09-go-mistakes/</link>
+      <pubDate>Thu, 09 Feb 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-02-09-go-mistakes/</guid>
+      <description>Welcome to &amp;ldquo;Go Recipes For the Lost&amp;rdquo; post, this is a live post, it won&amp;rsquo;t ever be done as long as I am writing go code. The intention here is to share with you some fast resolution for common Go coding problems. Let&amp;rsquo;s begin.
+Undefined function even though it is declared in another file! When you would like to use functions defined in another go file, and you are using the &amp;ldquo;run&amp;rdquo; command.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Microservices on </title>
+    <link>/tags/microservices/</link>
+    <description>Recent content in Microservices on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 15 Dec 2017 15:04:23 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/microservices/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Kubernetes How-Tos</title>
+      <link>/post/technical/2017-12-15-kubernetes-how-tos/</link>
+      <pubDate>Fri, 15 Dec 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-12-15-kubernetes-how-tos/</guid>
+      <description>Kubernetes has been taking over the container orchesteration stage for sometime now, it has a large community and a great set of tooling and contributers backing it. Along those lines, picking up kubernetes skills can be a little daunting at first, but fear not, as documentation is rich and concepts are well elaborated in not one but many places.
+In this post, I won&amp;rsquo;t attempt to re-explain kubernetes concepts (pods, deployments, services, replicasets, &amp;hellip;etc) since as I said, a lot of great people did that job already, and did it very well (if you still have doubts about some of the concepts, I would be glad to help clear smoke up).</description>
+    </item>
+    
+    <item>
+      <title>eBPF, Microservices, Docker, and Cilium: From Novice to Seasoned </title>
+      <link>/post/technical/2017-09-06-security-bpf-docker-cillium/</link>
+      <pubDate>Wed, 06 Sep 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-09-06-security-bpf-docker-cillium/</guid>
+      <description>In this post we will be covering eBPF concepts, as well as challenges faced when applying network policies for microservices and how these challenges can be tackled. Finally, we will have a look at Cilium to see how it makes eBPF simple and easy to utilize.
+  Introduction - What is eBPF - The bpf() system call - Important use-cases for eBPF - How to create an eBPF program?</description>
+    </item>
+    
+    <item>
+      <title>Demystifying Moby: From OCI to Linuxkit</title>
+      <link>/post/technical/2017-05-03-moby-linuxkit/</link>
+      <pubDate>Wed, 03 May 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-05-03-moby-linuxkit/</guid>
+      <description>OCI, Containerd, runC, Moby, linuxkit are all relatively new components that work together for building containers. In this post we will explain each component and how these components relate to one another.
+ Lets Start with the Basics (OCI, runC, Containerd)  So what is the Open Container Initiative (OCI)?   What are runC and Containerd? Demistyfing Moby &amp;amp; The LinuxKit Linuxkit Test-Drive Important References  Lets Start with the Basics (OCI, runC, Containerd) Before jumping in and talking about Moby and Linuxkit, it is important to establish some basic knowledge first, this will make understanding Linuxkit much easier.</description>
+    </item>
+    
+    <item>
+      <title>Docker Musings</title>
+      <link>/post/technical/2017-02-18-docker-musings/</link>
+      <pubDate>Sat, 18 Feb 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-02-18-docker-musings/</guid>
+      <description>As you might know already Docker is now the defacto standard for containers. It is being used as the run-time for many clustering frameworks. Therefore, I thought about summarizing some of the important commands that you might need in your day-to-day docker life.
+I hope this post will be useful for you.
+General Docker Commands ## Tagging an image docker tage &amp;lt;image_id&amp;gt; name_of_the_image #real time logs docker logs --tail 1 --follow cbceaaea0ef5 # Forcing a rebuild docker build --no-cache # publish a port even if it was not expose in the dockerfile docker run -p &amp;lt;port&amp;gt; # publish all ports that were explosed in the docker file docker run -P # Setting up environment variables docker run -e WEBAPP_PORT=8000 -e WEBAPP_HOST=www.</description>
+    </item>
+    
+    <item>
+      <title>Patterns for Microservices Decomposition</title>
+      <link>/post/technical/2017-02-17-patterns_for_decomposition/</link>
+      <pubDate>Thu, 02 Feb 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-02-17-patterns_for_decomposition/</guid>
+      <description>Microservices are decoupled components that follows the Single Responsibility Principle (SRP), that is, a component does one thing but does it really well. In this mini-book we will be discussing various patterns for decomposing a service into a microservice.
+ What motivates developers to go Micro? How to decompose your services? Handling Cross-cutting concerns Handling communication between micro-services ? Service-Discovery - Where is my-service? Handling failure across dependent services (Circuit breaking reliability) Handling storage-dependencies for microservices Handling access to services Service Function Validation Logging, Instrumentation, and health-checking (Observability) Is it really worth it?</description>
+    </item>
+    
+    <item>
+      <title>Microservices in a nutshell</title>
+      <link>/post/technical/2017-01-27-microservices-in-a-nutshell/</link>
+      <pubDate>Fri, 27 Jan 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-01-27-microservices-in-a-nutshell/</guid>
+      <description>In this post we will walk through the definitions, Properties and patterns for building Microservices.
+What are Microservices? A microservice is really just a service that adheres to a slightly looser definition of the Single Responsibility Principle (SRP) that arose from patterns for object-oriented design. It is a service that does one thing.
+Properties of Microservices  Small, and Focused on Doing One Thing Well AutonomusTo do decoupling well, you’ll need to model your services right and get the APIs right.</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes Kubeadm with Flannel Up &amp; Running</title>
+      <link>/post/technical/2016-10-01-kubeadm-with-flannel/</link>
+      <pubDate>Sat, 01 Oct 2016 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2016-10-01-kubeadm-with-flannel/</guid>
+      <description>Okay, so I am going to try and make this brief and to the point for you to get going. You need a Kubernetes cluster working with Kubeadm? good you are in the right place.
+First, lets get over the problems first. What you need to see at the end is the following:
+kube-system dummy-2088944543-1x359 1/1 Running 1 1d kube-system etcd-master 1/1 Running 1 1d kube-system kube-apiserver-master 1/1 Running 0 1d kube-system kube-controller-manager-master 1/1 Running 1 1d kube-system kube-discovery-1769846148-1khb9 1/1 Running 1 1d kube-system kube-dns-2924299975-pg660 4/4 Running 4 1d kube-system kube-flannel-ds-25l4t 2/2 Running 2 1d kube-system kube-flannel-ds-9jtd5 2/2 Running 2 1d kube-system kube-flannel-ds-lvskl 2/2 Running 8 1d kube-system kube-proxy-l1hn5 1/1 Running 1 1d kube-system kube-proxy-p1kbt 1/1 Running 1 1d kube-system kube-proxy-x2b1m 1/1 Running 1 1d kube-system kube-scheduler-master 1/1 Running 1 1d Not this &amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BPF on </title>
+    <link>/tags/bpf/</link>
+    <description>Recent content in BPF on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 06 Sep 2017 15:04:23 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/bpf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>eBPF, Microservices, Docker, and Cilium: From Novice to Seasoned </title>
+      <link>/post/technical/2017-09-06-security-bpf-docker-cillium/</link>
+      <pubDate>Wed, 06 Sep 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-09-06-security-bpf-docker-cillium/</guid>
+      <description>In this post we will be covering eBPF concepts, as well as challenges faced when applying network policies for microservices and how these challenges can be tackled. Finally, we will have a look at Cilium to see how it makes eBPF simple and easy to utilize.
+  Introduction - What is eBPF - The bpf() system call - Important use-cases for eBPF - How to create an eBPF program?</description>
+    </item>
+    
+  </channel>
+</rss>

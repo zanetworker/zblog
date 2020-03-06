@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on </title>
+    <link>/tags/linux/</link>
+    <description>Recent content in Linux on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 03 May 2017 15:04:23 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SSH Configuration: The Easy Way</title>
+      <link>/post/technical/2016-04-24-ssh-configuration/</link>
+      <pubDate>Sun, 24 Apr 2016 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2016-04-24-ssh-configuration/</guid>
+      <description>&lt;p&gt;So having problems using SSH to log into your servers? don&amp;rsquo;t fret, I am writing this to make your life easier.&lt;/p&gt;
+&lt;p&gt;There are two ways to use SSH, one using &amp;ldquo;PasswordAuthentication&amp;rdquo; and one using ssh-generated public and private Keys. The keyed methods is the one you will end up using most of the time. Now. here is how to go about it:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to Find My Linux Release &amp; Version </title>
+      <link>/post/technical/2011-09-06-find-linux-version/</link>
+      <pubDate>Tue, 06 Sep 2011 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2011-09-06-find-linux-version/</guid>
+      <description>Also this might be very easy to do, I always seem to forget it =D. Anyway, here is how:
+you just type cat etc/lsb-release on your terminal. That’s it =).
+I hope this helps,
+Have a good day!!</description>
+    </item>
+    
+    <item>
+      <title>How to Play .wmv Files on Linux </title>
+      <link>/post/technical/2011-09-06-wmv-linux/</link>
+      <pubDate>Tue, 06 Sep 2011 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2011-09-06-wmv-linux/</guid>
+      <description>Okayy, So I spent some time trying to get ubuntu to play out .wmv files, it took me a little while to figure that out. Here is how:
+ First you need to download an adequate player. I Personally use “mplayer”  You can use synaptic manager and search for it. Or, you could download it using this command
+sudo apt-get install mplayer  Now, Let’s install some packages from medibuntu.</description>
+    </item>
+    
+    <item>
+      <title>How to Setup &amp; Use Minicom on Linux</title>
+      <link>/post/technical/2011-04-09-minicom-on-linux/</link>
+      <pubDate>Sat, 09 Apr 2011 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2011-04-09-minicom-on-linux/</guid>
+      <description>Some people are windows oriented, others are linux oriented. Well I consider my self more of a windows user (I am not proud of that xD) so I decided to give linux a try and use minicom to configure Cisco devices. Here is how to download, Setup and Install minicom on ubuntu to be ready for use.
+ First you have to download and install minicom:  sudo apt-get install minicom Okay cool, now that you have installed it, you might want to find out the name of your serial port, Here is how:</description>
+    </item>
+    
+  </channel>
+</rss>

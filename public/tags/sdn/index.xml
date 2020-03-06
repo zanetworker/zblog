@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SDN on </title>
+    <link>/tags/sdn/</link>
+    <description>Recent content in SDN on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 10 Jun 2013 15:04:23 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/sdn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PreSDN: Ethane and Clean Slate 4D Approach</title>
+      <link>/post/technical/2013-06-10-presdn/</link>
+      <pubDate>Mon, 10 Jun 2013 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2013-06-10-presdn/</guid>
+      <description>The IP network was a network that was designed to be best effort, and wasn’t designed to support complex functionalities such as address translation, tunneling and queuing. Also, the design was based on a single plane just to maintain the forwarding table in the data plane. However, today’s networks are split into three parts:
+ Data Plane Control Plane Management Plane  All these parts are coupled together in today’s network nodes .</description>
+    </item>
+    
+    <item>
+      <title>SDN Approaches: The Map you are Looking For!</title>
+      <link>/post/technical/2013-04-20-sdn-the-map/</link>
+      <pubDate>Sat, 20 Apr 2013 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2013-04-20-sdn-the-map/</guid>
+      <description>Software Defined Networking (SDN) is a concept that rooted back to the last decade, yet only flourished nowadays. SDN started by a proof of concept and ended up being adopted by industry leaders and researchers. The SDN architecture/stack started with a simple diagram like this
+Check the document blow for the whole post.</description>
+    </item>
+    
+    <item>
+      <title>An SDN OpenFlow Boil Down</title>
+      <link>/post/technical/2013-04-10-sdn-openflow/</link>
+      <pubDate>Wed, 10 Apr 2013 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2013-04-10-sdn-openflow/</guid>
+      <description>Current networking architectures are quite different from the Original Internet as we know it, they are hungry for services and applications that can’t be supported by normal Internet devices and technologies. For example, the explosion of mobile devices and content, server virtualisation and the advent of cloud services are one of the main change driven technologies for a new Internet that is able to support these various kinds of technologies without having to increase the complexity of the network.</description>
+    </item>
+    
+    <item>
+      <title>SDN: A Walkthrough</title>
+      <link>/post/technical/2013-03-20-sdn-walkthrough/</link>
+      <pubDate>Wed, 20 Mar 2013 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2013-03-20-sdn-walkthrough/</guid>
+      <description>Current networking architectures are quite different from the Original Internet as we know it, they are hungry for services and applications that can’t be supported by normal Internet devices and technologies. For example, the explosion of mobile devices and content, server virtualisation and the advent of cloud services are one of the main change driven technologies for a new Internet that is able to support these various kinds of technologies without having to increase the complexity of the network&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>SDN: The Evolution that Led to the Revolution</title>
+      <link>/post/technical/2013-03-15-sdn-evolution/</link>
+      <pubDate>Fri, 15 Mar 2013 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2013-03-15-sdn-evolution/</guid>
+      <description>To understand SDN, it is recommended to understand the stack of technologies the led to it. This presentation (the first quick presentation I did on SDN) contains a very brief overview on the previous technologies related to SDN.</description>
+    </item>
+    
+  </channel>
+</rss>

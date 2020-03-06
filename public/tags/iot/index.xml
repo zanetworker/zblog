@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IoT on </title>
+    <link>/tags/iot/</link>
+    <description>Recent content in IoT on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 10 May 2017 15:04:23 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/iot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Super-Human Project: Distance-Sense</title>
+      <link>/post/technical/2017-05-10-pi-sensor/</link>
+      <pubDate>Wed, 10 May 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-05-10-pi-sensor/</guid>
+      <description>Alright, so recently I decided to use sensor for different applications. Sensors are a great way to hear, see, and even feel things that we as humans can&amp;rsquo;t see or hear. This post is the first in a long series to come about making, circuits, and the discovery of the world of things around use.
+ Components How does an ultrasonic sensor work?  My latest project was to use an ultrasonic sensor to detect distance.</description>
+    </item>
+    
+  </channel>
+</rss>

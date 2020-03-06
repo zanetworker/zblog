@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtualization on </title>
+    <link>/tags/virtualization/</link>
+    <description>Recent content in Virtualization on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 01 Jan 2014 15:04:23 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/virtualization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Virtualization: A Painless Introduction</title>
+      <link>/post/technical/2014-01-15-virtualization-intro/</link>
+      <pubDate>Wed, 01 Jan 2014 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2014-01-15-virtualization-intro/</guid>
+      <description>Recently any technologies started making use of virtualization, therefore, it is important to be familiar with the underlying concepts. In this article, the difference between virtualization, virtual networking and network virtuatlization will be explained.</description>
+    </item>
+    
+    <item>
+      <title>Virtualization: A Painless Introduction</title>
+      <link>/post/technical/2013-08-18-virtualization/</link>
+      <pubDate>Sun, 18 Aug 2013 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2013-08-18-virtualization/</guid>
+      <description>Recently any technologies started making use of virtualization, therefore, it is important to be familiar with the underlying concepts. In this article, the difference between virtualization, virtual networking and network virtuatlization will be explained.</description>
+    </item>
+    
+  </channel>
+</rss>

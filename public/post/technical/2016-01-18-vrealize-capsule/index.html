@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> VMware vRealize Automation Capsule &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.66.0" />
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/css/nix.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-90858024-1', 'auto');
+	  ga('send', 'pageview');
+
+</script>
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+      <a class="navbar-brand" id="green-terminal" href='/'>
+        zanetworker@adelzaalouk.me ~ $
+      </a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href='/' id="green-terminal">/home/zanetworker</a>
+        </li>
+        
+				
+				
+				<li class="dropdown">
+                    
+            		<a href="/about" id="green-terminal">~/about</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+                        <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        
+                    		<li>
+                    		<a href="/post">~/all posts</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/categories">~/categories</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/tags">~/tags</a>
+				    		</li>
+                		
+            		</ul>
+            		
+        		</li>
+        		
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="/post/technical/2016-01-18-vrealize-capsule/">VMware vRealize Automation Capsule</a></h1>
+            <span class="post-date">2016-01-18 </span>
+            <div class="post-content">
+                <p>Okay, so recently I have had the chance to play around with vRealize Automation (vRA). Therefore, I am using this chance to share with you the outcomes of this interesting endeavor of mine. I have formulated this article to be in the form of questions and answers, so feel free to jump around to any question you feel like you want an answer to. The questions are:</p>
+<ul>
+<li>What are the core components of vRA?</li>
+<li>What are the logical components of vRA?</li>
+<li>What are the important roles supported in vRA?</li>
+<li>What are the steps for basic configuration of vRA?</li>
+<li>What is vRealize Application Services?</li>
+<li>What are the other topics that I didn&rsquo;t discuss in this capsule?</li>
+</ul>
+<h2 id="what-are-the-core-components-of-vrealize-automation">What are the core components of vRealize Automation?</h2>
+<ul>
+<li><strong>vRA Server Appliance</strong> - Acts as the web protal for end-users (for self-service)</li>
+<li><strong>vRA Identity Appliance</strong> - Provides SSO authentication for the environment.</li>
+<li><strong>IaaS Server</strong>: is &ldquo;the&rdquo; component, through this guy you can communicate with your cloud components via APIs
+<ul>
+<li><em>DEM workers</em> - are the builders, and the doers of the tasks required in your infrastructures.</li>
+<li><em>DEM Orchestrators</em> - schedules tasks to be preformed by the DEM workers</li>
+<li>Agents - used for integration with external systems (e.g., vSphere)</li>
+<li><em>Model Manager</em> - holds the logic for communicating with external systems (e.g., SCVMM, Cisco UCS, vSphere)</li>
+<li><em>Database -</em> The &hellip;. database (nothing more to say sorry )</li>
+<li><em>Manager Service</em> – Coordinates the communication between the agents, the IaaS database, AD, and SMTP.</li>
+</ul>
+</li>
+</ul>
+<h2 id="what-are-the-logical-components-of-vrealize-automation">What are the logical components of vRealize Automation?</h2>
+<ul>
+<li><strong>Fabric Groups</strong> – defines a relationship between compute resources and their allowed access</li>
+<li><strong>Business Groups</strong> -an abstraction for defining the use-case for the resources (e.g., test/dev  group)</li>
+<li><strong>End-points</strong> – the actual reference to your compute resource provider (e.g., vCenter)</li>
+<li><strong>Reservations</strong> – a way to ensure that underlying resources are efficiently allocated to different parties with priorities and shares. This is done by carving out a specific portion of your compute- resources for use during provisioning activities</li>
+<li><strong>Reservation Policies –</strong> a container for reservations.</li>
+<li><strong>Network Profiles:</strong> define range of IPs  and/or configures DHCP (if needed in a lab environment)</li>
+<li><strong>Blueprint –</strong> defines the templates, the resources maximums and minimums and machine specific properties such as operating system, folders, etc.</li>
+<li><strong>Entitlements</strong> – defines what can be done with the blueprints. For example, if the blueprint is made for VM provisioning, then it specifies what action can be done on this VM.</li>
+<li><strong>Services</strong> - are containers for blueprints.</li>
+<li><strong>Custom properties - properties</strong> that allows you to customize VM deployment such as location, operation system, etc. There are many custom properties out there [1]</li>
+<li><strong>Build Profiles –</strong> is a grouping of one or more custom properties.</li>
+<li><strong>Catalog Items –</strong> are the entities available for users in self-service fashion. These entities contain attributes that the users can specify to customize his provisioning request (e.g., # of machines, CPU, memory, etc)</li>
+<li><strong>Guest Agents</strong> – software that installed on the guest machine that allows customization even after the machine has been deployed.</li>
+<li><strong>Approval policies</strong> – Allows controlled usage of resources through employing limits to services available to users (e.g., CPU&gt;1? ask for permission first). This is really helpful to prevent resource exhaustion which might lead to problems on the long term. For an approval policy to take be populated it needs to be coupled with an entitlement.</li>
+</ul>
+<h2 id="what-are-vra-important-roles">What are vRA important Roles?</h2>
+<p>vRA supports multi-tenancy to provide resource isolation and service access control. To do so, the vRA architecture is comprised of logical abstractions that represent the underlying physical resources, access to these resources are governed by roles. Below are the roles you will see in a vRA deployment.</p>
+<ul>
+<li>
+<p><strong>Tenant Roles</strong></p>
+<ul>
+<li><em>Tenant Admin (TA):</em>
+<ul>
+<li>Can create <em>business groups</em> and designate a manager to each of these groups</li>
+<li>Creates approval policies, entitlements, and global blue prints.</li>
+</ul>
+</li>
+<li><em>Service Architect (SA)</em>**: **creates and publishes custom blue-prints in the advanced service designer.</li>
+<li><em>Approval Admin (AA)</em>:creates and manages approval policies.</li>
+</ul>
+</li>
+<li>
+<p><strong>System Wide Roles</strong></p>
+<ul>
+<li>_System Admin (SysAdmin):_installs vRA and creates / configures the tenants.</li>
+<li>_Infra-structure Admin:_Have additional roles such as adding end-points, manage compute resources, add fabric groups, create reservations and add reservation policies.</li>
+<li>_Fabric Admin (FA): _
+<ul>
+<li>Manages the compute resources in the fabric-group</li>
+<li>Creates and manages reservations</li>
+<li>Creates and manages build-profiles and machine-prefixes</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Business Group roles</strong></p>
+<ul>
+<li><em>BG Manager</em>
+<ul>
+<li>creates and publishes blueprints</li>
+<li>manages entitlements and resource usage</li>
+</ul>
+</li>
+<li>_Business User: _requests and manages services</li>
+<li>_Support User:  _requests and manages items on behalf of others</li>
+<li>_Approver: _approves catalog requests</li>
+</ul>
+</li>
+</ul>
+<h2 id="what-are-the-steps-for-basic-configuration-of-vrealize-automation">What are the steps for basic configuration of vRealize Automation?</h2>
+<ul>
+<li>Check the right tenant is visible</li>
+<li>Configure an identity store such as Active Directory or OpenLDAP  to get your users from</li>
+<li>Add your Tenant and Infrastructure Admins</li>
+<li>Configure your E-mail Server from Administration</li>
+<li>Configure your Infrastructure
+<ul>
+<li>Add licensing (Standard, Advanced, or Enterprise)</li>
+<li>Create End-point credentials</li>
+<li>Add your end-points (vCenter, vRO, vCloud Directory, etc)</li>
+<li>Configure fabric-groups (Add the end-point to the fabric group)</li>
+<li>Configure a Machine Prefix (a name that will define the resources you create)</li>
+<li>Configure Network profiles and reservations.</li>
+<li>Assign Business Groups to reservations to dictate which users will use what resources.</li>
+</ul>
+</li>
+<li>Configuration your tenant attributes
+<ul>
+<li>Start by creating a blueprint and defining limits for users (e.g., machines/user), the VM templates you are going to use for the blueprint</li>
+<li>Prepare the blueprint for provisioning by wrapping services, entitlements around it and specifying Business Groups for it .</li>
+</ul>
+</li>
+</ul>
+<h2 id="what-is-vrealize-application-services">What is vRealize Application Services?</h2>
+<p>I think of it as a configuration management tool. It allows you to architect the applications you want to have inside your VMs. For example, I might want to run an SQLFire database inside a CentOS VM, even better, I can build mutli-tier applications (e.g., web applications with database, FE, and BE). Keep in mind that vRA application services is not part of vRA automation, it can however be integrated with vRA both ways (vRA AppServices). it is also deployed as a separate appliance with a rather lengthy configuration to have it up and running (but it is worth it).</p>
+<h2 id="what-are-other-topics-i-didnt-have-here-in-our-humble-capsule">What are other topics I didn&rsquo;t have here in our humble capsule?</h2>
+<p>I am sure you didn&rsquo;t expect to find all the nitty-gritty details of vRA here in this capsule, vRA is a fat tool, it is comprised of many components, and can integrate with other 3rd party tools each is a story on its own.  Some of the topics I didn&rsquo;t discuss here with you are:</p>
+<ul>
+<li>Integration with vReaize Orchestrator (vRO) to build custom workflows</li>
+<li>Monitoring and integration with vRealize Operations Manger (vROPs)</li>
+<li>Using the Advanced Service Designer with vRA</li>
+<li>Reclamation of resources. Yes! vRA allows you to reclaim unused resources (neat right?)</li>
+<li>vRA 7 , the &ldquo;I learned from my mistakes&rdquo; version of the previous vRAs</li>
+<li>Deployment of vRA</li>
+</ul>
+<h2 id="important-notes">Important notes:</h2>
+<ul>
+<li>Develop the habit of checking on your compute-resources inventory every now and then, vRealize runs the “update  inventory” service once a day, so make sure to manually update the inventory when needed.</li>
+<li>Before troubleshooting your vRA deployment make sure that services are running</li>
+<li>vRA appliance services are registered (and complete)</li>
+<li>IaaS services are visible from IaaS server.</li>
+<li>Make sure to create a service with the right entitlements for each blueprint you publish for use.</li>
+</ul>
+<p>If you are here already, I know what you want to say , say it!! I know this was boring because it had no pictures in it, I was lazy &hellip; but, In my follow up article(s), I will be having a lot of colors and visuals for you, or even better, I will be updating this boring (black and white) piece of boring text to have a lot of figures. I hope this helps!</p>
+<p><strong>References</strong></p>
+<ul>
+<li><strong>[1]</strong> <a href="http://pubs.vmware.com/vra-62/topic/com.vmware.ICbase/PDF/vrealize-automation-62-custom-properties.pdf">Check out vRA Custom Properties</a></li>
+<li><strong>[2]</strong> <a href="https://www.vmware.com/support/pubs/vrealize-automation-pubs.html">vRA Documentation (Feast yer Eyes)</a></li>
+</ul>
+
+            </div>
+            
+            <div class="post-comments">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "adelzaalouk-me" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2020 Adel Zaalouk -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

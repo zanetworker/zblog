@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on </title>
+    <link>/post/</link>
+    <description>Recent content in Posts on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 01 Apr 2018 15:04:23 +0000</lastBuildDate>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docktorino: Building Containers with Confidence</title>
+      <link>/post/technical/2018-04-01-docktorino/</link>
+      <pubDate>Sun, 01 Apr 2018 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2018-04-01-docktorino/</guid>
+      <description>Docktorino is a real-time continious testing tool for your docker builds, helping you containerize with confidence!
+When building Docker images it is sometimes tricky to assert the image behavior, for example, whether the contents of the image you built is correct, or that commands can execute correctly inside your container ( maybe you forgot to set your binary&amp;rsquo;s PATH).
+Docktrino makes these types of assertions easy to define when building your Docker images.</description>
+    </item>
+    
+    <item>
+      <title>DOCKument: Auto-generating Documentation for Dockerfiles and Images</title>
+      <link>/post/technical/2018-03-19-dockument/</link>
+      <pubDate>Mon, 19 Mar 2018 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2018-03-19-dockument/</guid>
+      <description>DOCKument is a tool that helps you auto-generate documentation for your Dockerfiles and Docker images the way you would an API.
+Matthias Lübken gave an example on how to use &amp;ldquo;API&amp;rdquo; like labels to describe important information in the Dockerfile (e.g., resources used, exposed ports, dependencies, etc) here. This project makes use of similar label patterns to fetch important data in Dockerfiles / Docker images and create Dockumentation for it automagically.</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes How-Tos</title>
+      <link>/post/technical/2017-12-15-kubernetes-how-tos/</link>
+      <pubDate>Fri, 15 Dec 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-12-15-kubernetes-how-tos/</guid>
+      <description>Kubernetes has been taking over the container orchesteration stage for sometime now, it has a large community and a great set of tooling and contributers backing it. Along those lines, picking up kubernetes skills can be a little daunting at first, but fear not, as documentation is rich and concepts are well elaborated in not one but many places.
+In this post, I won&amp;rsquo;t attempt to re-explain kubernetes concepts (pods, deployments, services, replicasets, &amp;hellip;etc) since as I said, a lot of great people did that job already, and did it very well (if you still have doubts about some of the concepts, I would be glad to help clear smoke up).</description>
+    </item>
+    
+    <item>
+      <title>Smile Your Way Through</title>
+      <link>/post/life/2016-10-10-smile-your-way-through/</link>
+      <pubDate>Sun, 10 Sep 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/life/2016-10-10-smile-your-way-through/</guid>
+      <description>I am walking across the office corridor right after the weekend, I push my mouth wide open to both of its ends, nod my head and give a friendly smile, what do I get in return? Nothing!
+Some people do not understand the value of a simple friendly smile, or the effect of it on someone else. I think of it as a sign of respect and appreciation in the work place, a gesture of kindness.</description>
+    </item>
+    
+    <item>
+      <title>eBPF, Microservices, Docker, and Cilium: From Novice to Seasoned </title>
+      <link>/post/technical/2017-09-06-security-bpf-docker-cillium/</link>
+      <pubDate>Wed, 06 Sep 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-09-06-security-bpf-docker-cillium/</guid>
+      <description>In this post we will be covering eBPF concepts, as well as challenges faced when applying network policies for microservices and how these challenges can be tackled. Finally, we will have a look at Cilium to see how it makes eBPF simple and easy to utilize.
+  Introduction - What is eBPF - The bpf() system call - Important use-cases for eBPF - How to create an eBPF program?</description>
+    </item>
+    
+    <item>
+      <title>The Super-Human Project: Distance-Sense</title>
+      <link>/post/technical/2017-05-10-pi-sensor/</link>
+      <pubDate>Wed, 10 May 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-05-10-pi-sensor/</guid>
+      <description>Alright, so recently I decided to use sensor for different applications. Sensors are a great way to hear, see, and even feel things that we as humans can&amp;rsquo;t see or hear. This post is the first in a long series to come about making, circuits, and the discovery of the world of things around use.
+ Components How does an ultrasonic sensor work?  My latest project was to use an ultrasonic sensor to detect distance.</description>
+    </item>
+    
+    <item>
+      <title>Demystifying Moby: From OCI to Linuxkit</title>
+      <link>/post/technical/2017-05-03-moby-linuxkit/</link>
+      <pubDate>Wed, 03 May 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-05-03-moby-linuxkit/</guid>
+      <description>OCI, Containerd, runC, Moby, linuxkit are all relatively new components that work together for building containers. In this post we will explain each component and how these components relate to one another.
+ Lets Start with the Basics (OCI, runC, Containerd)  So what is the Open Container Initiative (OCI)?   What are runC and Containerd? Demistyfing Moby &amp;amp; The LinuxKit Linuxkit Test-Drive Important References  Lets Start with the Basics (OCI, runC, Containerd) Before jumping in and talking about Moby and Linuxkit, it is important to establish some basic knowledge first, this will make understanding Linuxkit much easier.</description>
+    </item>
+    
+    <item>
+      <title>Docker Musings</title>
+      <link>/post/technical/2017-02-18-docker-musings/</link>
+      <pubDate>Sat, 18 Feb 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-02-18-docker-musings/</guid>
+      <description>As you might know already Docker is now the defacto standard for containers. It is being used as the run-time for many clustering frameworks. Therefore, I thought about summarizing some of the important commands that you might need in your day-to-day docker life.
+I hope this post will be useful for you.
+General Docker Commands ## Tagging an image docker tage &amp;lt;image_id&amp;gt; name_of_the_image #real time logs docker logs --tail 1 --follow cbceaaea0ef5 # Forcing a rebuild docker build --no-cache # publish a port even if it was not expose in the dockerfile docker run -p &amp;lt;port&amp;gt; # publish all ports that were explosed in the docker file docker run -P # Setting up environment variables docker run -e WEBAPP_PORT=8000 -e WEBAPP_HOST=www.</description>
+    </item>
+    
+    <item>
+      <title>GoSayan: Become an expert in Golang in your freetime</title>
+      <link>/post/technical/2017-02-10-gosayan/</link>
+      <pubDate>Fri, 10 Feb 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-02-10-gosayan/</guid>
+      <description>I have received many questions about a new project that I have created called GoSayan, so I decided to write a blog post about it.
+What is GoSayan? Needless to say that GoSayan is a project I started to work on as a hobby in my free time.
+So I am a &amp;ldquo;learn by doing&amp;rdquo; kind of person, even when I was learning Golang, I tried coding as many stub projects as I could, however, there is a limit to the amount of knowledge I can acquire because I have another life to live :D.</description>
+    </item>
+    
+    <item>
+      <title>Go Recipes For the Lost</title>
+      <link>/post/technical/2017-02-09-go-mistakes/</link>
+      <pubDate>Thu, 09 Feb 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-02-09-go-mistakes/</guid>
+      <description>Welcome to &amp;ldquo;Go Recipes For the Lost&amp;rdquo; post, this is a live post, it won&amp;rsquo;t ever be done as long as I am writing go code. The intention here is to share with you some fast resolution for common Go coding problems. Let&amp;rsquo;s begin.
+Undefined function even though it is declared in another file! When you would like to use functions defined in another go file, and you are using the &amp;ldquo;run&amp;rdquo; command.</description>
+    </item>
+    
+    <item>
+      <title>Patterns for Microservices Decomposition</title>
+      <link>/post/technical/2017-02-17-patterns_for_decomposition/</link>
+      <pubDate>Thu, 02 Feb 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-02-17-patterns_for_decomposition/</guid>
+      <description>Microservices are decoupled components that follows the Single Responsibility Principle (SRP), that is, a component does one thing but does it really well. In this mini-book we will be discussing various patterns for decomposing a service into a microservice.
+ What motivates developers to go Micro? How to decompose your services? Handling Cross-cutting concerns Handling communication between micro-services ? Service-Discovery - Where is my-service? Handling failure across dependent services (Circuit breaking reliability) Handling storage-dependencies for microservices Handling access to services Service Function Validation Logging, Instrumentation, and health-checking (Observability) Is it really worth it?</description>
+    </item>
+    
+    <item>
+      <title>Microservices in a nutshell</title>
+      <link>/post/technical/2017-01-27-microservices-in-a-nutshell/</link>
+      <pubDate>Fri, 27 Jan 2017 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2017-01-27-microservices-in-a-nutshell/</guid>
+      <description>In this post we will walk through the definitions, Properties and patterns for building Microservices.
+What are Microservices? A microservice is really just a service that adheres to a slightly looser definition of the Single Responsibility Principle (SRP) that arose from patterns for object-oriented design. It is a service that does one thing.
+Properties of Microservices  Small, and Focused on Doing One Thing Well AutonomusTo do decoupling well, you’ll need to model your services right and get the APIs right.</description>
+    </item>
+    
+    <item>
+      <title>The secret of solitude</title>
+      <link>/post/life/2016-10-10-secret-of-solitude/</link>
+      <pubDate>Mon, 10 Oct 2016 15:04:23 +0000</pubDate>
+      
+      <guid>/post/life/2016-10-10-secret-of-solitude/</guid>
+      <description>Have you ever tried to spend sometime alone somewhere, thinking about nothing, just letting your absolute self talk to you. I have, and it feels great.
+Usually, we are occupied mentally by tasks that we are mandated to finish, meetings that we have to attend, people that we have to discuss with, thus leaving no time for ourselves, for discussing important life matters, for defining who we truly are in this life.</description>
+    </item>
+    
+    <item>
+      <title>Intrinsic vs Extrinsic Success</title>
+      <link>/post/life/2016-10-07-intrinsic_vs_extrinsic_success/</link>
+      <pubDate>Fri, 07 Oct 2016 15:04:23 +0000</pubDate>
+      
+      <guid>/post/life/2016-10-07-intrinsic_vs_extrinsic_success/</guid>
+      <description>As a young kid, I strived for being good at school, for being the best at the swimming club, for getting high honors, and most importantly for being recognized and acknowledged by my peers at school and my family at home. My purpose was to please others and not myself, and as I grew up and started to get a grip at how the world works, I started to feel empty inside, I started to feel that I have not done anything for myself but I have done it all for others.</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes Kubeadm with Flannel Up &amp; Running</title>
+      <link>/post/technical/2016-10-01-kubeadm-with-flannel/</link>
+      <pubDate>Sat, 01 Oct 2016 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2016-10-01-kubeadm-with-flannel/</guid>
+      <description>Okay, so I am going to try and make this brief and to the point for you to get going. You need a Kubernetes cluster working with Kubeadm? good you are in the right place.
+First, lets get over the problems first. What you need to see at the end is the following:
+kube-system dummy-2088944543-1x359 1/1 Running 1 1d kube-system etcd-master 1/1 Running 1 1d kube-system kube-apiserver-master 1/1 Running 0 1d kube-system kube-controller-manager-master 1/1 Running 1 1d kube-system kube-discovery-1769846148-1khb9 1/1 Running 1 1d kube-system kube-dns-2924299975-pg660 4/4 Running 4 1d kube-system kube-flannel-ds-25l4t 2/2 Running 2 1d kube-system kube-flannel-ds-9jtd5 2/2 Running 2 1d kube-system kube-flannel-ds-lvskl 2/2 Running 8 1d kube-system kube-proxy-l1hn5 1/1 Running 1 1d kube-system kube-proxy-p1kbt 1/1 Running 1 1d kube-system kube-proxy-x2b1m 1/1 Running 1 1d kube-system kube-scheduler-master 1/1 Running 1 1d Not this &amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Neutron-SFC: A Sneak-Peak</title>
+      <link>/post/technical/2016-09-10-sfc-a-sneak-peak/</link>
+      <pubDate>Sat, 10 Sep 2016 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2016-09-10-sfc-a-sneak-peak/</guid>
+      <description>In today&amp;rsquo;s virtual network architecture, NFV is paving the way to become to defacto standard for providing network services in the cloud. NFV relies on Service Function Chaining (SFC), to stitch services together to provide a service-path for packets to traverse.
+OpenStack, one of the more successful open cloud platforms is considered a good base to start building services for NFV related functions. In this post, we will be having a sneak-peak over the components exposed by neutron-sfc, the service chaining API exposed by OpenStack.</description>
+    </item>
+    
+    <item>
+      <title>Happiness is Location Independent</title>
+      <link>/post/life/2016-08-15-happines-location-independent/</link>
+      <pubDate>Mon, 15 Aug 2016 15:04:23 +0000</pubDate>
+      
+      <guid>/post/life/2016-08-15-happines-location-independent/</guid>
+      <description>We tend to have a very narrow perspective when it comes to defining happiness. Some people think that happiness is where &amp;ldquo;happy&amp;rdquo; people are. Truth is, it has noting to do with the location, I am not sure how to describe it, there are many factors that when combined can make you happy, I am not sure I ever experienced fully fledged happiness, but I experience inner-peace every once in a while and I believe that inner peace is one of the magic ingredients of happiness.</description>
+    </item>
+    
+    <item>
+      <title>The Software-Defined Stack | EII OpenStack Networking</title>
+      <link>/post/technical/2016-04-28-openstack-a-brief-networking-tour/</link>
+      <pubDate>Thu, 28 Apr 2016 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2016-04-28-openstack-a-brief-networking-tour/</guid>
+      <description>&lt;p&gt;In this post, we are going take a quick look at how OpenStack does networking, along the process we are going to mention the important agents involved.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    
+    <item>
+      <title>SSH Configuration: The Easy Way</title>
+      <link>/post/technical/2016-04-24-ssh-configuration/</link>
+      <pubDate>Sun, 24 Apr 2016 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2016-04-24-ssh-configuration/</guid>
+      <description>&lt;p&gt;So having problems using SSH to log into your servers? don&amp;rsquo;t fret, I am writing this to make your life easier.&lt;/p&gt;
+&lt;p&gt;There are two ways to use SSH, one using &amp;ldquo;PasswordAuthentication&amp;rdquo; and one using ssh-generated public and private Keys. The keyed methods is the one you will end up using most of the time. Now. here is how to go about it:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The Software-Defiend Stack | EI</title>
+      <link>/post/technical/2016-04-28-openstack-introduction/</link>
+      <pubDate>Sun, 28 Feb 2016 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2016-04-28-openstack-introduction/</guid>
+      <description>Welcome to the Software-Define Stack Series, this will be an extensive series, exploring the software-defined aspects behind OpenStack and digging deeper into the structure of OpenStack and its internal anatomy.
+Before I start to talk about OpenStack specifically, let me explain why this series is called the “Software-Defined” series. The term Software-Defined was first used to describe networks which follow these following patterns:
+What we will be looking at in this series is how OpenStack really applies the Software-Defined paradigms (i.</description>
+    </item>
+    
+    <item>
+      <title>CloudArray: A Seamless Portal to the Cloud</title>
+      <link>/post/technical/2016-02-09-cloud-array/</link>
+      <pubDate>Tue, 09 Feb 2016 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2016-02-09-cloud-array/</guid>
+      <description>&lt;p&gt;The formal definition for CloudArray is:&lt;/p&gt;
+&lt;p&gt;“EMC-Cloud Array is a data storage software technology that easily integrates cloud (object) storage into traditional enterprise IT environments”&lt;/p&gt;
+&lt;p&gt;I am not sure if the definition really reflects what CloudArray does, CloudArray can be considered as a Cloud-Gateway, the reason I think of it this way is because it acts as a middle-man between Applications that talk standard SAN/NAS protocols (iSCSI, NFS, CIFS, and SMB) and public or private cloud providers (e.g., Amazon EC2, OpenStack, ECS, Atmos, Google Cloud, etc.) where most of them are Object-storage based.  CloudArray presents Object storage as local-disks to your hosts and applications.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>VMware vRealize Automation Capsule</title>
+      <link>/post/technical/2016-01-18-vrealize-capsule/</link>
+      <pubDate>Mon, 18 Jan 2016 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2016-01-18-vrealize-capsule/</guid>
+      <description>Okay, so recently I have had the chance to play around with vRealize Automation (vRA). Therefore, I am using this chance to share with you the outcomes of this interesting endeavor of mine. I have formulated this article to be in the form of questions and answers, so feel free to jump around to any question you feel like you want an answer to. The questions are:
+ What are the core components of vRA?</description>
+    </item>
+    
+    <item>
+      <title>NSX: A Morning Capsule</title>
+      <link>/post/technical/2015-08-22-nsx-capsule/</link>
+      <pubDate>Sat, 22 Aug 2015 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2015-08-22-nsx-capsule/</guid>
+      <description>I have recently had the chance to do some reading on VMware NSX. I come from a networking background Intertwined with software, previously I have had a chance to research on some of the underpinnings of NSX but never had the time to look at the big picture, so in this writing, I am going to briefly describe the NSX architecture.
+What is NSX? Management Plane Control Plane Data Plane In summary, I found NSX pretty decent compared to other Software-Defined solutions out there.</description>
+    </item>
+    
+    <item>
+      <title>ACI Policy-based SDN: A Morning Capsule</title>
+      <link>/post/technical/2015-01-18-aci-policy-based-sdn/</link>
+      <pubDate>Sun, 18 Jan 2015 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2015-01-18-aci-policy-based-sdn/</guid>
+      <description>IT Manager, Ops, and network administrators suffer today from the complex approaches being followed towards network operations which gives no space for innovation. Additionally, the current box-by-box approaches for configuration and provision can be cumbersome and lack agility to turn up new services quickly to meet demands and Service-Level Agreements (SLA) of internal customers. Adopting a new approach towards network automation is key to addressing these challenges, by automating network operation not only do we reduce operational and management expenses but we also provide investment protection as we adopt the application economy (a software approach that grows much faster).</description>
+    </item>
+    
+    <item>
+      <title>Virtualization: A Painless Introduction</title>
+      <link>/post/technical/2014-01-15-virtualization-intro/</link>
+      <pubDate>Wed, 01 Jan 2014 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2014-01-15-virtualization-intro/</guid>
+      <description>Recently any technologies started making use of virtualization, therefore, it is important to be familiar with the underlying concepts. In this article, the difference between virtualization, virtual networking and network virtuatlization will be explained.</description>
+    </item>
+    
+    <item>
+      <title>Virtualization: A Painless Introduction</title>
+      <link>/post/technical/2013-08-18-virtualization/</link>
+      <pubDate>Sun, 18 Aug 2013 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2013-08-18-virtualization/</guid>
+      <description>Recently any technologies started making use of virtualization, therefore, it is important to be familiar with the underlying concepts. In this article, the difference between virtualization, virtual networking and network virtuatlization will be explained.</description>
+    </item>
+    
+    <item>
+      <title>PreSDN: Ethane and Clean Slate 4D Approach</title>
+      <link>/post/technical/2013-06-10-presdn/</link>
+      <pubDate>Mon, 10 Jun 2013 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2013-06-10-presdn/</guid>
+      <description>The IP network was a network that was designed to be best effort, and wasn’t designed to support complex functionalities such as address translation, tunneling and queuing. Also, the design was based on a single plane just to maintain the forwarding table in the data plane. However, today’s networks are split into three parts:
+ Data Plane Control Plane Management Plane  All these parts are coupled together in today’s network nodes .</description>
+    </item>
+    
+    <item>
+      <title>SDN Approaches: The Map you are Looking For!</title>
+      <link>/post/technical/2013-04-20-sdn-the-map/</link>
+      <pubDate>Sat, 20 Apr 2013 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2013-04-20-sdn-the-map/</guid>
+      <description>Software Defined Networking (SDN) is a concept that rooted back to the last decade, yet only flourished nowadays. SDN started by a proof of concept and ended up being adopted by industry leaders and researchers. The SDN architecture/stack started with a simple diagram like this
+Check the document blow for the whole post.</description>
+    </item>
+    
+    <item>
+      <title>An SDN OpenFlow Boil Down</title>
+      <link>/post/technical/2013-04-10-sdn-openflow/</link>
+      <pubDate>Wed, 10 Apr 2013 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2013-04-10-sdn-openflow/</guid>
+      <description>Current networking architectures are quite different from the Original Internet as we know it, they are hungry for services and applications that can’t be supported by normal Internet devices and technologies. For example, the explosion of mobile devices and content, server virtualisation and the advent of cloud services are one of the main change driven technologies for a new Internet that is able to support these various kinds of technologies without having to increase the complexity of the network.</description>
+    </item>
+    
+    <item>
+      <title>SDN: A Walkthrough</title>
+      <link>/post/technical/2013-03-20-sdn-walkthrough/</link>
+      <pubDate>Wed, 20 Mar 2013 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2013-03-20-sdn-walkthrough/</guid>
+      <description>Current networking architectures are quite different from the Original Internet as we know it, they are hungry for services and applications that can’t be supported by normal Internet devices and technologies. For example, the explosion of mobile devices and content, server virtualisation and the advent of cloud services are one of the main change driven technologies for a new Internet that is able to support these various kinds of technologies without having to increase the complexity of the network&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>SDN: The Evolution that Led to the Revolution</title>
+      <link>/post/technical/2013-03-15-sdn-evolution/</link>
+      <pubDate>Fri, 15 Mar 2013 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2013-03-15-sdn-evolution/</guid>
+      <description>To understand SDN, it is recommended to understand the stack of technologies the led to it. This presentation (the first quick presentation I did on SDN) contains a very brief overview on the previous technologies related to SDN.</description>
+    </item>
+    
+    <item>
+      <title>Streaming a Video File on Android</title>
+      <link>/post/technical/2012-10-05-streaming-android/</link>
+      <pubDate>Fri, 05 Oct 2012 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2012-10-05-streaming-android/</guid>
+      <description>Well,
+I have been through multiple forums looking for the best way that works for me to play a streamed video file from a server or from my local machine, and I found an easy way to do that, here is how:
+public void onCreate(Bundle icicle) { super.onCreate(icicle); getWindow().setFormat(PixelFormat.TRANSLUCENT);&amp;lt;/code&amp;gt; yourVideoView = new VideoView(this); yourVideoView.setMediaController(new MediaController(this)); setContentView(yourVideoView); // This works fine for almost all MPEG-4 and H.264 containers you find out there  // If you have the video file on your sdk card  yourVideoView.</description>
+    </item>
+    
+    <item>
+      <title>Why Learn a Functional Programming Language</title>
+      <link>/post/technical/2012-08-11-learn-functional/</link>
+      <pubDate>Sat, 11 Aug 2012 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2012-08-11-learn-functional/</guid>
+      <description>Okay, I have to admit I wasn’t a big fan of functional programming languages, but looking at the benefits that it introduces, it might not be a very bad idea to put it under the microscope for a while.
+So, in this blog post I am going to list some of the benefits that are introduced by functional programming language.
+  “Polymorphic Type Systems” : Functional programing languages usually lets you use functions for many types (belonging to the same class), thus making use of the concepts of generecity and tragically reducing the software maintenance costs.</description>
+    </item>
+    
+    <item>
+      <title>Getting Back to C&#43;&#43; | Public, Private, and Protected (PPP) </title>
+      <link>/post/technical/2012-04-15-getting-back-to-c/</link>
+      <pubDate>Sun, 15 Apr 2012 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2012-04-15-getting-back-to-c/</guid>
+      <description>I have been away for a while now but every time I think I won’t need to lay a hand on C++ or any object oriented programming language I find my self mandated to do so. So I thought It would be helpful for people like me to look at this post if they got lost and forgot some of the basic concepts.
+In this post, I will talk specifically about the difference between public, private and protected key words.</description>
+    </item>
+    
+    <item>
+      <title>Wireless Hacking &amp; Security</title>
+      <link>/post/technical/2011-11-13-wireless-hacking-security/</link>
+      <pubDate>Sun, 13 Nov 2011 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2011-11-13-wireless-hacking-security/</guid>
+      <description>If you are a wirless kinda guy, you might be interested in having a look at this quick presentation. This presentation will give you an idea about:
+WLAN pros and cons  WEP introduction WEP vulnerabilities and threats Exploiting Vulnerabilities Counter measures and best practices  If that caught your interest, then you might want to have a look at the presentation below.</description>
+    </item>
+    
+    <item>
+      <title>L3 Routing vs. L3 Switching vs. Multi-layer Switching</title>
+      <link>/post/technical/2011-10-7-l3-routing-switching/</link>
+      <pubDate>Fri, 07 Oct 2011 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2011-10-7-l3-routing-switching/</guid>
+      <description>Okay, the difference between a layer 3 router, switch and a multilayer switch seems to confuse alot of networkers, so I decided to write this to briefly explain in a nutshell the main between both.
+Before starting to talk about layer 3 switches or multi-layer switches, why not briefly summarize &amp;ldquo;Switching&amp;rdquo; as in basic layer 2 switching.Before switches existed there were devices called bridges, and I will not be explaining or going into much details about what is a bridge, but here is the main differences between a bridge and a switch:</description>
+    </item>
+    
+    <item>
+      <title>Anatomy of a MAC Address, BPDU, BID, and 802.1Q Ethernet Frame Tag</title>
+      <link>/post/technical/2011-09-29-anatomy-of-a-mac-address/</link>
+      <pubDate>Thu, 29 Sep 2011 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2011-09-29-anatomy-of-a-mac-address/</guid>
+      <description>As a network engineer you must have skimmed through millions of acronyms and abbreviations like MAC, IP, FTP, &amp;hellip;.. and so on, they are un-countable :D. Sometimes these abbreviations mix them into a cocktail in my head, so Today I thought of re-visiting some of these abbreviations and concepts that I consider fairly important if you are considering to understand switching. So let&amp;rsquo;s start of by defining each one of these abbreviations.</description>
+    </item>
+    
+    <item>
+      <title>VoIP Vs. IP Telephony</title>
+      <link>/post/technical/2011-09-11-voip-telephony/</link>
+      <pubDate>Sun, 11 Sep 2011 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2011-09-11-voip-telephony/</guid>
+      <description>&amp;ldquo;IP telephony is the Concept, VoIP is the Use&amp;rdquo;
+I believe this quote can serves as an answer to the Big Question, but what does this really mean ?. To answer this question lets define each term separately.
+IP telephony: It is a term used to describe the area of communication that is based on Internet standards like the Internet Protocol (IP). Examples of an IP telephony system include and IP Public Private Exchange (PBX).</description>
+    </item>
+    
+    <item>
+      <title>How to Find My Linux Release &amp; Version </title>
+      <link>/post/technical/2011-09-06-find-linux-version/</link>
+      <pubDate>Tue, 06 Sep 2011 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2011-09-06-find-linux-version/</guid>
+      <description>Also this might be very easy to do, I always seem to forget it =D. Anyway, here is how:
+you just type cat etc/lsb-release on your terminal. That’s it =).
+I hope this helps,
+Have a good day!!</description>
+    </item>
+    
+    <item>
+      <title>How to Play .wmv Files on Linux </title>
+      <link>/post/technical/2011-09-06-wmv-linux/</link>
+      <pubDate>Tue, 06 Sep 2011 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2011-09-06-wmv-linux/</guid>
+      <description>Okayy, So I spent some time trying to get ubuntu to play out .wmv files, it took me a little while to figure that out. Here is how:
+ First you need to download an adequate player. I Personally use “mplayer”  You can use synaptic manager and search for it. Or, you could download it using this command
+sudo apt-get install mplayer  Now, Let’s install some packages from medibuntu.</description>
+    </item>
+    
+    <item>
+      <title>Recovering Passwords For Cisco Routers</title>
+      <link>/post/technical/2011-09-05-password-router/</link>
+      <pubDate>Mon, 05 Sep 2011 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2011-09-05-password-router/</guid>
+      <description>Here are the brief steps of how to recover passwords on Your Cisco Router:
+ Type show version to check on the current value of the configuration register. The configuration register is usually set set to 0x2102 or 0x102. Turn the router off and turn it back on. Within the first 60 seconds, press Ctrl+Break to exit the Boot sequence and enter the Rommon mode. In the rommon mode type confreg 0x2142.</description>
+    </item>
+    
+    <item>
+      <title>Okay, You Know About Subnetting, But Why Do It?</title>
+      <link>/post/technical/2011-09-03-subnetting/</link>
+      <pubDate>Sat, 03 Sep 2011 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2011-09-03-subnetting/</guid>
+      <description>Long time I had this question in my head, why do we subnet, yea I am being a smart guy, I am very good at sub-netting but I didn’t know why it is so crucial.
+Well there are many answers to that question, the most general ones are:
+ Reduced network traffic Optimized network performance Simplified management Facilitated spanning of large geographical distances.  Okay, that’s cool but still, How does it do these “bla bla written above” =D ?</description>
+    </item>
+    
+    <item>
+      <title>How to Get A MAP API Key for Android</title>
+      <link>/post/technical/2011-09-03-map-api-key-android/</link>
+      <pubDate>Wed, 06 Jul 2011 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2011-09-03-map-api-key-android/</guid>
+      <description>Steps to get your key:
+  you need to get an MD5 finger print
+ go to C:\Program Files\Java\jdk1.6.0_24\bin copy the file &amp;ldquo;debug.keystore&amp;rdquo; you will find this in C:\Users\User.android&amp;lt;/li&amp;gt; Type the following command:  keytool.exe -list -alias androiddebugkey -keystore &amp;#34;C:\android\debug.keystore&amp;#34; -storepass android -keypass android   Now you should be getting a finger print like this:
+  A5:83:11:BB:56:EE:3E:87:58:6D:49:D3:90:E6:61:11  Now go to this page: http://code.google.com/android/maps-api-signup.html Insert your MD5 finger print and get your key: 0uNikOV3dR5gYi2qwuoNRrfR1OZRmM0uG5Arbvg  </description>
+    </item>
+    
+    <item>
+      <title>How to Setup &amp; Use Minicom on Linux</title>
+      <link>/post/technical/2011-04-09-minicom-on-linux/</link>
+      <pubDate>Sat, 09 Apr 2011 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2011-04-09-minicom-on-linux/</guid>
+      <description>Some people are windows oriented, others are linux oriented. Well I consider my self more of a windows user (I am not proud of that xD) so I decided to give linux a try and use minicom to configure Cisco devices. Here is how to download, Setup and Install minicom on ubuntu to be ready for use.
+ First you have to download and install minicom:  sudo apt-get install minicom Okay cool, now that you have installed it, you might want to find out the name of your serial port, Here is how:</description>
+    </item>
+    
+    <item>
+      <title>Adding a view within your ListActivity</title>
+      <link>/post/technical/2010-06-26-adding-view-from-list-activity/</link>
+      <pubDate>Sat, 26 Jun 2010 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2010-06-26-adding-view-from-list-activity/</guid>
+      <description>I spent some time trying to find out how to put other views in the same place with a ListActivity and I figured out 2 different ways :
+First, you can create a new XML file that should contain a listViewlike this for example:
+android:orientation=&amp;#34;vertical&amp;#34; android:layout_width=&amp;#34;fill_parent&amp;#34; android:layout_height=&amp;#34;fill_parent&amp;#34; android:background=&amp;#34;@color/black&amp;#34;&amp;gt; android:layout_width=&amp;#34;wrap_content&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34; android:src=&amp;#34;@drawable/home&amp;#34; /&amp;gt; android:layout_width=&amp;#34;fill_parent&amp;#34; android:layout_height=&amp;#34;fill_parent&amp;#34; android:drawSelectorOnTop=&amp;#34;false&amp;#34; /&amp;gt; Then, in your activity type the following
+setContentView(&amp;#34;xmlFile&amp;#34;); Here for example, I would like to put that image within my ListActivity.</description>
+    </item>
+    
+    <item>
+      <title>Changing the Background Colour or Image of a ListActivity</title>
+      <link>/post/technical/2010-06-20-background-color/</link>
+      <pubDate>Sun, 20 Jun 2010 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2010-06-20-background-color/</guid>
+      <description>I was stuck for like three hours trying to figure out how to change the background of a ListActivity because I have used an adapter with a layout for each item so when I change the background at the layout, only the item&amp;rsquo;s background is changed, but at the end I figured that it was very easy here is how I did it :-
+inside your onCreate() preferably before setting any adapters or putting any views, you insert the following line : getListView().</description>
+    </item>
+    
+    <item>
+      <title>How to Change the Color of an image when Clicked in Android ?</title>
+      <link>/post/technical/2010-05-10-change-clicked-image/</link>
+      <pubDate>Mon, 10 May 2010 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2010-05-10-change-clicked-image/</guid>
+      <description>In advanced mobile applications or normal ones , a developer should communicate with the user using some feed backs so changing the color of an image or label when clicked gives the user the feedback that he has really clicked something, here how it is done. In your onClick() method , use the following method :
+setColorFilter(&amp;#34;color in hexa&amp;#34; , &amp;#34;mode&amp;#34;) In my case I use
+button.setColorFilter(0x77000000,Mode.SRC_ATOP); doing this you will change the Colour but if you pressed the back button , you will find it stuck on the colour you changed ,to return things as they were you can either use</description>
+    </item>
+    
+    <item>
+      <title>How to be a Networker?</title>
+      <link>/post/technical/2008-10-20-how-to-be-a-networker/</link>
+      <pubDate>Mon, 20 Oct 2008 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2008-10-20-how-to-be-a-networker/</guid>
+      <description>Well, Lets say that most of the People have wrong concept of Who is A network Engineer and whose not,in Order to Clarify this Vague concept among people and also to answer the question that almost Most students or young Engineers ask them selves “How to be a Networker ?”, I will First Define who is A newtork Engineer.
+A Network Engineer is A Guy who takes the best of both worlds (Communications and Computer Science) and merge them into one to get into the “Communter Science ” world 😀 ,so A Network Engineer is like a federal spy, he can get into a room full of aliens and never be exposed, also most people think that some Certifications will make you a network Engineer that easily, well I admit that certifications give you quite a good understanding of IT stuff but not Engineering stuff, anyway lets get to the second Question already.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/post/life/2017-09-14-will-to-compensate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/post/life/2017-09-14-will-to-compensate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cloud Computing &amp; LTE</title>
+      <link>/post/technical/2009-01-20-cloud-lte/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/post/technical/2009-01-20-cloud-lte/</guid>
+      <description>I have been thinking for a while, what would it be like in 3 or 4 years ahead, and I started noticing that everybody is starting to love the “Cloud”, I won’t lie, I love it to :D, It is exponentially increasing, some of the ISP’s have already started using the cloud, it is a pretty neat concept, for some of you who are not familiar with the cloud: Imagine that you are subscribing to a bank and you are no longer keeping your money under you bed :D, well everybody doesn’t now, no body is hiding his money under his bed.</description>
+    </item>
+    
+  </channel>
+</rss>

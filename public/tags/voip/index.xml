@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VoIP on </title>
+    <link>/tags/voip/</link>
+    <description>Recent content in VoIP on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 11 Sep 2011 15:04:23 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/voip/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VoIP Vs. IP Telephony</title>
+      <link>/post/technical/2011-09-11-voip-telephony/</link>
+      <pubDate>Sun, 11 Sep 2011 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2011-09-11-voip-telephony/</guid>
+      <description>&amp;ldquo;IP telephony is the Concept, VoIP is the Use&amp;rdquo;
+I believe this quote can serves as an answer to the Big Question, but what does this really mean ?. To answer this question lets define each term separately.
+IP telephony: It is a term used to describe the area of communication that is based on Internet standards like the Internet Protocol (IP). Examples of an IP telephony system include and IP Public Private Exchange (PBX).</description>
+    </item>
+    
+  </channel>
+</rss>
