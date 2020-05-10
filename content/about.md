@@ -24,8 +24,11 @@ Below you can find some references and pointers to some of my work.
 
 ## Recorded Talks
 
+- [Reversing the Gardener Tunnel](https://www.youtube.com/watch?v=wSk-gdf4VJM)
 - [Network Machinery: A United Front for Network Troubleshooting with CRDs - KubeCon Barcelona](https://www.youtube.com/watch?v=JsJoRkmzoa0)
 - [Thinking Cloud Native: Connecting the dots with Gardener - EclipseCon](https://www.youtube.com/watch?v=bfw22WPg99A&t=1558s)
+- [Gardener Testing Framework](https://www.youtube.com/watch?v=xWxg41M-q8o&list=PLozz-rrEP0dt-EJ7N9fuQGtX7t5u9LX9u&index=32)
+
 
 ## Publication list
 
