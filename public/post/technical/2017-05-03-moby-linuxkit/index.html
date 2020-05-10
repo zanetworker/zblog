@@ -211,8 +211,8 @@ rkt run rep_name/image_name,version<span style="color:#f92672">=</span>version_t
 runC list <span style="color:#75715e"># to see the containers</span>
 </code></pre></div><p>Alright, so now we have a runtime for containers that understands and talks OCI, yay! are we done now? well, you can stop here and go run containers with <code>runC</code>, but I might not be interested in using runC in the future, so I will go learn how to use <code>Containerd</code>, this way even if I want to use another container runtime (that supports OCI), I will not have to understand how this runtime works, I will instead rely on Containerd.</p>
 <p><strong>Containerd</strong> is daemon to manage the complete container lifecycle, it abstracts <strong>runC</strong> details and provides a <strong>gRPC</strong> compataible API that can be used natively or from a command terminal (ctr).</p>
-<p>Lets have a look at the entire picture so far!
-<img src="/assets/linuxkit_post/containerd.png" alt=""></p>
+<p><strong>Lets have a look at the entire picture so far:</strong></p>
+<p><img src="/assets/linuxkit_post/containerd.png" alt=""></p>
 <p>Looks good right? So now that we are armed with this knowledge lets free Moby!</p>
 <h2 id="demistyfing-moby--the-linuxkit">Demistyfing Moby &amp; The LinuxKit</h2>
 <p>So recently a project called Moby was announced at Dockercon, the announcement raised alot of concerns about how the current docker framework will be used compared to Moby. But worry not, there is no need for confusion.</p>
@@ -324,13 +324,8 @@ runC list <span style="color:#75715e"># to see the containers</span>
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2020 Adel Zaalouk -
-<span class="credit">
-	Powered by
-	<a target="_blank" href="https://gohugo.io">Hugo</a>
-	and
-	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
-</span>
+<p>Copyright &copy; 2020
+
 </p>
 </footer>
 

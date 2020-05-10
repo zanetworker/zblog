@@ -5,10 +5,20 @@
     <link>/categories/technical/</link>
     <description>Recent content in technical on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 01 Apr 2018 15:04:23 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 May 2020 15:04:23 +0000</lastBuildDate>
     
 	<atom:link href="/categories/technical/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>To CRI or not to CRI: A Tale of a Lonely Sandbox</title>
+      <link>/post/technical/2020-03-23-to-cri-or-not-to-cri/</link>
+      <pubDate>Sat, 09 May 2020 15:04:23 +0000</pubDate>
+      
+      <guid>/post/technical/2020-03-23-to-cri-or-not-to-cri/</guid>
+      <description>Recently I have been trying to wrap my head around what has been happening in the kubernetes runtime space, doing so made me realize that alot has happened and I was too busy to catch up, as a result, I decided to write this blog post which summarizes my thoughts after reading up a bit.
+Have a look at this post&amp;rsquo;s outline and feel free to jump to sections of choice if you already feel confident about the topic.</description>
+    </item>
     
     <item>
       <title>Docktorino: Building Containers with Confidence</title>

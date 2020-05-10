@@ -15,8 +15,11 @@ body {
 }
 
 img {
- 	max-width: 100%;
+	 max-width: 70%;
+	 display: block;
+	 margin: 20 auto;
 }
+
 
 
 #green-terminal {
@@ -146,3 +149,13 @@ div p {
 td {
 	margin: 0 20px 0 20px;
 }
+
+
+/* .img-circle {
+    border-radius: 50%;
+}
+
+
+ img[src~="bordered"] {
+	border: 1px solid black;
+ } */

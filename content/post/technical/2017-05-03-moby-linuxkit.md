@@ -118,7 +118,8 @@ Alright, so now we have a runtime for containers that understands and talks OCI,
 
 **Containerd** is daemon to manage the complete container lifecycle, it abstracts **runC** details and provides a **gRPC** compataible API that can be used natively or from a command terminal (ctr).
 
-Lets have a look at the entire picture so far!
+**Lets have a look at the entire picture so far:**
+
 ![](/assets/linuxkit_post/containerd.png)
 
 

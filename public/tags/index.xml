@@ -5,10 +5,46 @@
     <link>/tags/</link>
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 01 Apr 2018 15:04:23 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 May 2020 15:04:23 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Containerd</title>
+      <link>/tags/containerd/</link>
+      <pubDate>Sat, 09 May 2020 15:04:23 +0000</pubDate>
+      
+      <guid>/tags/containerd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CRI</title>
+      <link>/tags/cri/</link>
+      <pubDate>Sat, 09 May 2020 15:04:23 +0000</pubDate>
+      
+      <guid>/tags/cri/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>/tags/kubernetes/</link>
+      <pubDate>Sat, 09 May 2020 15:04:23 +0000</pubDate>
+      
+      <guid>/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OCI</title>
+      <link>/tags/oci/</link>
+      <pubDate>Sat, 09 May 2020 15:04:23 +0000</pubDate>
+      
+      <guid>/tags/oci/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Containers</title>
@@ -34,15 +70,6 @@
       <pubDate>Sun, 01 Apr 2018 15:04:23 +0000</pubDate>
       
       <guid>/tags/testing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kubernetes</title>
-      <link>/tags/kubernetes/</link>
-      <pubDate>Fri, 15 Dec 2017 15:04:23 +0000</pubDate>
-      
-      <guid>/tags/kubernetes/</guid>
       <description></description>
     </item>
     
