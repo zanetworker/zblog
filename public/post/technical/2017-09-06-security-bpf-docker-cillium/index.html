@@ -113,68 +113,23 @@ ga('create', 'UA-90858024-1', 'auto');
             <span class="post-date">2017-09-06 </span>
             <div class="post-content">
                 <p>In this post we will be covering eBPF concepts, as well as challenges faced when applying network policies for microservices and how these challenges can be tackled. Finally, we will have a look at Cilium to see how it makes eBPF simple and easy to utilize.</p>
-<!-- raw HTML omitted -->
 <ul>
-<li>
-<p><a href="#introduction">Introduction</a>
+<li><a href="#introduction">Introduction</a>
 - <a href="#what-is-ebpf">What is eBPF</a>
 - <a href="#the-bpf-system-call">The bpf() system call</a>
 - <a href="#important-use-cases-for-ebpf">Important use-cases for eBPF</a>
-- <a href="#how-to-create-an-ebpf-program">How to create an eBPF program?</a></p>
-</li>
-<li>
-<p><a href="#microservices">Microservices</a>
+- <a href="#how-to-create-an-ebpf-program">How to create an eBPF program?</a></li>
+<li><a href="#microservices">Microservices</a>
 - <a href="#what-are-microservices-and-how-do-they-work">What are Microservices and how do they work?</a>
 - <a href="#security-policies-with-iptables">Security policies with IPTables</a>
-- <a href="#security-policies-using-ebpf">Security Policies using eBPF</a></p>
-</li>
-<li>
-<p><a href="#cilium">Cilium</a>
+- <a href="#security-policies-using-ebpf">Security Policies using eBPF</a></li>
+<li><a href="#cilium">Cilium</a>
 - <a href="#cillium-important-concepts">Cillium Important Concepts</a>
 - <a href="#important-cilium-constructs">Important Cilium Constructs</a>
 - <a href="#cilium-policies">Cilium Policies</a>
-- <a href="#demo">Demo</a></p>
-</li>
-<li>
-<p><a href="#important-references">Important References</a></p>
-</li>
-<li>
-<p><a href="#introduction">Introduction</a>
-- <a href="#what-is-ebpf">What is eBPF</a>
-- <a href="#the-bpf-system-call">The bpf() system call</a>
-- <a href="#important-use-cases-for-ebpf">Important use-cases for eBPF</a>
-- <a href="#how-to-create-an-ebpf-program">How to create an eBPF program?</a></p>
-</li>
-<li>
-<p><a href="#microservices">Microservices</a>
-- <a href="#what-are-microservices-and-how-do-they-work">What are Microservices and how do they work?</a>
-- <a href="#security-policies-with-iptables">Security policies with IPTables</a>
-- <a href="#security-policies-using-ebpf">Security Policies using eBPF</a></p>
-</li>
-<li>
-<p><a href="#cilium">Cilium</a>
-- <a href="#cillium-important-concepts">Cillium Important Concepts</a>
-- <a href="#important-cilium-constructs">Important Cilium Constructs</a>
-- <a href="#cilium-policies">Cilium Policies</a>
-- <a href="#demo">Demo</a></p>
-</li>
-<li>
-<p><a href="#important-references">Important References</a></p>
-</li>
-<li>
-<p><a href="#cillium">Cillium</a></p>
-<ul>
-<li><a href="#cillium-important-concepts">Cillium Important Concepts</a></li>
-<li><a href="#important-cilium-constructs">Important Cilium Constructs</a></li>
-<li><a href="#cillium-policies">Cillium Policies</a></li>
-<li><a href="#demo">Demo</a></li>
+- <a href="#demo">Demo</a></li>
+<li><a href="#important-references">Important References</a></li>
 </ul>
-</li>
-<li>
-<p><a href="#important-references">Important References</a></p>
-</li>
-</ul>
-<!-- raw HTML omitted -->
 <h1 id="introduction">Introduction</h1>
 <p>In this section we are going to answer some important questions as:</p>
 <ul>

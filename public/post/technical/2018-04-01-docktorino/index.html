@@ -116,7 +116,12 @@ ga('create', 'UA-90858024-1', 'auto');
 <p>When building Docker images it is sometimes tricky to assert the image behavior, for example, whether the contents of the image you built is correct, or that commands can execute correctly inside your container ( maybe you forgot to set your binary&rsquo;s PATH).</p>
 <p>Docktrino makes these types of assertions easy to define when building your Docker images. It then listens to your Docker builds and triggers these tests on the spot to notify you if you have done something wrong, or if your container image is misbehaving.</p>
 <p>The outline for this post is as follows:</p>
-<!-- raw HTML omitted -->
+<ul>
+<li><a href="#step-stones">Step Stones</a></li>
+<li><a href="#usecases">Usecases</a></li>
+<li><a href="#demo">Demo</a></li>
+<li><a href="#getting-started">Getting Started</a></li>
+</ul>
 <h3 id="step-stones">Step Stones</h3>
 <p>In the previous post, I talked about <a href="https://github.com/zanetworker/dockument"><strong>Dockument</strong></a>, a tool that helps you auto-generate documentation for your Dockerfiles and Docker images the way you would an API. Docktorino  <em>uses Dockument as a library to fetch important data from Docker images</em>.</p>
 <p>Furthermore, it uses the fetched information, in particular <strong>testing</strong> information which follows the <a href="https://github.com/GoogleCloudPlatform/container-structure-test"><strong>container-structure-test</strong></a> style as previously explained in the <a href="http://www.adelzaalouk.me/2018/dockument/">Dockument blog post</a> and produces testing results triggered by a build to the target image. The ouput again conforms with the <code>container-structure-test</code> output.</p>
