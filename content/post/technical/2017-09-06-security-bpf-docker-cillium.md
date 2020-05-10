@@ -8,8 +8,6 @@ tags: [Docker, Microservices, Containers, BPF, Cilium]
 In this post we will be covering eBPF concepts, as well as challenges faced when applying network policies for microservices and how these challenges can be tackled. Finally, we will have a look at Cilium to see how it makes eBPF simple and easy to utilize.
 
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
 - [Introduction](#introduction)
 		- [What is eBPF](#what-is-ebpf)
 		- [The bpf() system call](#the-bpf-system-call)
@@ -27,33 +25,6 @@ In this post we will be covering eBPF concepts, as well as challenges faced when
 - [Important References](#important-references)
 
 
-- [Introduction](#introduction)
-		- [What is eBPF](#what-is-ebpf)
-		- [The bpf() system call](#the-bpf-system-call)
-		- [Important use-cases for eBPF](#important-use-cases-for-ebpf)
-		- [How to create an eBPF program?](#how-to-create-an-ebpf-program)
-- [Microservices](#microservices)
-		- [What are Microservices and how do they work?](#what-are-microservices-and-how-do-they-work)
-		- [Security policies with IPTables](#security-policies-with-iptables)
-		- [Security Policies using eBPF](#security-policies-using-ebpf)
-- [Cilium](#cilium)
-		- [Cillium Important Concepts](#cillium-important-concepts)
-		- [Important Cilium Constructs](#important-cilium-constructs)
-		- [Cilium Policies](#cilium-policies)
-		- [Demo](#demo)
-- [Important References](#important-references)
-
-
-- [Cillium](#cillium)
-	- [Cillium Important Concepts](#cillium-important-concepts)
-	- [Important Cilium Constructs](#important-cilium-constructs)
-	- [Cillium Policies](#cillium-policies)
-	- [Demo](#demo)
-
-
-- [Important References](#important-references)
-
-<!-- /TOC -->
 # Introduction
 In this section we are going to answer some important questions as:
 - What is BPF and eBPF? What is difference between them?
