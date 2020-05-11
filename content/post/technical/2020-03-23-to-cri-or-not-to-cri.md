@@ -137,7 +137,7 @@ Kubernetes started out as one big blob of code, for simpliciy this helped kubern
 
 For a long time, Kubernetes had only Docker as its go-to container runtime, but with the developement of other runtimes, the gravity towards Docker started to fade out, and there was a growing interest from vendors to support other container runtimes. As they say need is the mother of invention, in this case the child / invention was CRI.
 
-Similar to [what happened with OCI](#the-open-container-initiative-oci), the community developed a standard interface for communicating with container runtimes (high-level runtimes). Want to be exposed in Kubernetes as a supported runtime? implement the interface, as simple as that. So how does this interface look like? Here is a sample from the Kubernetes blog [4]:
+Similar to [what happened with OCI](#the-open-container-initiative-oci), the community developed a standard interface for communicating with container runtimes (high-level runtimes). Want to be exposed in Kubernetes as a supported runtime? Implement the interface, as simple as that. So how does this interface look like? Here is a sample from the Kubernetes blog [4]:
 
 ```protobuf
 service RuntimeService {
@@ -221,7 +221,7 @@ In the above config, the default runtime is `runc`, so with no effort we get a r
 
 ### The RuntimeClass
 
-If we just want to run containers, do we really care about low-level runtimes? no we just want `kubectl run --name fire-me-i-dont-care` and we get a container. If you really just want to do that, you can stop reading now, and I apologize for wasting your time. IF however, you care about low-level runtimes, for example, if security is a major concern then you might be thinking "`runc` is not that secure, I want to enable `gVisor` to get cutting edge payload isolation", then its your lucky day for we have Runtime classes to just do that.
+If we just want to run containers, do we really care about low-level runtimes? No we just want `kubectl run --name fire-me-up-i-dont-care` and we get a container. If you really just want to do that, you can stop reading now, and I apologize for wasting your time. IF however, you care about low-level runtimes, for example, if security is a major concern then you might be thinking "`runc` is not that secure, I want to enable `gVisor` to get cutting edge payload isolation", then its your lucky day for we have Runtime classes to just do that.
 
 Runtime classes is CRI's way to provide runtime alternatives to choose from when running a pod. For example, consider the following runtime classes configured in the cluster [7]:
 
@@ -276,9 +276,9 @@ Similarly I can choose from the other available runtime classes and run the pod 
 
 ## CRIng with Gardener
 
-Okay now we know how to configure and use different container runtimes, this however can be so much work everytime a new cluster is spawned, so the question now is... "can I as a user, just configure my cluster to use a different container runtime with a one-liner?" and the answer is YES. There are many managed kubernetes services out there but only a handeful come with a one-line configuration for different controller runtimes, one of these is Gardener.
+Okay now we know how to configure and use different container runtimes, this however can be so much work everytime a new cluster is spawned, so the question now is... "can I as a user, just configure my cluster to use a different container runtime with a one-liner?" and the answer is YES. There are many managed kubernetes services out there but only a handeful come with a one-line configuration for different container runtimes, one of these is Gardener.
 
-In Gardener, a Kubernetes cluster is called a `Shoot` (in case you are wondering about the name, check [this](https://en.wikipedia.org/wiki/Shoot) out). To configure a controller runtime for the cluster worker nodes, all we need to do is:
+In Gardener, a Kubernetes cluster is called a `Shoot` (in case you are wondering about the name, check [this](https://en.wikipedia.org/wiki/Shoot) out). To configure a container runtime for the cluster worker nodes, all we need to do is:
 
 ```yaml
     workers:
