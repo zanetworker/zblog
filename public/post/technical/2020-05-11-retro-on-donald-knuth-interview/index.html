@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Retrospecting Donald Knuth&#39;s Interview (My advice to young people) - A Personal Take &middot;  </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.66.0" />
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/css/nix.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-90858024-1', 'auto');
+	  ga('send', 'pageview');
+
+</script>
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+      <a class="navbar-brand" id="green-terminal" href='/'>
+        zanetworker@adelzaalouk.me ~ $
+      </a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href='/' id="green-terminal">/home/zanetworker</a>
+        </li>
+        
+				
+				
+				<li class="dropdown">
+                    
+            		<a href="/about" id="green-terminal">~/about</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
+                        <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        
+                    		<li>
+                    		<a href="/post">~/all posts</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/categories">~/categories</a>
+				    		</li>
+                		
+                    		<li>
+                    		<a href="/tags">~/tags</a>
+				    		</li>
+                		
+            		</ul>
+            		
+        		</li>
+        		
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="/post/technical/2020-05-11-retro-on-donald-knuth-interview/">Retrospecting Donald Knuth&#39;s Interview (My advice to young people) - A Personal Take</a></h1>
+            <span class="post-date">2020-05-11 </span>
+            <div class="post-content">
+                <p>I recently watched an <a href="https://www.youtube.com/watch?time_continue=65&amp;v=75Ju0eM5T2c&amp;feature=emb_logo">interesting interview</a> from one of the best minds in computer science, Donald Knuth, author of the six-volume series &ldquo;The Art of Computer Programming&rdquo; and it got me thinking a lot. In this post, I will try to share my personal take on some of his quotes, as well as open up the discussion to get more opinions :)</p>
+<p>If you have not already watched it, I really recommend watching the whole thing. What really got me thinking watching this interview are the following quotes:</p>
+<ul>
+<li>&ldquo;Don&rsquo;t just believe that because something is trendy, that it&rsquo;s good&rdquo;</li>
+<li>&ldquo;I think you get more prestige by doing good science than by doing popular science&rdquo;</li>
+<li>&ldquo;People will do something against their own gut instincts because they think the community wants them to do it that way&rdquo;</li>
+<li>&ldquo;I like this idea about learning everything about an area before you feel&hellip; if you don&rsquo;t know something real solid then you never have enough confidence&rdquo;</li>
+</ul>
+<p>I will try to tackle them one by one (from a personal perspective, so yes subjectively), but before I do I would like to say that I am one of the lucky ones who have a full-time job contributing to open source, this allowed me to plug into many design discussions, some of which can alter the direction of a project and from these discussions I kind of relate to every one of these quotes whether directly or indirectly.</p>
+<h2 id="dont-just-believe-that-because-something-is-trendy-that-its-good">“Don’t just believe that because something is trendy, that it’s good”</h2>
+<p>I completely agree with these statements, but IMO there are multiple ways to look at it. Our end-goal should be good science, the way good science is approached can be different from one project to another, also I would like to divide the attitude to approach &ldquo;good science&rdquo; into two categories 1) guaranteed good science and 2) eventual good science.</p>
+<p>The &ldquo;guaranteed good science&rdquo; attitude is basically like &ldquo;Hey, lets only announce this thing when its 100 percent functional, does everything it should and ready for take off immediately&rdquo;. Usually that takes time but the results are promising, it is also harder to cultivate interest towards that type of science because people don&rsquo;t really see it yet so they are not willing to invest any kind of effort to make it happen. Basically, I believe it only if I see it.</p>
+<p>The &ldquo;eventual good science&rdquo; attitude on the other hand goes like &ldquo;Hey we have a great idea, lets PoC this thing out, it does not have to fully work now, lets see if people are interested first&rdquo;. With this attitude, there is a bit of sweet-sour risk involved. This kind helps get the idea  out but leave out much of the details. The believe here is that if that idea is good enough, many will rush to help realize it and &ldquo;eventually&rdquo; it will become good solid science with the main difference being early acting on and incorporating feedback.</p>
+<p>This brings me to &ldquo;Good&rdquo; Vs. &ldquo;Popular&rdquo; science. Good science is good science from the moment you lay sight on it, but it takes alot of faith and investment to make it happen and expose it to the real world. Popular science might or might not become good science, depends on the problem its trying to solve and the man power available to make it happen, but if the risk is justified, it might actually turn out to be good science fast enough, IMO its all about the originality of the idea.</p>
+<h2 id="people-will-do-something-against-their-own-gut-instincts-because-they-think-the-community-wants-them-to-do-it-that-way">“People will do something against their own gut instincts because they think the community wants them to do it that way”</h2>
+<p>IMO, sometimes science is not the only governing entity there is, people also want to trade and do business. In that case, business can drive many of the decisions concerning the future of a project.</p>
+<p>The force of the community is something to be reckoned with. Which again brings me to two types of decisions made to move projects forward (or backwards):</p>
+<ul>
+<li>faith driven</li>
+<li>community-push driven</li>
+</ul>
+<p>With faith driven decisions, the parties involved are willing to go all-out and invest with a firm believe that the long-term Return on Investment (ROI) is worth the effort. That again is risky business, and not for the faint hearted. Because there is no community to begin with, the community here is developed from scratch based on those believes.</p>
+<p>On the other hand, community-push driven decisions focus on realizing what the community think is good science, and this here has a bit of business bias that is not so easy to escape from. Community decisions are easier for pooling in fast adoption, be it good science or not, fast adoption is good for business continuity, and as I mentioned earlier, these type of decisions might end-up lead to eventual good-science if enough adoption gets in.</p>
+<p>IMO, it is always important to find the right balance, like put some faith in but don&rsquo;t be too rigid about your opinions. i.e., leave some space for change and most importantly try to not be affected by the <code>Not Invented Here Syndrome (NIHS)</code>.</p>
+<p><img src="/assets/retro/venn-retro-donald-knuth.png" alt=""></p>
+<h2 id="i-like-this-idea-about-learning-everything-about-an-area-before-you-feel-if-you-dont-know-something-real-solid-then-you-never-have-enough-confidence">&ldquo;I like this idea about learning everything about an area before you feel&hellip; if you don&rsquo;t know something real solid then you never have enough confidence&rdquo;</h2>
+<p>With this one I have to say, 100 percent &hellip; but again, there are cases where 100 percent is not really required right? Lets look at the different category of jobs we have in tech companies for example. We have with different titles ranging from sales to developers, each usually gets to have a different kind of conversation with different people.</p>
+<p>For a sales person what matters is the initial pitch (with the decision makers), usually with a script that is super directed and analyzed previously (probably by a different team) towards a certain problem / pain point. Once interest is piqued, a different conversation can take off from there, usually involving the developers who in this case should have 100 percent of the answers in that specific area of discussion.</p>
+<p>So my point is, 100 percent is definitely important especially if you are the final go-to person in the topic or field of discussion, but not much if your goal is just to pique interest.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>I did not think I will get that much carried away, but here we go, I wrote a post about it. I would be very interested in knowing what you think about those quotes / the interview. In this post, I simply thought out loud and shared my thoughts with you but I guess the discussion should not end here. Looking forward to more discussion on this.</p>
+<p>And in case you don&rsquo;t feel like going to youtube, I brought it here :)</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/75Ju0eM5T2c" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+            </div>
+            
+            <div class="post-comments">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "adelzaalouk-me" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2020
+
+</p>
+</footer>
+
+    </body>

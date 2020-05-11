@@ -9,17 +9,13 @@ Recently I have been trying to wrap my head around what has been happening in th
 
 Have a look at this post's outline and feel free to jump to sections of choice if you already feel confident about the topic.
 
-- [A Walk Down the Memory Lane: The Container Wars](#a-walk-down-the-memory-lane-the-container-wars)
-- [The Open Container Initiative (OCI)](#the-open-container-initiative-oci)
-	- [Image Spec](#image-spec)
-	- [Runtime Spec](#runtime-spec)
-- [A Sandbox's Highs and Lows](#a-sandboxs-highs-and-lows)
-- [CRIng Out Loud in Kubernetes Land](#cring-out-loud-in-kubernetes-land)
-	- [Configuring CRI](#configuring-cri)
-	- [The RuntimeClass](#the-runtimeclass)
-- [CRIng with Gardener](#cring-with-gardener)
-- [Summary](#summary)
-- [References](#references)
+- [The container runtime to use. Possible values: 'docker', 'remote', 'rkt(deprecated)'. (default "docker")](#the-container-runtime-to-use-possible-values-docker-remote-rktdeprecated-default-%22docker%22)
+- [The endpoint of remote runtime service. Currently unix socket endpoint is supported on Linux, while npipe and tcp endpoints are supported on windows.](#the-endpoint-of-remote-runtime-service-currently-unix-socket-endpoint-is-supported-on-linux-while-npipe-and-tcp-endpoints-are-supported-on-windows)
+- ['plugins."io.containerd.grpc.v1.cri".containerd' contains config related to containerd](#plugins%22iocontainerdgrpcv1cri%22containerd-contains-config-related-to-containerd)
+		- [The RuntimeClass](#the-runtimeclass)
+	- [CRIng with Gardener](#cring-with-gardener)
+	- [Summary](#summary)
+	- [References](#references)
 
 
 ## A Walk Down the Memory Lane: The Container Wars
@@ -74,7 +70,7 @@ An image spec is nothing but a description of the OCI image tar format. To help 
 `-- oci-layout
 ```
 
-- The `oci-layout` just contain the image layout version (e.g., 1.0.0) which serves to provide consistency with the image spec if changes to the layout are made.
+- The `oci-layout` just contains the image layout version (e.g., 1.0.0) which serves to provide consistency with the image spec if changes to the layout are made.
 - The `blobs` which represent the config and the manifest parts of the image spec, as well as the file-system layers.
 
 
@@ -108,7 +104,8 @@ Examples of high-level runtimes are `containerd`, `cri-o`, while examples of low
 
 As can be seen from the figure, a high-level runtime takes care of tasks such as interfacing with other consumers of the runtime API, image management (pushing, pulling, content-storage, snapshots, diffs, etc.), interfacing with low-level runtimes via the Shim concept (basically a plugin) while the lower-level API is responsible for the plumbing and isolation of namespaces. A low-level runtime needs to implement the shim interface, this way the implementation can differ without changes in the higher-level runtime (e.g., containerd):
 
-```protobuf
+
+{{< highlight protobuf >}}
 service Shim {
 	rpc State(StateRequest) returns (StateResponse);
 	rpc Create(CreateTaskRequest) returns (CreateTaskResponse);
@@ -127,7 +124,8 @@ service Shim {
 	rpc Update(UpdateTaskRequest) returns (google.protobuf.Empty);
 	rpc Wait(WaitRequest) returns (WaitResponse);
 }
-```
+{{< /highlight >}}
+
 
 ## CRIng Out Loud in Kubernetes Land
 
@@ -139,7 +137,7 @@ For a long time, Kubernetes had only Docker as its go-to container runtime, but 
 
 Similar to [what happened with OCI](#the-open-container-initiative-oci), the community developed a standard interface for communicating with container runtimes (high-level runtimes). Want to be exposed in Kubernetes as a supported runtime? Implement the interface, as simple as that. So how does this interface look like? Here is a sample from the Kubernetes blog [4]:
 
-```protobuf
+{{< highlight protobuf >}}
 service RuntimeService {
     // Sandbox operations.
 
@@ -168,7 +166,8 @@ service ImageService {
 	rpc ImageFsInfo(ImageFsInfoRequest) returns (ImageFsInfoResponse) {}
 }
 
-```
+{{< /highlight >}}
+
 
 As can be seen from the interfaces above, there are two service interfaces, namely `RuntimeService` and `ImageService`, where both  define main functions that should be implemented by the higher-level runtime interfacing with a container runtime client, in this case its Kubernetes. Both service interfaces should respect and talk OCI, and be able to relay requests to lower-level runtimes to do the actual work of assembling containers.
 
@@ -185,12 +184,14 @@ So now that we understand a bit about the flow, how do we configure the `kubelet
 
 First step is to configure the `kubelet` with the following flags:
 
-```bash
+{{< highlight bash >}}
+
 # The container runtime to use. Possible values: 'docker', 'remote', 'rkt(deprecated)'. (default "docker")
 --container-runtime=remote
 # The endpoint of remote runtime service. Currently unix socket endpoint is supported on Linux, while npipe and tcp endpoints are supported on windows.
 --container-runtime-endpoint=unix:///run/containerd/containerd.sock
-```
+
+{{< /highlight >}}
 
 In our case we are choosing `remote` as the value for the container runtime, and we are pointing the requests to the `containerd` unix socket. Next step, is to configure the low level runtime.
 
@@ -202,7 +203,7 @@ containerd config default > /etc/containerd/config.toml
 
 The resultant config would be a long file, with the following lines being the most important in choosing the low-level runtime:
 
-```toml
+{{< highlight toml >}}
   # 'plugins."io.containerd.grpc.v1.cri".containerd' contains config related to containerd
   [plugins."io.containerd.grpc.v1.cri".containerd]
 
@@ -215,7 +216,8 @@ The resultant config would be a long file, with the following lines being the mo
 
     # default_runtime_name is the default runtime name to use.
     default_runtime_name = "runc"
-```
+
+{{< /highlight >}}
 
 In the above config, the default runtime is `runc`, so with no effort we get a running `containerd` daemon talking to `runc` to run containers. All good, but what if we want to switch to another low-level runtime? well no biggie, we use a RuntimeClass :)
 
@@ -225,7 +227,8 @@ If we just want to run containers, do we really care about low-level runtimes? N
 
 Runtime classes is CRI's way to provide runtime alternatives to choose from when running a pod. For example, consider the following runtime classes configured in the cluster [7]:
 
-```yaml
+{{< highlight yaml >}}
+
 kind: RuntimeClass
 apiVersion: node.k8s.io/v1alpha1
 metadata:
@@ -246,11 +249,11 @@ metadata:
     name: kata-containers
 spec:
     runtimeHandler: kata-containers
-```
+{{< /highlight >}}
 
 Each `RuntimeClass` has a `runtimeHandler` which correspond to the low-level runtime to use if this runtime class is to be chosen. Running a pod with `gVisor` is a matter of modifying the pod spec and adding a `runtimeClassName` as follows:
 
-```yaml
+{{< highlight yaml >}}
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -270,7 +273,7 @@ spec:
         app: gVisor
     spec:
       runtimeClassName: gVisor
-```
+{{< /highlight >}}
 
 Similarly I can choose from the other available runtime classes and run the pod with `kata-containers` for example.
 
@@ -280,14 +283,14 @@ Okay now we know how to configure and use different container runtimes, this how
 
 In Gardener, a Kubernetes cluster is called a `Shoot` (in case you are wondering about the name, check [this](https://en.wikipedia.org/wiki/Shoot) out). To configure a container runtime for the cluster worker nodes, all we need to do is:
 
-```yaml
+{{< highlight yaml >}}
     workers:
     - name: cpu-worker
       cri:
         name: containerd
         containerRuntimes:
         - type: gvisor
-```
+{{< /highlight >}}
 
 The one liner is the type in the `spec`, once this is done, Gardener takes care of installing all the binaries, config, runtime classes, ... and everything that is needed  to get your cluster up and running with `gVisor` in this case.
 

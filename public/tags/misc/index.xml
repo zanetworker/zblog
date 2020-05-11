@@ -5,10 +5,20 @@
     <link>/tags/misc/</link>
     <description>Recent content in Misc on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 20 Oct 2008 15:04:23 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/misc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Retrospecting Donald Knuth&#39;s Interview (My advice to young people) - A Personal Take</title>
+      <link>/post/technical/2020-05-11-retro-on-donald-knuth-interview/</link>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/technical/2020-05-11-retro-on-donald-knuth-interview/</guid>
+      <description>I recently watched an interesting interview from one of the best minds in computer science, Donald Knuth, author of the six-volume series &amp;ldquo;The Art of Computer Programming&amp;rdquo; and it got me thinking a lot. In this post, I will try to share my personal take on some of his quotes, as well as open up the discussion to get more opinions :)
+If you have not already watched it, I really recommend watching the whole thing.</description>
+    </item>
     
     <item>
       <title>How to be a Networker?</title>
