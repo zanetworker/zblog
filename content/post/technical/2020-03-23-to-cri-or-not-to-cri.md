@@ -17,6 +17,7 @@ Have a look at this post's outline and feel free to jump to sections of choice i
 - [CRIng Out Loud in Kubernetes Land](#cring-out-loud-in-kubernetes-land)
   - [Configuring CRI](#configuring-cri)
   - [The RuntimeClass](#the-runtimeclass)
+- [CRIng with Gardener](#cring-with-gardener)
 - [Summary](#summary)
 - [References](#references)
 
@@ -252,7 +253,7 @@ metadata:
     name: kata-containers
 spec:
     runtimeHandler: kata-containers
-``
+```
 
 Each `RuntimeClass` has a `runtimeHandler` which correspond to the low-level runtime to use if this runtime class is to be chosen. Running a pod with `gVisor` is a matter of modifying the pod spec and adding a `runtimeClassName` as follows:
 
