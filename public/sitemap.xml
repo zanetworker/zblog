@@ -153,11 +153,6 @@
   </url>
   
   <url>
-    <loc>/tags/linux/</loc>
-    <lastmod>2017-05-03T15:04:23+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/linuxkit/</loc>
     <lastmod>2017-05-03T15:04:23+00:00</lastmod>
   </url>
@@ -260,6 +255,11 @@
   <url>
     <loc>/post/technical/2016-04-28-openstack-a-brief-networking-tour/</loc>
     <lastmod>2016-04-28T15:04:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/linux/</loc>
+    <lastmod>2016-04-24T15:04:23+00:00</lastmod>
   </url>
   
   <url>

@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.66.0" />
+<meta name="generator" content="Hugo 0.75.1" />
 
 
 
@@ -147,20 +147,20 @@ TOKEN<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>ku
 <p>If you want to access the dashboard from outside, you need to modify the service with a <code>NodePort</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n kube-system edit service kubernetes-dashboard
 </code></pre></div><p>if you want to get access without a token or kube-config for the dashboard, apply the following <a href="https://gist.githubusercontent.com/jpetazzo/fb0fd5c5233486e5b17c194b304a8905/raw/0dca3976cffa0c9f46c9a88549cdf9efd9cbf02e/k8s-admin-dashboard.yaml">yaml</a> to give the cluster-admin role:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#66d9ef">apiVersion</span>: rbac.authorization.k8s.io/v1beta1
-<span style="color:#66d9ef">kind</span>: ClusterRoleBinding
-<span style="color:#66d9ef">metadata</span>:
-  <span style="color:#66d9ef">name</span>: kubernetes-dashboard
-  <span style="color:#66d9ef">labels</span>:
-    <span style="color:#66d9ef">k8s-app</span>: kubernetes-dashboard
-<span style="color:#66d9ef">roleRef</span>:
-  <span style="color:#66d9ef">apiGroup</span>: rbac.authorization.k8s.io
-  <span style="color:#66d9ef">kind</span>: ClusterRole
-  <span style="color:#66d9ef">name</span>: cluster-admin
-<span style="color:#66d9ef">subjects</span>:
-- <span style="color:#66d9ef">kind</span>: ServiceAccount
-  <span style="color:#66d9ef">name</span>: kubernetes-dashboard
-  <span style="color:#66d9ef">namespace</span>: kube-system
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1beta1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRoleBinding</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">kubernetes-dashboard</span>
+  <span style="color:#f92672">labels</span>:
+    <span style="color:#f92672">k8s-app</span>: <span style="color:#ae81ff">kubernetes-dashboard</span>
+<span style="color:#f92672">roleRef</span>:
+  <span style="color:#f92672">apiGroup</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io</span>
+  <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRole</span>
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">cluster-admin</span>
+<span style="color:#f92672">subjects</span>:
+- <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ServiceAccount</span>
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">kubernetes-dashboard</span>
+  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">kube-system</span>
 </code></pre></div><h3 id="how-to-do-health-checks-with-kubernetes">How to do health-checks with kubernetes</h3>
 <p>There are two options to do health checks:</p>
 <ul>

@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.66.0" />
+<meta name="generator" content="Hugo 0.75.1" />
 
 
 
@@ -115,16 +115,23 @@ ga('create', 'UA-90858024-1', 'auto');
                 <p>Recently I have been trying to wrap my head around what has been happening in the kubernetes runtime space, doing so made me realize that alot has happened and I was too busy to catch up, as a result, I decided to write this blog post which summarizes my thoughts after reading up a bit.</p>
 <p>Have a look at this post&rsquo;s outline and feel free to jump to sections of choice if you already feel confident about the topic.</p>
 <ul>
-<li><a href="#the-container-runtime-to-use-possible-values-docker-remote-rktdeprecated-default-%22docker%22">The container runtime to use. Possible values: &lsquo;docker&rsquo;, &lsquo;remote&rsquo;, &lsquo;rkt(deprecated)'. (default &ldquo;docker&rdquo;)</a></li>
-<li><a href="#the-endpoint-of-remote-runtime-service-currently-unix-socket-endpoint-is-supported-on-linux-while-npipe-and-tcp-endpoints-are-supported-on-windows">The endpoint of remote runtime service. Currently unix socket endpoint is supported on Linux, while npipe and tcp endpoints are supported on windows.</a></li>
-<li><a href="#plugins%22iocontainerdgrpcv1cri%22containerd-contains-config-related-to-containerd">&lsquo;plugins.&ldquo;io.containerd.grpc.v1.cri&rdquo;.containerd&rsquo; contains config related to containerd</a>
-- <a href="#the-runtimeclass">The RuntimeClass</a>
+<li><a href="#a-walk-down-the-memory-lane-the-container-wars">A Walk Down the Memory Lane: The Container Wars</a></li>
+<li><a href="#the-open-container-initiative-oci">The Open Container Initiative (OCI)</a>
 <ul>
+<li><a href="#image-spec">Image Spec</a></li>
+<li><a href="#runtime-spec">Runtime Spec</a></li>
+</ul>
+</li>
+<li><a href="#a-sandboxs-highs-and-lows">A Sandbox&rsquo;s Highs and Lows</a></li>
+<li><a href="#cring-out-loud-in-kubernetes-land">CRIng Out Loud in Kubernetes Land</a>
+<ul>
+<li><a href="#configuring-cri">Configuring CRI</a></li>
+<li><a href="#the-runtimeclass">The RuntimeClass</a></li>
+</ul>
+</li>
 <li><a href="#cring-with-gardener">CRIng with Gardener</a></li>
 <li><a href="#summary">Summary</a></li>
 <li><a href="#references">References</a></li>
-</ul>
-</li>
 </ul>
 <h2 id="a-walk-down-the-memory-lane-the-container-wars">A Walk Down the Memory Lane: The Container Wars</h2>
 <p>History gives us the opportunity to understand our past, which in turns helps us understand our present. In the context of this post, history is less than a decade back, but in the tech industry, a decade is history already. In any case, lets start with 2013 or lets call it &ldquo;the Docker year&rdquo;, in my opinion this is where it alllll started.</p>
@@ -200,8 +207,8 @@ ga('create', 'UA-90858024-1', 'auto');
 </span><span style="color:#960050;background-color:#1e0010"></span>	<span style="color:#66d9ef">rpc</span> ShimInfo(google.protobuf.Empty) <span style="color:#66d9ef">returns</span> (ShimInfoResponse);<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>	<span style="color:#66d9ef">rpc</span> Update(UpdateTaskRequest) <span style="color:#66d9ef">returns</span> (google.protobuf.Empty);<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>	<span style="color:#66d9ef">rpc</span> Wait(WaitRequest) <span style="color:#66d9ef">returns</span> (WaitResponse);<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>}</code></pre></div>
-<h2 id="cring-out-loud-in-kubernetes-land">CRIng Out Loud in Kubernetes Land</h2>
+</span><span style="color:#960050;background-color:#1e0010"></span>}<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><h2 id="cring-out-loud-in-kubernetes-land">CRIng Out Loud in Kubernetes Land</h2>
 <p>Now that we understand the important constituents of runtimes, we can involve Mr. Kubernetes in the game, more specifically the Container Runtime Interface (CRI).</p>
 <p>Kubernetes started out as one big blob of code, for simpliciy this helped kubernetes make a name fast as a container orchestrator that does what it should well. However, it was very hard to extend since extensibility just meant growing the in-tree code to provide additional features be it in networking, storage, runtimes, etc.</p>
 <p>For a long time, Kubernetes had only Docker as its go-to container runtime, but with the developement of other runtimes, the gravity towards Docker started to fade out, and there was a growing interest from vendors to support other container runtimes. As they say need is the mother of invention, in this case the child / invention was CRI.</p>
@@ -232,19 +239,22 @@ ga('create', 'UA-90858024-1', 'auto');
 </span><span style="color:#960050;background-color:#1e0010"></span>	<span style="color:#66d9ef">rpc</span> PullImage(PullImageRequest) <span style="color:#66d9ef">returns</span> (PullImageResponse) {}<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>	<span style="color:#66d9ef">rpc</span> RemoveImage(RemoveImageRequest) <span style="color:#66d9ef">returns</span> (RemoveImageResponse) {}<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>	<span style="color:#66d9ef">rpc</span> ImageFsInfo(ImageFsInfoRequest) <span style="color:#66d9ef">returns</span> (ImageFsInfoResponse) {}<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>}</code></pre></div>
-<p>As can be seen from the interfaces above, there are two service interfaces, namely <code>RuntimeService</code> and <code>ImageService</code>, where both  define main functions that should be implemented by the higher-level runtime interfacing with a container runtime client, in this case its Kubernetes. Both service interfaces should respect and talk OCI, and be able to relay requests to lower-level runtimes to do the actual work of assembling containers.</p>
+</span><span style="color:#960050;background-color:#1e0010"></span>}<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>As can be seen from the interfaces above, there are two service interfaces, namely <code>RuntimeService</code> and <code>ImageService</code>, where both  define main functions that should be implemented by the higher-level runtime interfacing with a container runtime client, in this case its Kubernetes. Both service interfaces should respect and talk OCI, and be able to relay requests to lower-level runtimes to do the actual work of assembling containers.</p>
 <p>Kubernetes supports many high-level container runtimes, prominent examples are Docker, CRI-O, Containerd, Frakti, etc.</p>
 <p>Before we dig into the details of the &ldquo;How&rdquo;, lets look at the &ldquo;Who&rdquo;. When I say kubernetes uses CRI, I am being a bit too generic, the component that is really involved in CRI communication is our dear fellow <code>Kubelet</code>. The <code>Kubelet</code> is the kubernetes entity that handles requests coming from the API server to create, update, delete pods / volumes (pod life-cycle) as well as requests for sub-resources (e.g., logs, port-forward). After receiving these requests, the <code>Kubelet</code> itself acts as a client and uses the CRI interface to call out the container-runtime to actualize the request. Find below a sample flow assuming we are to use <code>Containerd</code> as our runtime interface:</p>
 <p><img src="/assets/cri_oci/kubelet-cri.png" alt=""></p>
 <h3 id="configuring-cri">Configuring CRI</h3>
 <p>So now that we understand a bit about the flow, how do we configure the <code>kubelet</code> to use the right container-runtime, and more, how do choose what runtime we want. Again, we will show as example how to configure <code>containerd</code> as the high-level container runtime.</p>
 <p>First step is to configure the <code>kubelet</code> with the following flags:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># The container runtime to use. Possible values: &#39;docker&#39;, &#39;remote&#39;, &#39;rkt(deprecated)&#39;. (default &#34;docker&#34;)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+<span style="color:#75715e"># The container runtime to use. Possible values: &#39;docker&#39;, &#39;remote&#39;, &#39;rkt(deprecated)&#39;. (default &#34;docker&#34;)</span>
 --container-runtime<span style="color:#f92672">=</span>remote
 <span style="color:#75715e"># The endpoint of remote runtime service. Currently unix socket endpoint is supported on Linux, while npipe and tcp endpoints are supported on windows.</span>
---container-runtime-endpoint<span style="color:#f92672">=</span>unix:///run/containerd/containerd.sock</code></pre></div>
-<p>In our case we are choosing <code>remote</code> as the value for the container runtime, and we are pointing the requests to the <code>containerd</code> unix socket. Next step, is to configure the low level runtime.</p>
+--container-runtime-endpoint<span style="color:#f92672">=</span>unix:///run/containerd/containerd.sock
+
+</code></pre></div><p>In our case we are choosing <code>remote</code> as the value for the container runtime, and we are pointing the requests to the <code>containerd</code> unix socket. Next step, is to configure the low level runtime.</p>
 <p>Once <code>containerd</code> is installed (after a bunch of apt-gets and curls [5]), the following command can be executed to get a default <code>containerd</code> configuration file:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">containerd config default &gt; /etc/containerd/config.toml
 </code></pre></div><p>The resultant config would be a long file, with the following lines being the most important in choosing the low-level runtime:</p>
@@ -259,62 +269,64 @@ ga('create', 'UA-90858024-1', 'auto');
     <span style="color:#a6e22e">no_pivot</span> = <span style="color:#66d9ef">false</span>
 
     <span style="color:#75715e"># default_runtime_name is the default runtime name to use.</span>
-    <span style="color:#a6e22e">default_runtime_name</span> = <span style="color:#e6db74">&#34;runc&#34;</span></code></pre></div>
-<p>In the above config, the default runtime is <code>runc</code>, so with no effort we get a running <code>containerd</code> daemon talking to <code>runc</code> to run containers. All good, but what if we want to switch to another low-level runtime? well no biggie, we use a RuntimeClass :)</p>
+    <span style="color:#a6e22e">default_runtime_name</span> = <span style="color:#e6db74">&#34;runc&#34;</span>
+
+</code></pre></div><p>In the above config, the default runtime is <code>runc</code>, so with no effort we get a running <code>containerd</code> daemon talking to <code>runc</code> to run containers. All good, but what if we want to switch to another low-level runtime? well no biggie, we use a RuntimeClass :)</p>
 <h3 id="the-runtimeclass">The RuntimeClass</h3>
 <p>If we just want to run containers, do we really care about low-level runtimes? No we just want <code>kubectl run --name fire-me-up-i-dont-care</code> and we get a container. If you really just want to do that, you can stop reading now, and I apologize for wasting your time. IF however, you care about low-level runtimes, for example, if security is a major concern then you might be thinking &ldquo;<code>runc</code> is not that secure, I want to enable <code>gVisor</code> to get cutting edge payload isolation&rdquo;, then its your lucky day for we have Runtime classes to just do that.</p>
 <p>Runtime classes is CRI&rsquo;s way to provide runtime alternatives to choose from when running a pod. For example, consider the following runtime classes configured in the cluster [7]:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">kind</span>: RuntimeClass
-<span style="color:#66d9ef">apiVersion</span>: node.k8s.io/v1alpha1
-<span style="color:#66d9ef">metadata</span>:
-    <span style="color:#66d9ef">name</span>: native  <span style="color:#75715e"># equivalent to &#39;legacy&#39; for now</span>
-<span style="color:#66d9ef">spec</span>:
-    <span style="color:#66d9ef">runtimeHandler</span>: runc
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">RuntimeClass</span>
+<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">node.k8s.io/v1alpha1</span>
+<span style="color:#f92672">metadata</span>:
+    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">native  # equivalent to &#39;legacy&#39; for now</span>
+<span style="color:#f92672">spec</span>:
+    <span style="color:#f92672">runtimeHandler</span>: <span style="color:#ae81ff">runc</span>
 ---
-<span style="color:#66d9ef">kind</span>: RuntimeClass
-<span style="color:#66d9ef">apiVersion</span>: node.k8s.io/v1alpha1
-<span style="color:#66d9ef">metadata</span>:
-    <span style="color:#66d9ef">name</span>: gvisor
-<span style="color:#66d9ef">spec</span>:
-    <span style="color:#66d9ef">runtimeHandler</span>: gvisor
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">RuntimeClass</span>
+<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">node.k8s.io/v1alpha1</span>
+<span style="color:#f92672">metadata</span>:
+    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">gvisor</span>
+<span style="color:#f92672">spec</span>:
+    <span style="color:#f92672">runtimeHandler</span>: <span style="color:#ae81ff">gvisor</span>
 ----
-<span style="color:#66d9ef">kind</span>: RuntimeClass
-<span style="color:#66d9ef">apiVersion</span>: node.k8s.io/v1alpha1
-<span style="color:#66d9ef">metadata</span>:
-    <span style="color:#66d9ef">name</span>: kata-containers
-<span style="color:#66d9ef">spec</span>:
-    <span style="color:#66d9ef">runtimeHandler</span>: kata-containers</code></pre></div>
-<p>Each <code>RuntimeClass</code> has a <code>runtimeHandler</code> which correspond to the low-level runtime to use if this runtime class is to be chosen. Running a pod with <code>gVisor</code> is a matter of modifying the pod spec and adding a <code>runtimeClassName</code> as follows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">apiVersion</span>: extensions/v1beta1
-<span style="color:#66d9ef">kind</span>: Deployment
-<span style="color:#66d9ef">metadata</span>:
-  <span style="color:#66d9ef">name</span>: gVisor-nginx
-<span style="color:#66d9ef">spec</span>:
-  <span style="color:#66d9ef">replicas</span>: <span style="color:#ae81ff">2</span>
-  <span style="color:#66d9ef">selector</span>:
-    <span style="color:#66d9ef">matchLabels</span>:
-      <span style="color:#66d9ef">app</span>: gVisor-nginx
-  <span style="color:#66d9ef">template</span>:
-    <span style="color:#66d9ef">metadata</span>:
-      <span style="color:#66d9ef">labels</span>:
-        <span style="color:#66d9ef">app</span>: gVisor-nginx
-  <span style="color:#66d9ef">template</span>:
-    <span style="color:#66d9ef">metadata</span>:
-      <span style="color:#66d9ef">labels</span>:
-        <span style="color:#66d9ef">app</span>: gVisor
-    <span style="color:#66d9ef">spec</span>:
-      <span style="color:#66d9ef">runtimeClassName</span>: gVisor</code></pre></div>
-<p>Similarly I can choose from the other available runtime classes and run the pod with <code>kata-containers</code> for example.</p>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">RuntimeClass</span>
+<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">node.k8s.io/v1alpha1</span>
+<span style="color:#f92672">metadata</span>:
+    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">kata-containers</span>
+<span style="color:#f92672">spec</span>:
+    <span style="color:#f92672">runtimeHandler</span>: <span style="color:#ae81ff">kata-containers</span>
+</code></pre></div><p>Each <code>RuntimeClass</code> has a <code>runtimeHandler</code> which correspond to the low-level runtime to use if this runtime class is to be chosen. Running a pod with <code>gVisor</code> is a matter of modifying the pod spec and adding a <code>runtimeClassName</code> as follows:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">extensions/v1beta1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Deployment</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">gVisor-nginx</span>
+<span style="color:#f92672">spec</span>:
+  <span style="color:#f92672">replicas</span>: <span style="color:#ae81ff">2</span>
+  <span style="color:#f92672">selector</span>:
+    <span style="color:#f92672">matchLabels</span>:
+      <span style="color:#f92672">app</span>: <span style="color:#ae81ff">gVisor-nginx</span>
+  <span style="color:#f92672">template</span>:
+    <span style="color:#f92672">metadata</span>:
+      <span style="color:#f92672">labels</span>:
+        <span style="color:#f92672">app</span>: <span style="color:#ae81ff">gVisor-nginx</span>
+  <span style="color:#f92672">template</span>:
+    <span style="color:#f92672">metadata</span>:
+      <span style="color:#f92672">labels</span>:
+        <span style="color:#f92672">app</span>: <span style="color:#ae81ff">gVisor</span>
+    <span style="color:#f92672">spec</span>:
+      <span style="color:#f92672">runtimeClassName</span>: <span style="color:#ae81ff">gVisor</span>
+</code></pre></div><p>Similarly I can choose from the other available runtime classes and run the pod with <code>kata-containers</code> for example.</p>
 <h2 id="cring-with-gardener">CRIng with Gardener</h2>
 <p>Okay now we know how to configure and use different container runtimes, this however can be so much work everytime a new cluster is spawned, so the question now is&hellip; &ldquo;can I as a user, just configure my cluster to use a different container runtime with a one-liner?&rdquo; and the answer is YES. There are many managed kubernetes services out there but only a handeful come with a one-line configuration for different container runtimes, one of these is Gardener.</p>
 <p>In Gardener, a Kubernetes cluster is called a <code>Shoot</code> (in case you are wondering about the name, check <a href="https://en.wikipedia.org/wiki/Shoot">this</a> out). To configure a container runtime for the cluster worker nodes, all we need to do is:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#66d9ef">workers</span>:
-    - <span style="color:#66d9ef">name</span>: cpu-worker
-      <span style="color:#66d9ef">cri</span>:
-        <span style="color:#66d9ef">name</span>: containerd
-        <span style="color:#66d9ef">containerRuntimes</span>:
-        - <span style="color:#66d9ef">type</span>: gvisor</code></pre></div>
-<p>The one liner is the type in the <code>spec</code>, once this is done, Gardener takes care of installing all the binaries, config, runtime classes, &hellip; and everything that is needed  to get your cluster up and running with <code>gVisor</code> in this case.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#f92672">workers</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">cpu-worker</span>
+      <span style="color:#f92672">cri</span>:
+        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">containerd</span>
+        <span style="color:#f92672">containerRuntimes</span>:
+        - <span style="color:#f92672">type</span>: <span style="color:#ae81ff">gvisor</span>
+</code></pre></div><p>The one liner is the type in the <code>spec</code>, once this is done, Gardener takes care of installing all the binaries, config, runtime classes, &hellip; and everything that is needed  to get your cluster up and running with <code>gVisor</code> in this case.</p>
 <p>The full example of a <code>Shoot</code> can be found <a href="https://github.com/gardener/gardener/blob/master/example/90-shoot.yaml">here</a>. Furthermore, Daniel Foehr, a colleague of mine gave a great talk on how different container runtimes can be enabled in Gardener, so if you are curious check his talk out <a href="https://www.youtube.com/watch?v=bC4b5V_e3Po">here</a>.</p>
 <h2 id="summary">Summary</h2>
 <p>Alrighttt, we are finally in the end of this post, so what did we talk about? First we had a look at the history of containers, and how different requirements for addressing and distributing images led to common standards such as <code>Appc</code> and <code>OCI</code> that enabled extensibility and choice in the container space. Then we dug a little deeper into OCI and examined the different specs to use, namely the <code>Image</code> and <code>Runtime</code> specs.</p>

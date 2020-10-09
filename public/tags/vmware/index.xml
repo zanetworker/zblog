@@ -5,11 +5,7 @@
     <link>/tags/vmware/</link>
     <description>Recent content in VMware on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 18 Jan 2016 15:04:23 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/vmware/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 18 Jan 2016 15:04:23 +0000</lastBuildDate><atom:link href="/tags/vmware/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VMware vRealize Automation Capsule</title>
       <link>/post/technical/2016-01-18-vrealize-capsule/</link>

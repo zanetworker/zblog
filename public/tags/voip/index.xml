@@ -5,11 +5,7 @@
     <link>/tags/voip/</link>
     <description>Recent content in VoIP on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 11 Sep 2011 15:04:23 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/voip/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 11 Sep 2011 15:04:23 +0000</lastBuildDate><atom:link href="/tags/voip/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VoIP Vs. IP Telephony</title>
       <link>/post/technical/2011-09-11-voip-telephony/</link>

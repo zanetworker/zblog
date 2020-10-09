@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-My name is Adel Zaalouk, a free-style researcher who cares more about knowledge than titles and I currently work as a Senior Software Engineer (with a soft-side for product management) focusing on all things Kubernetes (checkout the [Gardener Project](https://github.com/gardener)).
+My name is Adel Zaalouk, a free-style researcher who cares more about knowledge than titles and I currently work as Product Manager with a technical focus on all things Kubernetes and OpenShift.
 
 Throughout my career I wore different hats, in different countries working with different people from a broad spectrum of nationalities. Initially, I started in research with a strong focus on Software-Defined Networking (back in the buzz days), and moved slowly to the industry side, covering / advocating for software-defined concepts across the entire stack.
 
@@ -39,7 +39,7 @@ Below you can find some references and pointers to some of my work.
 
 ## Disclaimer
 
-This blog is one that I describe learning experience, summaries of readings, easier way to do certain tasks, and my own life musings. Blogging for me is a hobby and not a job. That being said, I work for SAP as a Senior Software Engineer. The content published here is not read, reviewed, or approved in advance by my employer and does not necessarily reflect the views of my employer nor does it relate to internal information for any of its divisions.
+This blog is one that I describe learning experience, summaries of readings, easier way to do certain tasks, and my own life musings. Blogging for me is a hobby and not a job. That being said, I work for as a Senior Product Manager at Red Hat. The content published here is not read, reviewed, or approved in advance by my employer and does not necessarily reflect the views of my employer nor does it relate to internal information for any of its divisions.
 
 ## More Information?
 
