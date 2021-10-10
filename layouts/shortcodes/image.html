@@ -1,0 +1,25 @@
+{{ $original := .Page.Resources.GetMatch (printf "*%s*" (.Get 0)) }}
+{{ $command := .Get 1 }}
+{{ $options := .Get 2 }}
+{{ if eq $command "Fit"}}
+{{ .Scratch.Set "image" ($original.Fit $options) }}
+{{ else if eq $command "Resize"}}
+{{ .Scratch.Set "image" ($original.Resize $options) }}
+{{ else if eq $command "Fill"}}
+{{ .Scratch.Set "image" ($original.Fill $options) }}
+{{ else }}
+{{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
+{{ end }}
+{{ $image := .Scratch.Get "image" }}
+<figure style="padding: 0.25rem; margin: 2rem 0">
+	<!-- <img style="max-width: 200%; width: auto; height: auto;" src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}"> -->
+	<!-- <div style="position: relative; padding-bottom: 65%; padding-top: 0; height: 0;"><iframe style="position: absolute; top: 0; left: 0; width: 130%; height: 110%; border-width:0px; max-width:150%; overflow-y:auto;" width="100%" height="100%" src="https://interactive-img.com/view?id=22223&iframe=true"></iframe></div> -->
+	<iframe width="960" height="606.168768186227" data-original-width="5155" data-original-height="3255" src="https://www.thinglink.com/card/1400875554139275267" type="text/html" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen scrolling="no"></iframe><script async src="//cdn.thinglink.me/jse/responsive.js"></script>
+	<figcaption>
+	<small>
+	{{ with .Inner }}
+	{{ . }}
+	{{ end }}
+	</small>
+	</figcaption>
+</figure>  

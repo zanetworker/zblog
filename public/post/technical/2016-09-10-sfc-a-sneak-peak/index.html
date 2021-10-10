@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.75.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 
@@ -82,6 +82,13 @@ ga('create', 'UA-90858024-1', 'auto');
 				
 				<li class="dropdown">
                     
+            		<a href="/kabooms" id="green-terminal">~/kabooms!</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
                         <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         
@@ -124,7 +131,7 @@ ga('create', 'UA-90858024-1', 'auto');
 <h3 id="a-port-pair">A Port-pair</h3>
 <p>A port pair is created for each service function</p>
 <p>options allowed when created a service function port-pair</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">neutron port-pair-create <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">neutron port-pair-create <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span>
         <span style="color:#f92672">[</span>--description &lt;description&gt;<span style="color:#f92672">]</span>
         --ingress &lt;port-id&gt;
         --egress &lt;port-id&gt;
@@ -132,13 +139,13 @@ ga('create', 'UA-90858024-1', 'auto');
         <span style="color:#f92672">[</span>--service-function-parameters &lt;parameter&gt;<span style="color:#f92672">]</span> PORT-PAIR-NAME
 </code></pre></div><h3 id="port-pair-group">Port-Pair group</h3>
 <p>To group VMs with the same network function together for load-distribution purposes for example. A port-pair-group can have more than one port-pair created within (e.g., multiple VMs doing the same function).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">neutron port-pair-group-create <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">neutron port-pair-group-create <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span>
         <span style="color:#f92672">[</span>--description &lt;description&gt;<span style="color:#f92672">]</span>
         --port-pairs &lt;port-pair-id&gt;
         <span style="color:#f92672">[</span>--port-pair-group-parameters &lt;parameter&gt;<span style="color:#f92672">]</span> PORT-PAIR-GROUP-NAME
 </code></pre></div><h3 id="flow-classifier">Flow-Classifier</h3>
 <p>We can use any of the following options to specify a flow for a chain. i.e., all the traffic matching a flow-classifier needs to go through a chain.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">neutron flow-classifier-create <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">neutron flow-classifier-create <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span>
         <span style="color:#f92672">[</span>--description &lt;description&gt;<span style="color:#f92672">]</span>
         <span style="color:#f92672">[</span>--protocol &lt;protocol&gt;<span style="color:#f92672">]</span>
         <span style="color:#f92672">[</span>--ethertype &lt;Ethertype&gt;<span style="color:#f92672">]</span>
@@ -151,7 +158,7 @@ ga('create', 'UA-90858024-1', 'auto');
         <span style="color:#f92672">[</span>--l7-parameters &lt;L7 parameter&gt;<span style="color:#f92672">]</span> FLOW-CLASSIFIER-NAME
 </code></pre></div><h3 id="port-chain">Port-Chain</h3>
 <p>You can associate flow-classifiers to port chains if you want them to be active. Otherwise, the port-chain will not be active.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">neutron port-chain-create <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">neutron port-chain-create <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span>
         <span style="color:#f92672">[</span>--description &lt;description&gt;<span style="color:#f92672">]</span>
          --port-pair-group &lt;port-pair-group-id&gt;
         <span style="color:#f92672">[</span>--flow-classifier &lt;classifier-id&gt;<span style="color:#f92672">]</span>
@@ -195,7 +202,7 @@ ga('create', 'UA-90858024-1', 'auto');
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2020
+<p>Copyright &copy; 2021
 
 </p>
 </footer>

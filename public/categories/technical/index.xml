@@ -5,7 +5,16 @@
     <link>/categories/technical/</link>
     <description>Recent content in technical on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/technical/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/technical/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Katacontainers</title>
+      <link>/kabooms/2020-11-29-katacontainers/</link>
+      <pubDate>Sun, 29 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/kabooms/2020-11-29-katacontainers/</guid>
+      <description>A detailed overview of Kata Containers architecture end-to-end.</description>
+    </item>
+    
     <item>
       <title>Retrospecting Donald Knuth&#39;s Interview (My advice to young people) - A Personal Take</title>
       <link>/post/technical/2020-05-11-retro-on-donald-knuth-interview/</link>

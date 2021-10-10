@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.75.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 
@@ -82,6 +82,13 @@ ga('create', 'UA-90858024-1', 'auto');
 				
 				<li class="dropdown">
                     
+            		<a href="/kabooms" id="green-terminal">~/kabooms!</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
                         <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         
@@ -126,7 +133,7 @@ ga('create', 'UA-90858024-1', 'auto');
 <p>In the previous post, I talked about <a href="https://github.com/zanetworker/dockument"><strong>Dockument</strong></a>, a tool that helps you auto-generate documentation for your Dockerfiles and Docker images the way you would an API. Docktorino  <em>uses Dockument as a library to fetch important data from Docker images</em>.</p>
 <p>Furthermore, it uses the fetched information, in particular <strong>testing</strong> information which follows the <a href="https://github.com/GoogleCloudPlatform/container-structure-test"><strong>container-structure-test</strong></a> style as previously explained in the <a href="http://www.adelzaalouk.me/2018/dockument/">Dockument blog post</a> and produces testing results triggered by a build to the target image. The ouput again conforms with the <code>container-structure-test</code> output.</p>
 <h3 id="usecases">Usecases</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:alpine as builder</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:alpine as builder</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">LABEL</span> api.TEST.fileExistence<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.TEST.fileExistence.name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Dockumentation Check&#34;</span><span style="color:#ae81ff">\
@@ -156,7 +163,7 @@ ga('create', 'UA-90858024-1', 'auto');
 <li>Tests that the environment variables we defined (PATH and GOPATH) have the right values.</li>
 </ul>
 <p>We can also tests the content of a file via <code>fileContent tests</code>. For example, if we are to build a debian image, we can check the <code>sources.list</code> file contents as follows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.TEST.fileContent<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.TEST.fileContent<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.TEST.fileContent.name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Debian Sources&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.TEST.fileContent.path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/etc/apt/sources.list&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.TEST.fileContent.expectedContents<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[&#39;.*httpredir\\.debian\\.org.*&#39;]&#34;</span><span style="color:#ae81ff">\
@@ -196,7 +203,7 @@ ga('create', 'UA-90858024-1', 'auto');
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2020
+<p>Copyright &copy; 2021
 
 </p>
 </footer>

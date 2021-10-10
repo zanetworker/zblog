@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.75.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 
@@ -82,6 +82,13 @@ ga('create', 'UA-90858024-1', 'auto');
 				
 				<li class="dropdown">
                     
+            		<a href="/kabooms" id="green-terminal">~/kabooms!</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
                         <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         
@@ -114,7 +121,7 @@ ga('create', 'UA-90858024-1', 'auto');
             <div class="post-content">
                 <p>I spent some time trying to find out how to put other views in the same place with a ListActivity and I figured out 2 different ways :</p>
 <p>First,  you can create a new XML file that should contain a <!-- raw HTML omitted -->listView<!-- raw HTML omitted --> like this for example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">android:orientation=&#34;vertical&#34;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">android:orientation=&#34;vertical&#34;
 android:layout_width=&#34;fill_parent&#34;
 android:layout_height=&#34;fill_parent&#34;
 android:background=&#34;@color/black&#34;&gt;
@@ -128,16 +135,16 @@ android:layout_height=&#34;fill_parent&#34;
 android:drawSelectorOnTop=&#34;false&#34; /&gt;
 
 </code></pre></div><p>Then, in your activity type the following</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">setContentView<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;xmlFile&#34;</span><span style="color:#f92672">);</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">setContentView<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;xmlFile&#34;</span><span style="color:#f92672">);</span>
 </code></pre></div><p>Here for example, I would like  to put that image within my <!-- raw HTML omitted -->ListActivity<!-- raw HTML omitted --> .</p>
 <p>Second, you can either use add a header or a footage view. Most importantly do this before setting any adapters ,</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
 ListView lv <span style="color:#f92672">=</span> getListView<span style="color:#f92672">();</span>
 LayoutInflater inflater <span style="color:#f92672">=</span> getLayoutInflater<span style="color:#f92672">();</span>
 ViewGroup header <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>ViewGroup<span style="color:#f92672">)</span>inflater<span style="color:#f92672">.</span><span style="color:#a6e22e">inflate</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">messageinfo</span><span style="color:#f92672">,</span> lv<span style="color:#f92672">,</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
 lv<span style="color:#f92672">.</span><span style="color:#a6e22e">addFooterView</span><span style="color:#f92672">(</span>header<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
 </code></pre></div><p>Or</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
 lv<span style="color:#f92672">.</span><span style="color:#a6e22e">addHeaderView</span><span style="color:#f92672">(</span>header<span style="color:#f92672">,</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span><span style="color:#66d9ef">false</span><span style="color:#f92672">)</span> <span style="color:#f92672">;</span>
 
 </code></pre></div><p>I hope this helps : ) .</p>
@@ -170,7 +177,7 @@ lv<span style="color:#f92672">.</span><span style="color:#a6e22e">addHeaderView<
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2020
+<p>Copyright &copy; 2021
 
 </p>
 </footer>

@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.75.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 
@@ -82,6 +82,13 @@ ga('create', 'UA-90858024-1', 'auto');
 				
 				<li class="dropdown">
                     
+            		<a href="/kabooms" id="green-terminal">~/kabooms!</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
                         <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         
@@ -116,7 +123,7 @@ ga('create', 'UA-90858024-1', 'auto');
 <p>In this post, I won&rsquo;t attempt to re-explain kubernetes concepts (pods, deployments, services, replicasets, &hellip;etc) since as I said, a lot of great people did that job already, and did it very well (if you still have doubts about some of the concepts, I would be glad to help clear smoke up). Instead, I will be adding a set of How-Tos for common tasks that you might encounter when working with kubernetes, the post might be updated every now and then to include more. Shall we begin?!</p>
 <p><strong>N.B:</strong> The How-Tos take the form of Q&amp;A.</p>
 <h3 id="how-to-access-k8s-api-from-the-command-line">How to access K8s API from the command line</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># First Get the Token and the API server address</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># First Get the Token and the API server address</span>
 APISERVER<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl config view | grep server | cut -f 2- -d <span style="color:#e6db74">&#34;:&#34;</span> | tr -d <span style="color:#e6db74">&#34; &#34;</span><span style="color:#66d9ef">)</span>
 TOKEN<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl describe secret <span style="color:#66d9ef">$(</span>kubectl get secrets | grep default | cut -f1 -d <span style="color:#e6db74">&#39; &#39;</span><span style="color:#66d9ef">)</span> | grep -E <span style="color:#e6db74">&#39;^token&#39;</span> | cut -f2 -d<span style="color:#e6db74">&#39;:&#39;</span> | tr -d <span style="color:#e6db74">&#39;\t&#39;</span><span style="color:#66d9ef">)</span>
 
@@ -137,7 +144,7 @@ curl $APISERVER/api --header <span style="color:#e6db74">&#34;Authorization: Bea
 </code></pre></div><h3 id="how-to-get-access-to-the-dashboard">How to get access to the dashboard</h3>
 <ul>
 <li>First  get the token.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">APISERVER<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl config view | grep server | cut -f 2- -d <span style="color:#e6db74">&#34;:&#34;</span> | tr -d <span style="color:#e6db74">&#34; &#34;</span><span style="color:#66d9ef">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">APISERVER<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl config view | grep server | cut -f 2- -d <span style="color:#e6db74">&#34;:&#34;</span> | tr -d <span style="color:#e6db74">&#34; &#34;</span><span style="color:#66d9ef">)</span>
 TOKEN<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl describe secret <span style="color:#66d9ef">$(</span>kubectl get secrets | grep default | cut -f1 -d <span style="color:#e6db74">&#39; &#39;</span><span style="color:#66d9ef">)</span> | grep -E <span style="color:#e6db74">&#39;^token&#39;</span> | cut -f2 -d<span style="color:#e6db74">&#39;:&#39;</span> | tr -d <span style="color:#e6db74">&#39;\t&#39;</span><span style="color:#66d9ef">)</span>
 </code></pre></div></li>
 <li>Then create a secure channel to your kubernetes cluster using <code>kubectl proxy</code></li>
@@ -145,9 +152,9 @@ TOKEN<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>ku
 </ul>
 <p>For more Info check the documentation and the repo <a href="https://github.com/kubernetes/dashboard">here</a></p>
 <p>If you want to access the dashboard from outside, you need to modify the service with a <code>NodePort</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n kube-system edit service kubernetes-dashboard
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n kube-system edit service kubernetes-dashboard
 </code></pre></div><p>if you want to get access without a token or kube-config for the dashboard, apply the following <a href="https://gist.githubusercontent.com/jpetazzo/fb0fd5c5233486e5b17c194b304a8905/raw/0dca3976cffa0c9f46c9a88549cdf9efd9cbf02e/k8s-admin-dashboard.yaml">yaml</a> to give the cluster-admin role:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1beta1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1beta1</span>
 <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRoleBinding</span>
 <span style="color:#f92672">metadata</span>:
   <span style="color:#f92672">name</span>: <span style="color:#ae81ff">kubernetes-dashboard</span>
@@ -205,15 +212,15 @@ TOKEN<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>ku
 </table>
 <h3 id="how-to-delete-replicationsets-without-deleting-pods">How to delete replicationsets without deleting pods</h3>
 <p>This can be achieved by setting the <code>--cascade</code> option to false at the end of the delete command, example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl delete rs rs_name --cascade<span style="color:#f92672">=</span>false
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl delete rs rs_name --cascade<span style="color:#f92672">=</span>false
 </code></pre></div><h3 id="how-to-list-pod-names-only">How to list pod names only</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -o go-template --template <span style="color:#e6db74">&#39;{{range .items}}{{.metadata.name}}{{&#34;\n&#34;}}{{end}}&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -o go-template --template <span style="color:#e6db74">&#39;{{range .items}}{{.metadata.name}}{{&#34;\n&#34;}}{{end}}&#39;</span>
 </code></pre></div><p>OR</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -o jsonpath --template <span style="color:#e6db74">&#39;{.items[*].metadata.name}&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -o jsonpath --template <span style="color:#e6db74">&#39;{.items[*].metadata.name}&#39;</span>
 </code></pre></div><p>if you want to delete all pods you can do it in a loop:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> pod in <span style="color:#66d9ef">$(</span>kubectl get pods -o go-template --template <span style="color:#e6db74">&#39;{{range .items}}{{.metadata.name}}{{&#34;\n&#34;}}{{end}}&#39;</span><span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> kubectl delete pod $pod; <span style="color:#66d9ef">done</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> pod in <span style="color:#66d9ef">$(</span>kubectl get pods -o go-template --template <span style="color:#e6db74">&#39;{{range .items}}{{.metadata.name}}{{&#34;\n&#34;}}{{end}}&#39;</span><span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> kubectl delete pod $pod; <span style="color:#66d9ef">done</span>
 </code></pre></div><p>OR</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> pod in <span style="color:#66d9ef">$(</span>kubectl get pods -o jsonpath --template <span style="color:#e6db74">&#39;{.items[*].metadata.name}&#39;</span><span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> kubectl delete pod $pod; sleep 60; <span style="color:#66d9ef">done</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> pod in <span style="color:#66d9ef">$(</span>kubectl get pods -o jsonpath --template <span style="color:#e6db74">&#39;{.items[*].metadata.name}&#39;</span><span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> kubectl delete pod $pod; sleep 60; <span style="color:#66d9ef">done</span>
 </code></pre></div>
             </div>
             
@@ -243,7 +250,7 @@ TOKEN<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>ku
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2020
+<p>Copyright &copy; 2021
 
 </p>
 </footer>

@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.75.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 
@@ -82,6 +82,13 @@ ga('create', 'UA-90858024-1', 'auto');
 				
 				<li class="dropdown">
                     
+            		<a href="/kabooms" id="green-terminal">~/kabooms!</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
                         <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         
@@ -115,7 +122,7 @@ ga('create', 'UA-90858024-1', 'auto');
                 <p>As you might know already Docker is now the defacto standard for containers. It is being used as the run-time for many clustering frameworks. Therefore, I thought about summarizing some of the important commands that you might need in your day-to-day docker life.</p>
 <p>I hope this post will be useful for you.</p>
 <h3 id="general-docker-commands">General Docker Commands</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">## Tagging an image</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">## Tagging an image</span>
 docker tage &lt;image_id&gt; name_of_the_image
 
 <span style="color:#75715e">#real time logs</span>
@@ -208,7 +215,7 @@ docker volume create --name &lt;volume_name&gt;
 
 </code></pre></div><h2 id="writing-a-docker-file">Writing a Docker File</h2>
 <p>Exampole of a Docker File:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Fetch an image called node</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Fetch an image called node</span>
 FROM node
 <span style="color:#75715e"># Maintainer</span>
 MAINTAINER maintainer@email.com
@@ -236,7 +243,7 @@ ENTRYPOINT <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;
 <li><strong>volumes</strong>: optional (defines the volumes to be used and shared by containers)</li>
 </ul>
 <p>Example compose file:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">version: <span style="color:#e6db74">&#39;2&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">version: <span style="color:#e6db74">&#39;2&#39;</span>
 services:
   web:
     build: .
@@ -253,13 +260,13 @@ volumes:
   logvolume01: <span style="color:#f92672">{}</span>
 </code></pre></div><h2 id="how-to-install-docker-compose">How to install Docker-compose?</h2>
 <p>Download it and add it to the bin path:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo curl -L https://github.com/docker/compose/releases/download/1.11.1/docker-compose-<span style="color:#e6db74">`</span>uname -s<span style="color:#e6db74">`</span>-<span style="color:#e6db74">`</span>uname -m<span style="color:#e6db74">`</span> &gt; /usr/local/bin/docker-compose
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo curl -L https://github.com/docker/compose/releases/download/1.11.1/docker-compose-<span style="color:#e6db74">`</span>uname -s<span style="color:#e6db74">`</span>-<span style="color:#e6db74">`</span>uname -m<span style="color:#e6db74">`</span> &gt; /usr/local/bin/docker-compose
 </code></pre></div><p>Then enable execute permissions:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod +x /usr/local/bin/docker-compose
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod +x /usr/local/bin/docker-compose
 
 </code></pre></div><p>Finally, check that it is correctly installed by typing <code>docker-coompose --version</code></p>
 <h2 id="how-to-use-docker-compose">How to use Docker compose?</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">##Build your compose setup</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">##Build your compose setup</span>
 docker-compose build
 
 <span style="color:#75715e">## Run it</span>
@@ -275,10 +282,10 @@ docker-compose ps
 docker-compose kill
 docker-compose rm
 </code></pre></div><h2 id="how-to-create-container-link">How to create container link?</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -it --link datastore:redis alpine ping redis
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -it --link datastore:redis alpine ping redis
 </code></pre></div><h2 id="what-is-a-network-alias">What is a network alias</h2>
 <p>Imagine the case where you have more than one container doing the webserver duty and you want to give them the same name on the network (e.g., for loadbalancing). The solution your looking for might be network alias.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Creating Network Alias</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Creating Network Alias</span>
 docker run -d --name prod-es-1 --net-alias search --net prod elasticsearch
 docker run -d --name prod-es-2 --net-alias search --net prod elasticsearch
 
@@ -289,7 +296,7 @@ docker run -d --name prod-es-2 --net-alias search --net prod elasticsearch
 </ul>
 <h2 id="how-to-enable-multi-host-communication-communication">How to enable multi-host communication communication?</h2>
 <p>Use overlay networking. To configure overlay networking, do the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker network create mynet --driver overlay
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker network create mynet --driver overlay
 </code></pre></div><h2 id="how-to-upload-images-to-dockerhub">How to upload images to Dockerhub</h2>
 <p>Here are the steps required for uploading Images to Dockerhub</p>
 <ul>
@@ -334,7 +341,7 @@ docker run -d --name prod-es-2 --net-alias search --net prod elasticsearch
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2020
+<p>Copyright &copy; 2021
 
 </p>
 </footer>

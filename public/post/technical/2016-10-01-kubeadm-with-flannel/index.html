@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.75.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 
@@ -82,6 +82,13 @@ ga('create', 'UA-90858024-1', 'auto');
 				
 				<li class="dropdown">
                     
+            		<a href="/kabooms" id="green-terminal">~/kabooms!</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
                         <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         
@@ -114,7 +121,7 @@ ga('create', 'UA-90858024-1', 'auto');
             <div class="post-content">
                 <p>Okay, so I am going to try and make this brief and to the point for you to get going. You need a Kubernetes cluster working with Kubeadm? good you are in the right place.</p>
 <p>First, lets get over the problems first. What you need to see at the end is the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kube-system   dummy-2088944543-1x359            1/1       Running   <span style="color:#ae81ff">1</span>          1d
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kube-system   dummy-2088944543-1x359            1/1       Running   <span style="color:#ae81ff">1</span>          1d
 kube-system   etcd-master                       1/1       Running   <span style="color:#ae81ff">1</span>          1d
 kube-system   kube-apiserver-master             1/1       Running   <span style="color:#ae81ff">0</span>          1d
 kube-system   kube-controller-manager-master    1/1       Running   <span style="color:#ae81ff">1</span>          1d
@@ -128,7 +135,7 @@ kube-system   kube-proxy-p1kbt                  1/1       Running   <span style=
 kube-system   kube-proxy-x2b1m                  1/1       Running   <span style="color:#ae81ff">1</span>          1d
 kube-system   kube-scheduler-master             1/1       Running   <span style="color:#ae81ff">1</span>          1d
 </code></pre></div><p><em>Not</em>  this &hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kube-system   dummy-2088944543-1x359            1/1       Running   <span style="color:#ae81ff">1</span>          1d
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kube-system   dummy-2088944543-1x359            1/1       Running   <span style="color:#ae81ff">1</span>          1d
 kube-system   etcd-master                       1/1       Running   <span style="color:#ae81ff">1</span>          1d
 kube-system   kube-apiserver-master             1/1       Running   <span style="color:#ae81ff">0</span>          1d
 kube-system   kube-controller-manager-master    1/1       Running   <span style="color:#ae81ff">1</span>          1d
@@ -145,11 +152,11 @@ kube-system   kube-scheduler-master             1/1       Running   <span style=
 <ul>
 <li>First initiate your cluster with kubeadm</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubeadm init --api-advertise-addresses<span style="color:#f92672">=</span>&lt;_your_private_network_address&gt; --pod-network-cidr<span style="color:#f92672">=</span>10.244.0.0/16
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubeadm init --api-advertise-addresses<span style="color:#f92672">=</span>&lt;_your_private_network_address&gt; --pod-network-cidr<span style="color:#f92672">=</span>10.244.0.0/16
 </code></pre></div><ul>
 <li>Once your kubeadm is ready for joining running the following (to avoid getting the crashLoopBackOff message):</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Overwrite the exisiting address with the new advertised address</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Overwrite the exisiting address with the new advertised address</span>
 jq <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   <span style="color:#e6db74">&#39;.spec.containers[0].command |= .+ [&#34;--advertise-address=&lt;_your_private_network_address&gt;&#34;]&#39;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   /etc/kubernetes/manifests/kube-apiserver.json &gt; /tmp/kube-apiserver.json
@@ -163,13 +170,13 @@ kubectl -n kube-system get ds -l <span style="color:#e6db74">&#39;component=kube
 </code></pre></div><ul>
 <li>Now you can apply the networking configuration file using <a href="https://github.com/coreos/flannel/blob/master/Documentation/kube-flannel.yml">Copy the content of this yaml file</a>:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f flannel_config.yaml
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f flannel_config.yaml
 </code></pre></div><ul>
 <li>Finally, join your nodes using the following command (you should have noted that from earlier):</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubeadm join --token<span style="color:#f92672">=</span>&lt;token&gt; &lt;master_ip&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubeadm join --token<span style="color:#f92672">=</span>&lt;token&gt; &lt;master_ip&gt;
 </code></pre></div><p>To test run the following command to deploy a pod.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl run --image<span style="color:#f92672">=</span>weaveworks/hello-world hello
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl run --image<span style="color:#f92672">=</span>weaveworks/hello-world hello
 </code></pre></div><p>I hope this helps!</p>
 
             </div>
@@ -200,7 +207,7 @@ kubectl -n kube-system get ds -l <span style="color:#e6db74">&#39;component=kube
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2020
+<p>Copyright &copy; 2021
 
 </p>
 </footer>

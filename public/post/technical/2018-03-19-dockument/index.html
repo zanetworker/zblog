@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.75.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 
@@ -82,6 +82,13 @@ ga('create', 'UA-90858024-1', 'auto');
 				
 				<li class="dropdown">
                     
+            		<a href="/kabooms" id="green-terminal">~/kabooms!</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
                         <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         
@@ -130,7 +137,7 @@ ga('create', 'UA-90858024-1', 'auto');
 <h3 id="how-to-use-it">How to Use it</h3>
 <p>With DOCKument you have the option to fetch important information about your Dockerfile or Docker images direcly from the command line <strong>OR</strong> create a markdown document that you can add to your git REPO or share with other developers.</p>
 <p>For example, if you type <code>dockument deps -d &quot;../examples/Dockerfile&quot;</code>, you will get the following output which describes the dependencies of this container image:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">### Dependency RABBIT ###</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">### Dependency RABBIT ###</span>
 	Application: rabbit
 	Image: <span style="color:#e6db74">&#34;rabbit:latest&#34;</span>
 	Description: <span style="color:#e6db74">&#34;The rabbit&#34;</span>
@@ -153,35 +160,35 @@ ga('create', 'UA-90858024-1', 'auto');
 <p>You can use <code>Dockument</code> to print or create a documentation of random metadata in your Dockerfile or Docker images, however, that is not very useful. To utilize the fully-fledged functionality of Dockument, define labels in your Docker images that follow the below pattern.</p>
 <p><strong>For Dependencies</strong>:</p>
 <p>Will this containerized application have dependencies on other applications?</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.DEPENDENCY.redis<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.DEPENDENCY.redis<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.DEPENDENCY.redis.image<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;redis:latest&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.DEPENDENCY.redis.port<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;6379&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.DEPENDENCY.redis.about<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;For caching results from OWM API.&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.DEPENDENCY.redis.mandatory<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p><strong>For Important ENVs</strong>:</p>
 <p>What are the environment variables that this container image defines?</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.ENV.OPENWEATHERMAP_APIKEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.ENV.OPENWEATHERMAP_APIKEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.ENV.OPENWEATHERMAP_APIKEY.about<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Access key for OpenWeatherMap. See http://openweathermap.org/appid for details.&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.ENV.OPENWEATHERMAP_APIKEY.mandatory<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p><strong>For Exposed Ports</strong>:</p>
 <p>Do we expose any ports?</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.EXPOSE.1337<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.EXPOSE.1337<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.EXPOSE.1337.scheme<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tcp&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>	api.EXPOSE.1337.protocol<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.EXPOSE.1337.about<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;The main endpoint of this service.&#34;</span><span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p><strong>For resources used by the container image</strong>:</p>
 <p>What resources are required by my application to run in a smooth and performant manner?</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.RESOURCES.Memory<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3gb&#34;</span><span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.RESOURCES.Memory<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3gb&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.RESOURCES.CPU<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span><span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p><strong>For Important Tags</strong></p>
 <p>What are some important tags that I want my Dockerfile to expose?</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.TAGS.go<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.9&#34;</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.TAGS.go<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.9&#34;</span><span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p><strong>For Container Tests</strong></p>
 <p>Tests help you make sure that your container image conforms with what you actually wants it to do. To this end, we decided to support the <a href="https://github.com/GoogleCloudPlatform/container-structure-test">container-structured-test</a> style. There are four types that are supported by Dockument:</p>
 <ul>
 <li><strong>Command Tests:</strong> &ldquo;Command tests ensure that certain commands run properly in the target image&rdquo;.</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.TEST.command<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.TEST.command<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.TEST.command.name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;go version&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.TEST.command.command<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;go&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.TEST.command.args<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;version&#34;</span><span style="color:#ae81ff">\
@@ -189,7 +196,7 @@ ga('create', 'UA-90858024-1', 'auto');
 </span></code></pre></div><ul>
 <li><strong>File Existence Tests:</strong> &ldquo;File existence tests check to make sure a specific file (or directory) exist within the file system of the image.&rdquo;</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.TEST.fileExistence<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.TEST.fileExistence<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.TEST.fileExistence.name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Dockumentation Check&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.TEST.fileExistence.path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/dockumentation.md&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.TEST.fileExistence.shouldExist<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#ae81ff">\
@@ -197,7 +204,7 @@ ga('create', 'UA-90858024-1', 'auto');
 </span></code></pre></div><ul>
 <li><strong>File Content Tests:</strong> &ldquo;File content tests open a file on the file system and check its contents.&rdquo;</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.TEST.fileContent<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.TEST.fileContent<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.TEST.fileContent.name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Debian Sources&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.TEST.fileContent.path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/etc/apt/sources.list&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.TEST.fileContent.expectedContents<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[&#39;.*httpredir\\.debian\\.org.*&#39;]&#34;</span><span style="color:#ae81ff">\
@@ -205,7 +212,7 @@ ga('create', 'UA-90858024-1', 'auto');
 </span></code></pre></div><ul>
 <li><strong>Meta data tests</strong>: &ldquo;The Metadata test ensures the container is configured correctly&rdquo;.</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.TEST.metadata<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">LABEL</span> api.TEST.metadata<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.TEST.metadata.env<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;GOPATH:/go&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.TEST.metadata.exposedPorts<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>      api.TEST.metadata.volumes<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#ae81ff">\
@@ -247,7 +254,7 @@ ga('create', 'UA-90858024-1', 'auto');
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2020
+<p>Copyright &copy; 2021
 
 </p>
 </footer>

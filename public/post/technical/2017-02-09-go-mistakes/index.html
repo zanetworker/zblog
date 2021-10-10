@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.75.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 
@@ -82,6 +82,13 @@ ga('create', 'UA-90858024-1', 'auto');
 				
 				<li class="dropdown">
                     
+            		<a href="/kabooms" id="green-terminal">~/kabooms!</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
                         <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         
@@ -115,20 +122,20 @@ ga('create', 'UA-90858024-1', 'auto');
                 <p>Welcome to &ldquo;Go Recipes For the Lost&rdquo; post, this is a live post, it won&rsquo;t ever be done as long as I am writing go code. The intention here is to share with you some fast resolution for common Go coding problems. Let&rsquo;s begin.</p>
 <h3 id="undefined-function-even-though-it-is-declared-in-another-file">Undefined function even though it is declared in another file!</h3>
 <p>When you would like to use functions defined in another go file, and you are using the &ldquo;run&rdquo; command. Make sure to pass all the file names to it.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">├── main.go
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">├── main.go
 └── utils.go
 
 go run main.go utils.go
 </code></pre></div><p>It is preferrable to use <code>go build</code> or <code>go install</code> instead of &ldquo;run&rdquo;.</p>
 <h3 id="cant-cast-an-slice-of-interfaces-to-a-slice-of-another-type">Can&rsquo;t cast an slice of interfaces to a slice of another type!</h3>
 <p>Since I don&rsquo;t have a better answer, I copied this answer from <a href="http://stackoverflow.com/questions/12753805/type-converting-slices-of-interfaces-in-go">Stephen Weinberg&rsquo;s answer on  stackoverflow</a>:</p>
-<pre><code>In Go, there is a general rule that syntax should not hide complex/costly operations. Converting a string to an interface{} is done in O(1) time. Converting a []string to an interface{} is also done in O(1) time since a slice is still one value. However, converting a []string to an []interface{} is O(n) time because each element of the slice must be converted to an interface{}.
+<pre tabindex="0"><code>In Go, there is a general rule that syntax should not hide complex/costly operations. Converting a string to an interface{} is done in O(1) time. Converting a []string to an interface{} is also done in O(1) time since a slice is still one value. However, converting a []string to an []interface{} is O(n) time because each element of the slice must be converted to an interface{}.
 
 The one exception to this rule is converting strings. When converting a string to and from a []byte or a []rune, Go does O(n) work even though conversions are &quot;syntax&quot;.
 
  There is no standard library function that will do this conversion for you. You could make one with reflect, but it would be slower than the three line option.
 </code></pre><p>Example with reflection:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">InterfaceSlice</span>(<span style="color:#a6e22e">slice</span> <span style="color:#66d9ef">interface</span>{}) []<span style="color:#66d9ef">interface</span>{} {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">InterfaceSlice</span>(<span style="color:#a6e22e">slice</span> <span style="color:#66d9ef">interface</span>{}) []<span style="color:#66d9ef">interface</span>{} {
     <span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">reflect</span>.<span style="color:#a6e22e">ValueOf</span>(<span style="color:#a6e22e">slice</span>)
     <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">Kind</span>() <span style="color:#f92672">!=</span> <span style="color:#a6e22e">reflect</span>.<span style="color:#a6e22e">Slice</span> {
         panic(<span style="color:#e6db74">&#34;InterfaceSlice() given a non-slice type&#34;</span>)
@@ -143,20 +150,20 @@ The one exception to this rule is converting strings. When converting a string t
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>
 }
 </code></pre></div><p>Your best option though is just to use those three lines of code:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">b</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">interface</span>{}, len(<span style="color:#a6e22e">a</span>))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">b</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">interface</span>{}, len(<span style="color:#a6e22e">a</span>))
 <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">a</span> {
     <span style="color:#a6e22e">b</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]
 }
 </code></pre></div><h3 id="godep-command-is-not-found">Godep command is not found</h3>
 <p>If you are wondering why you can&rsquo;t execute Godep, it is because you did not
 export &ldquo;GOBIN&rdquo;. Here is what you need to do:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GOBIN<span style="color:#f92672">=</span>$GOPATH/bin
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GOBIN<span style="color:#f92672">=</span>$GOPATH/bin
 export PATH<span style="color:#f92672">=</span>$GOPATH:$GOBIN:$PATH
 </code></pre></div><p>you can now execute <code>godep save</code> and immendiately find the &ldquo;Godeps/&rdquo; directory there.</p>
 <h3 id="why-are-my-structs-not-being-correctly-marshalled-into-json">Why are my structs not being correctly marshalled into json?</h3>
 <p>When marshalling structs, you should export your struct parameters by making them
 public. For example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Test</span> <span style="color:#66d9ef">struct</span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Test</span> <span style="color:#66d9ef">struct</span>{
   <span style="color:#a6e22e">a</span> <span style="color:#66d9ef">string</span>
   <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">int</span>
   }
@@ -176,7 +183,7 @@ public. For example:</p>
 <h3 id="how-to-resize-a-slice-for-reception">How to resize a slice for reception?</h3>
 <p>Sometimes when you are writing networking application, you are not sure about the size of the data
 received, as a result your fixed capacity will result in an error. So how to fix that? Do the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">bytestToReceive</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">1024</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">bytestToReceive</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">1024</span>)
 <span style="color:#a6e22e">yourModel</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">models</span>.<span style="color:#a6e22e">structToUnmarshalTo</span>{}
 
 <span style="color:#75715e">// Now get the size of the your data
@@ -190,7 +197,7 @@ received, as a result your fixed capacity will result in an error. So how to fix
 </code></pre></div><h3 id="how-to-do-a-delete-rest-request-ing-go">How to do a DELETE REST request ing Go?</h3>
 <p>The http library does not support a DELETE function. However, it provides a &ldquo;NewRequest&rdquo; call that you can utilize
 to issue a delete request with the help of the http.Client library, here is how:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">request</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">NewRequest</span>(<span style="color:#e6db74">&#34;DELETE&#34;</span>, <span style="color:#a6e22e">url</span>, <span style="color:#66d9ef">nil</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">request</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">NewRequest</span>(<span style="color:#e6db74">&#34;DELETE&#34;</span>, <span style="color:#a6e22e">url</span>, <span style="color:#66d9ef">nil</span>)
 <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span><span style="color:#f92672">!=</span><span style="color:#66d9ef">nil</span>{
 <span style="color:#75715e">//Handle Error
 </span><span style="color:#75715e"></span>}
@@ -203,7 +210,7 @@ to issue a delete request with the help of the http.Client library, here is how:
 </span><span style="color:#75715e"></span>}
 </code></pre></div><h3 id="how-to-use-glide-for-dependency-management">How to use glide for dependency management?</h3>
 <p>You need to follow these steps:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">glide init // this will create a glide.yml and a .lock file which contains all your dependencies
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">glide init // this will create a glide.yml and a .lock file which contains all your dependencies
 glide up // you updated your code with new dependencies, run this <span style="color:#66d9ef">if</span> you want .lock file to be updated
 glide install //this reads all your dependencies from the .lock file and installs them
 </code></pre></div>
@@ -235,7 +242,7 @@ glide install //this reads all your dependencies from the .lock file and install
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2020
+<p>Copyright &copy; 2021
 
 </p>
 </footer>

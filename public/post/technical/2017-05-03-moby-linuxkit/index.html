@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.75.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 
@@ -82,6 +82,13 @@ ga('create', 'UA-90858024-1', 'auto');
 				
 				<li class="dropdown">
                     
+            		<a href="/kabooms" id="green-terminal">~/kabooms!</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
                         <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         
@@ -130,14 +137,14 @@ In this post we will explain each component and how these components relate to o
 knowledge first, this will make understanding Linuxkit much easier.</p>
 <h3 id="so-what-is-the-open-container-initiative-oci">So what is the Open Container Initiative (OCI)?</h3>
 <p>The OCI is an initiative to define common standards for container frameworks to build containers. Container engines such as <em>Docker</em> and <em>rkt</em> provided an easy way to run containers by just providing the container image name and the version, for example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run repo_name/image_name:tag_name
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run repo_name/image_name:tag_name
 rkt run rep_name/image_name,version<span style="color:#f92672">=</span>version_tag
 
 </code></pre></div><p>To keep supporting this easy way of building containers, OCI needs to define an image format that provide information such as (commands, env variables, arguments, etc) for the container to use later and so they did, so now we have two specifications by OCI:</p>
 <ul>
 <li><strong>Image Format Specification</strong>: Contains the image manifest, file-system layers, and the image configuration (similar to how you do it user a Dockerfile)</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;created&#34;</span>:<span style="color:#e6db74">&#34;2015-10-31&#34;</span>,
   <span style="color:#f92672">&#34;author&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,
   <span style="color:#f92672">&#34;architecture&#34;</span>:<span style="color:#e6db74">&#34;amd64&#34;</span>,
@@ -160,7 +167,7 @@ rkt run rep_name/image_name,version<span style="color:#f92672">=</span>version_t
 </code></pre></div><ul>
 <li><strong>Runtime Specification</strong>: specified the configuration, execution environment, PID, and lifecycle of a container (e.g., running, created, stopped, etc). Below is an example of runtime and configuration:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;ociVersion&#34;</span>:<span style="color:#e6db74">&#34;1.0.0-rc5-dev&#34;</span>,
   <span style="color:#f92672">&#34;platform&#34;</span>:{
     <span style="color:#f92672">&#34;os&#34;</span>:<span style="color:#e6db74">&#34;linux&#34;</span>,
@@ -207,7 +214,7 @@ rkt run rep_name/image_name,version<span style="color:#f92672">=</span>version_t
 <p>Now we have a standard that dictates how to run containers, and a bundle with configuration, so how will we use this standard to run them now. lets <strong>runC</strong>.</p>
 <p>runC is a container runtime that knows how to deal with OCI defined speicifcations. To use runC you need to have a <code>rootfs</code> and an OCI <code>config.json</code> which can be created using <code>runc spec</code>.</p>
 <p>Now that we have all what we need, we can start a container:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">runC run container-name <span style="color:#75715e"># runs the container</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">runC run container-name <span style="color:#75715e"># runs the container</span>
 runC list <span style="color:#75715e"># to see the containers</span>
 </code></pre></div><p>Alright, so now we have a runtime for containers that understands and talks OCI, yay! are we done now? well, you can stop here and go run containers with <code>runC</code>, but I might not be interested in using runC in the future, so I will go learn how to use <code>Containerd</code>, this way even if I want to use another container runtime (that supports OCI), I will not have to understand how this runtime works, I will instead rely on Containerd.</p>
 <p><strong>Containerd</strong> is daemon to manage the complete container lifecycle, it abstracts <strong>runC</strong> details and provides a <strong>gRPC</strong> compataible API that can be used natively or from a command terminal (ctr).</p>
@@ -227,20 +234,20 @@ runC list <span style="color:#75715e"># to see the containers</span>
 <li>Inside the linuxkit repo run <code>make clean &amp;&amp; make &amp;&amp; make install</code> or you can run <code>make</code> and copy all the contents of bin/* to your PATH</li>
 </ul>
 <p>Now you have moby (the tool for building images), and linuxkit for deploying them. So how do you define your images? we use a .yml config file. Lets have a look at the important bits of the yaml file for building a docker linuxkit image (which you can find in the <code>examples/</code> directory):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">
 <span style="color:#f92672">kernel</span>:
   <span style="color:#75715e">#This section defines the kernel configuration,  The image field specifies the Docker image, which should contain a bzImage (for amd64 architecture, others may vary) and a file called kernel.tar</span>
   <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;linuxkit/kernel:4.9.x&#34;</span>
   <span style="color:#f92672">cmdline</span>: <span style="color:#e6db74">&#34;console=ttyS0 console=tty0 page_poison=1&#34;</span>
 </code></pre></div><p><img src="/assets/linuxkit_post/extracting.PNG" alt=""></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">init</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">init</span>:
   <span style="color:#75715e">#This section currently just lists images that is used for the init system and are unpacked directly into the root filesystem</span>
   - <span style="color:#ae81ff">linuxkit/init:63eed9ca7a09d2ce4c0c5e7238ac005fa44f564b</span>
   - <span style="color:#ae81ff">linuxkit/runc:b0fb122e10dbb7e4e45115177a61a3f8d68c19a9</span>
   - <span style="color:#ae81ff">linuxkit/containerd:18eaf72f3f4f9a9f29ca1951f66df701f873060b</span>
   - <span style="color:#ae81ff">linuxkit/ca-certificates:e091a05fbf7c5e16f18b23602febd45dd690ba2f</span>
 </code></pre></div><p><img src="/assets/linuxkit_post/init_containers.PNG" alt=""></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">onboot</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">onboot</span>:
   <span style="color:#75715e">#These containers are run to completion sequentially, using runc before anything else is started</span>
   - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">sysctl</span>
     <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;linuxkit/sysctl:1f5ec5d5e6f7a7a1b3d2ff9dd9e36fd6fb14756a&#34;</span>
@@ -252,7 +259,7 @@ runC list <span style="color:#75715e"># to see the containers</span>
     <span style="color:#f92672">readonly</span>: <span style="color:#66d9ef">true</span>
 ...
 </code></pre></div><p><img src="/assets/linuxkit_post/onboot_containers.PNG" alt=""></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">services</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">services</span>:
   <span style="color:#75715e">#These containers are started with containerd and are expected to remain running</span>
   - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">docker</span>
     <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;linuxkit/docker-ce:a82b61b151f6d6a3606e66f284c927b4c83b50f5&#34;</span>
@@ -267,11 +274,11 @@ runC list <span style="color:#75715e"># to see the containers</span>
      - <span style="color:#ae81ff">/lib/modules:/lib/modules</span>
 ...
 </code></pre></div><p><img src="/assets/linuxkit_post/service_containers.PNG" alt=""></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">files</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">files</span>:
   - <span style="color:#f92672">path</span>: <span style="color:#ae81ff">etc/docker/daemon.json</span>
     <span style="color:#f92672">contents</span>: <span style="color:#e6db74">&#39;{&#34;debug&#34;: true}&#39;</span>
 </code></pre></div><p><img src="/assets/linuxkit_post/add_files.PNG" alt=""></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">trust</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">trust</span>:
   <span style="color:#75715e">#his section specifies which build components are to be cryptographically verified with Docker Content Trust prior to pulling</span>
   <span style="color:#f92672">image</span>:
     - <span style="color:#ae81ff">linuxkit/kernel</span>
@@ -281,9 +288,9 @@ runC list <span style="color:#75715e"># to see the containers</span>
   - <span style="color:#f92672">format</span>: <span style="color:#ae81ff">kernel+initrd</span>
 </code></pre></div><p><img src="/assets/linuxkit_post/Create_Output.PNG" alt=""></p>
 <p>To build the linuxkit image we use <code>moby</code> the tool:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">moby build docker.yml
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">moby build docker.yml
 </code></pre></div><p>Finally to deploy the image, use:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  linuxkit run docker
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  linuxkit run docker
 </code></pre></div><p>The end result should look like this:</p>
 <p><img src="/assets/linuxkit_post/docker_linux_lit.PNG" alt=""></p>
 <p>As you can see, docker running as a runc container inside the linuxkit image.</p>
@@ -324,7 +331,7 @@ runC list <span style="color:#75715e"># to see the containers</span>
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2020
+<p>Copyright &copy; 2021
 
 </p>
 </footer>

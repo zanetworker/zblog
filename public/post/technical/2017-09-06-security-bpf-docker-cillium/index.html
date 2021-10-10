@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.75.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 
 
@@ -82,6 +82,13 @@ ga('create', 'UA-90858024-1', 'auto');
 				
 				<li class="dropdown">
                     
+            		<a href="/kabooms" id="green-terminal">~/kabooms!</a>
+            		
+        		</li>
+        		
+				
+				<li class="dropdown">
+                    
                         <a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">posts <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         
@@ -149,7 +156,7 @@ ga('create', 'UA-90858024-1', 'auto');
 <ul>
 <li>A separate system call which is externally usable with BPF:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">  <span style="color:#66d9ef">int</span> bpf(<span style="color:#66d9ef">int</span> cmd, <span style="color:#66d9ef">union</span> bpf_attr <span style="color:#f92672">*</span>attr, <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> size)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">  <span style="color:#66d9ef">int</span> bpf(<span style="color:#66d9ef">int</span> cmd, <span style="color:#66d9ef">union</span> bpf_attr <span style="color:#f92672">*</span>attr, <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> size)
 </code></pre></div><ul>
 <li>The eBPF system call is a combination of the following functions:
 <ul>
@@ -163,7 +170,7 @@ ga('create', 'UA-90858024-1', 'auto');
 <li>Secure access to kernel memory through kernel getter functions.</li>
 <li>Faster interpretation and Just-In-Time (JIT) compilation.</li>
 <li>State persistance across events through BPF Maps (global data-store) which allows for collecting statistics and enabling context-aware behavior between kernel and userspace. To create a map, the following call is done:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">bpf(BPF_MAP_CREATE, <span style="color:#66d9ef">union</span> <span style="color:#a6e22e">bpf_attr</span> <span style="color:#f92672">*</span>attr, u32 size)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">bpf(BPF_MAP_CREATE, <span style="color:#66d9ef">union</span> <span style="color:#a6e22e">bpf_attr</span> <span style="color:#f92672">*</span>attr, u32 size)
 </code></pre></div></li>
 <li>Helper functions within the kernel (e.g., RNG, timestamps):
 <ul>
@@ -184,7 +191,7 @@ ga('create', 'UA-90858024-1', 'auto');
 <li>The underlying kernel magic.</li>
 </ul>
 <p>The bpf system call can be showed below:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// From the macro expansion of the following code:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// From the macro expansion of the following code:
 </span><span style="color:#75715e">// int bpf(int cmd, union bpf_attr *attr, unsigned int size);
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">bpf</span>(<span style="color:#66d9ef">int</span> cmd, <span style="color:#66d9ef">union</span> <span style="color:#a6e22e">bpf_attr</span> <span style="color:#f92672">*</span>attr, <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> size);
@@ -192,7 +199,7 @@ ga('create', 'UA-90858024-1', 'auto');
 <ul>
 <li>The <code>cmd</code> parameters is basically telling the kernel which command to execute. There are ten availabe commands that can be passed for this parameter:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// From https://github.com/torvalds/linux/blob/v4.11/include/uapi/linux/bpf.h#L73
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// From https://github.com/torvalds/linux/blob/v4.11/include/uapi/linux/bpf.h#L73
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">bpf_cmd</span> {
     BPF_MAP_CREATE,
     BPF_MAP_LOOKUP_ELEM,
@@ -208,7 +215,7 @@ ga('create', 'UA-90858024-1', 'auto');
 </code></pre></div><ul>
 <li>The <code>bpf_attr</code> is a pointer to union which can allow different structs to be passed to the <code>bpf</code> call. The available structs can be found in <a href="https://github.com/torvalds/linux/blob/v4.11/include/uapi/linux/bpf.h#L148">here</a>, but lets point them out below:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">union</span> <span style="color:#a6e22e">bpf_attr</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">union</span> <span style="color:#a6e22e">bpf_attr</span> {
 	<span style="color:#66d9ef">struct</span> { <span style="color:#75715e">/* anonymous struct used by BPF_MAP_CREATE command */</span>
 		__u32	map_type;	<span style="color:#75715e">/* one of enum bpf_map_type */</span>
 		__u32	key_size;	<span style="color:#75715e">/* size of key in bytes */</span>
@@ -253,7 +260,7 @@ ga('create', 'UA-90858024-1', 'auto');
 </code></pre></div><ul>
 <li>different BPF program types can be loaded, as sepcified in the <code>bpf_prog_type</code> struct:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">enum</span> bpf_prog_type {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">enum</span> bpf_prog_type {
 	BPF_PROG_TYPE_UNSPEC,
 	BPF_PROG_TYPE_SOCKET_FILTER,
 	BPF_PROG_TYPE_KPROBE,
@@ -423,7 +430,7 @@ Labels are prefexed with container: for Docker and k8s: for kubernetes (e.g., k8
             <div class="push"></div>
         </div>
         <footer class="footer text-center">
-<p>Copyright &copy; 2020
+<p>Copyright &copy; 2021
 
 </p>
 </footer>

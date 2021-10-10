@@ -23,19 +23,19 @@ Below you can find some references and pointers to some of my work.
 - [Software-Defined Cairo](https://www.meetup.com/Software-Defined-Cairo/)
 - [The German SocioLingo Guild](https://www.meetup.com/The-German-SocioLingo-Guild/)
 
-## Recorded Talks
+## Publicly Recorded Talks
 
 - [Reversing the Gardener Tunnel](https://www.youtube.com/watch?v=wSk-gdf4VJM)
 - [Network Machinery: A United Front for Network Troubleshooting with CRDs - KubeCon Barcelona](https://www.youtube.com/watch?v=JsJoRkmzoa0)
 - [Thinking Cloud Native: Connecting the dots with Gardener - EclipseCon](https://www.youtube.com/watch?v=bfw22WPg99A&t=1558s)
 - [Gardener Testing Framework](https://www.youtube.com/watch?v=xWxg41M-q8o&list=PLozz-rrEP0dt-EJ7N9fuQGtX7t5u9LX9u&index=32)
-
+- [The Dawn of OpenShift sandboxed containers](https://www.youtube.com/watch?v=kLXJmBXbkew)
+- [Emerging Multi-Cluster Patterns](https://www.youtube.com/watch?v=qQ04ixhJZps)
 
 ## Publication list
 
 - [My Google scholar Page](https://scholar.google.de/citations?user=eirZEv0AAAAJ&hl=en).
 - [My Research Gate Profile](https://www.researchgate.net/profile/Adel_Zaalouk)
-
 
 ## Disclaimer
 

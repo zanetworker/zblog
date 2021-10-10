@@ -51,3 +51,9 @@ theme = "nix"
   parent = "posts"
   name = "All Posts"
   url = "/post"
+
+[[menu.header]]
+  identifier = "kabooms"
+  name = "Kabooms!"
+  weight = 0
+  url = "/kabooms"
