@@ -23,14 +23,17 @@ Below you can find some references and pointers to some of my work.
 - [Software-Defined Cairo](https://www.meetup.com/Software-Defined-Cairo/)
 - [The German SocioLingo Guild](https://www.meetup.com/The-German-SocioLingo-Guild/)
 
-## Publicly Recorded Talks
+## Publicly Recorded Talks / Interviews
 
 - [Reversing the Gardener Tunnel](https://www.youtube.com/watch?v=wSk-gdf4VJM)
 - [Network Machinery: A United Front for Network Troubleshooting with CRDs - KubeCon Barcelona](https://www.youtube.com/watch?v=JsJoRkmzoa0)
 - [Thinking Cloud Native: Connecting the dots with Gardener - EclipseCon](https://www.youtube.com/watch?v=bfw22WPg99A&t=1558s)
+- [Gardener Overview Podcast](https://community.sap.com/media/bluebeards-tech-talk/we-grow-some-k8-s-with-project-gardener-and-our-botanist-adel-zaalouk)
 - [Gardener Testing Framework](https://www.youtube.com/watch?v=xWxg41M-q8o&list=PLozz-rrEP0dt-EJ7N9fuQGtX7t5u9LX9u&index=32)
 - [The Dawn of OpenShift sandboxed containers](https://www.youtube.com/watch?v=kLXJmBXbkew)
 - [Emerging Multi-Cluster Patterns](https://www.youtube.com/watch?v=qQ04ixhJZps)
+- [Ask an OpenShift Admin (Ep 50): Sandboxed containers](https://www.youtube.com/watch?v=RKXIuOUR8q4)
+
 
 ## Publication list
 
