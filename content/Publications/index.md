@@ -2,8 +2,9 @@
 layout: page
 title: Publications
 permalink: /publications/
+hidedate: true
 ---
-{{< table "table table-striped" >}}
+{{< table "table styled-table" >}}
 | Authors                                                                                                                                                                                | Title                                                                                                                         | Publication                                                                   | Volume | Number | Pages   | Year | Publisher        |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|--------|--------|---------|------|------------------|
 | "Zaalouk, Adel; Khondoker, Rahamatullah; Marx, Ronald; Bayarou, Kpatcha; "                                                                                                             | OrchSec: An orchestrator-based architecture for enhancing network-security using network monitoring and SDN control functions | 2014 IEEE Network Operations and Management Symposium (NOMS)                  |        |        | 1-9     | 2014 | IEEE             |

@@ -20,8 +20,6 @@ img {
 	 margin: 20 auto;
 }
 
-
-
 #green-terminal {
 	color: #00ff00;
 }
@@ -113,6 +111,7 @@ i {
 	border-style: solid;
 	border-width: 0 0 3px 0;
 	border-color: #292929;
+	float: Left;
 }
 
 .post-comments {

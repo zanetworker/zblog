@@ -24,9 +24,19 @@
 							<h4 class="post-date">{{ .Date.Format "2006-01-02" }}</h4>
 						</div>
 						<div class="post-summary"><p>{{ .Summary }}</p></div>
-						<div class="post-list-footer text-center">
+						<!-- <div class="post-list-footer text-center">
 							<a href="{{ .Permalink }}">Read More</a>
-						</div>
+						</div> -->
+						<!-- <div class="post-image">
+							{{ with .Resources }}
+								{{ with .GetMatch "{cover.*,*.jpg,*.png,*.jpeg}" }}
+									 {{ $cover := .Resize "600x" }}
+									 {{ with $cover }}
+										  <img src="{{ .Permalink }}"/>      
+									 {{ end }}
+								{{ end }}
+							{{ end }}							
+							</div> -->
 					</div>
 				</li>
 			{{ end }}

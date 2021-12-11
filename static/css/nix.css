@@ -7,11 +7,10 @@ html {
 }
 
 body {
-	background-color: #fdfdfd;
 	height: 100%;
-	font-family: 'Open Sans', sans-serif;
 	font-size: 1.5em;
 	padding-top: 70px;
+	font-family: 'Droid Sans', monospace;
 }
 
 img {
@@ -21,9 +20,9 @@ img {
 }
 
 
-
 #green-terminal {
 	color: #00ff00;
+	font-size: larger;
 }
 
 .font-header {
@@ -36,6 +35,7 @@ img {
 
 nav {
 	font-size: 1.5em;
+	align-items: flex-start;
 }
 
 .dropdown-menu li {
@@ -79,6 +79,8 @@ i {
 
 .post-link {
 	float: left;
+	color: rgb(0, 255, 21);
+	font-size: x-large;
 }
 
 .post-date {
@@ -86,7 +88,7 @@ i {
 }
 
 .post-header {
-	background-color: #F5F5F5;
+	background: #f8f4f4;
 	overflow: hidden;
 	padding: 0 5px 0 5px;
 }
@@ -150,12 +152,23 @@ td {
 	margin: 0 20px 0 20px;
 }
 
+.styled-table thead tr {
+    background-color: #0d0e0d;
+    color: #43f907;
+    text-align: left;
+}
 
-/* .img-circle {
-    border-radius: 50%;
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
 }
 
 
- img[src~="bordered"] {
-	border: 1px solid black;
- } */
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}

@@ -10,11 +10,11 @@
 {{ with .Site.Params.SlackURL }}
 <a href="{{.}}" title="Slack"><i class="fab fa-slack fa-3x" aria-hidden="true"></i></a>
 {{ end }}
-{{ with .Site.Params.CNCF }}
+<!-- {{ with .Site.Params.CNCF }}
 <a href="https://www.cncf.io/speaker/{{.}}" title="Slack"><i class="fab fa-linux fa-3x" aria-hidden="true"></i></a>
-{{ end }}
+{{ end }} -->
 {{ with .Site.Params.TwitterID }}
-<a href="https://twitter.com/{{.}}" rel="me" title="Twitter"><i class="fab fa-twitter fa-3x" aria-hidden="true"></i></a>
+<a href="https://twitter.com/{{.}}" rel="me" title="Twitter"><i class="fab fa-twitter fa-3x" style="font-size:48px;color:rgb(0, 162, 255)" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.MastodonURL }}
 <a href="{{.}}" title="Mastodon"><i class="fab fa-mastodon fa-3x" aria-hidden="true"></i></a>
@@ -29,7 +29,7 @@
 <a href="https://bitbucket.org/{{.}}" rel="me" title="Bitbucket"><i class="fab fa-bitbucket fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.GithubID }}
-<a href="https://github.com/{{.}}" rel="me" title="GitHub"><i class="fab fa-github fa-3x" aria-hidden="true"></i></a>
+<a href="https://github.com/{{.}}" rel="me" title="GitHub"><i class="fab fa-github fa-3x" style="font-size:48px;color:rgb(15, 15, 15)" aria-hidden="false"></i></a>
 {{ end }}
 {{ with .Site.Params.GitlabId }}
 <a href="https://gitlab.com/{{.}}" rel="me" title="GitLab"><i class="fab fa-gitlab fa-3x" aria-hidden="true"></i></a>
@@ -38,7 +38,7 @@
 <a href="https://codepen.io/{{.}}" rel="me" title="Codepen"><i class="fab fa-codepen fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.LinkedInID }}
-<a href="https://linkedin.com/in/{{.}}" rel="me" title="LinkedIn"><i class="fab fa-linkedin fa-3x" aria-hidden="true"></i></a>
+<a href="https://linkedin.com/in/{{.}}" rel="me" title="LinkedIn"><i class="fab fa-linkedin  fa-3x" style="font-size:48px;color:rgb(0, 119, 255)" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.InstagramID }}
 <a href="https://instagram.com/{{.}}" rel="me" title="Instagram"><i class="fab fa-instagram fa-3x" aria-hidden="true"></i></a>

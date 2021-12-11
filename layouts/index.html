@@ -2,7 +2,6 @@
 <html lang="{{ .Site.LanguageCode }}">
 	<head>
 		<title> {{ .Site.Title }} </title>
-
 		{{ partial "head.html" . }}
 	</head>
 	<body>
@@ -26,7 +25,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6 col-md-offset-3 user-description text-center">
+				<div class="col-md-6 col-md-offset-3  user-description text-center" id="description" >
 					<p>{{ .Site.Params.About }}</p>
 				</div>
 			</div>
