@@ -31,22 +31,21 @@ theme = "nix"
 [[menu.header]]
   identifier = "about"
   name = "About"
-  weight = 0
+  weight = 7
   url = "/about"
-
 [[menu.header]]
   identifier = "posts"
   name = "posts"
-  weight = 0
+  weight = 9
   url = "/post"
-[[menu.header]]
-  parent = "posts"
-  name = "categories"
-  url = "/categories"
 [[menu.header]]
   parent = "posts"
   name = "tags"
   url = "/tags"
+[[menu.header]]
+  parent = "posts"
+  name = "categories"
+  url = "/categories"
 [[menu.header]]
   parent = "posts"
   name = "All Posts"
@@ -55,5 +54,10 @@ theme = "nix"
 [[menu.header]]
   identifier = "kabooms"
   name = "Kabooms!"
-  weight = 0
+  weight = 8
   url = "/kabooms"
+[[menu.header]]
+  identifier = "publications"
+  name = "Publications"
+  weight = 7
+  url = "/publications"
