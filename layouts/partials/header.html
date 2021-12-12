@@ -41,11 +41,11 @@
 		{{ $name := lower .Name }}
 		<li class="dropdown">
 			{{ if .HasChildren }}
-				<a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ .Name }} <span class="caret"></span></a>
+				<a href="#" class="dropdown-toggle" id="green-terminal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">~/{{ lower .Name }}/<span class="caret"></span></a>
 			<ul class="dropdown-menu">
 				{{ range .Children }}
 					<li>
-					<a href="{{ .URL | absLangURL }}">~/{{ lower .Name }}</a>
+					<a href="{{ .URL | absLangURL }}">{{ lower .Name }}</a>
 					</li>
 				{{ end }}
 			</ul>
@@ -105,7 +105,6 @@
 		}
 				//Check Storage. Keep user preference on page reload
 		if (sessionStorage.getItem('darkMode')) {
-			body.classList.add('dark-mode');
 			switcher.classList.add('js-toggle--checked');
 			body.classList.add('dark-mode');
 		}

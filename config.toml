@@ -48,14 +48,15 @@ theme = "nix"
   url = "/categories"
 [[menu.header]]
   parent = "posts"
+  identifier = "kbooms"
+  name = "Kbooms!"
+  weight = 8
+  url = "/kbooms"
+[[menu.header]]
+  parent = "posts"
   name = "All Posts"
   url = "/post"
 
-[[menu.header]]
-  identifier = "kabooms"
-  name = "Kabooms!"
-  weight = 8
-  url = "/kabooms"
 [[menu.header]]
   identifier = "publications"
   name = "Publications"
