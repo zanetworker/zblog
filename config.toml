@@ -11,6 +11,7 @@ features = ["blog"]
 min_version = 0.20
 disqusShortname = "adelzaalouk-me"
 theme = "nix"
+baseURL = "https://adelzaalouk.me/"
 
 [author]
   name = "Matúš Námešný"
