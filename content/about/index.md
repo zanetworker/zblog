@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-My name is Adel Zaalouk, a free-style researcher who cares more about knowledge than titles and I currently work as Product Manager with a technical focus on all things Kubernetes and OpenShift.
+My name is Adel Zaalouk, a free-style researcher who cares more about knowledge than titles and I currently work as Product Manager with a technical focus on all things Kubernetes and OpenShift (with passion for data, AI, and ML).
 
 Throughout my career I wore different hats, in different countries working with different people from a broad spectrum of nationalities. Initially, I started in research with a strong focus on Software-Defined Networking (back in the buzz days), and moved slowly to the industry side, covering / advocating for software-defined concepts across the entire stack.
 
@@ -33,7 +33,8 @@ Below you can find some references and pointers to some of my work.
 - [The Dawn of OpenShift sandboxed containers](https://www.youtube.com/watch?v=kLXJmBXbkew)
 - [Emerging Multi-Cluster Patterns](https://www.youtube.com/watch?v=qQ04ixhJZps)
 - [Ask an OpenShift Admin (Ep 50): Sandboxed containers](https://www.youtube.com/watch?v=RKXIuOUR8q4)
-
+- [Hosted Control Planes: Bring extra power and more cost control](https://thenewstack.io/hosted-control-planes-bring-extra-power-and-more-cost-control/)
+- [Ask an OpenShift Admin (Ep 84) | Hosted Control Planes](https://www.youtube.com/watch?v=mW2ao7kjVTU)
 
 ## Publication list
 
@@ -42,7 +43,7 @@ Below you can find some references and pointers to some of my work.
 
 ## Disclaimer
 
-This blog is one that I describe learning experience, summaries of readings, easier way to do certain tasks, and my own life musings. Blogging for me is a hobby and not a job. That being said, I work for as a Senior Product Manager at Red Hat. The content published here is not read, reviewed, or approved in advance by my employer and does not necessarily reflect the views of my employer nor does it relate to internal information for any of its divisions.
+This blog is one that I describe learning experience, summaries of readings, easier way to do certain tasks, and my own life musings. Blogging for me is a hobby and not a job. That being said, I work for as a Principal Product Manager at Red Hat. The content published here is not read, reviewed, or approved in advance by my employer and does not necessarily reflect the views of my employer nor does it relate to internal information for any of its divisions.
 
 ## More Information?
 

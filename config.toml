@@ -11,7 +11,7 @@ features = ["blog"]
 min_version = 0.20
 disqusShortname = "adelzaalouk-me"
 theme = "nix"
-baseURL = "https://adelzaalouk.me/"
+baseURL = "https://adelzaalouk.me"
 
 [author]
   name = "Matúš Námešný"
@@ -21,7 +21,7 @@ baseURL = "https://adelzaalouk.me/"
   Name = "Adel Zaalouk"
   HeaderUsername = "zanetworker"
   HeaderHostname = "adelzaalouk.me"
-  About = "Earthlander | Free-Style Researcher | Docker & Kubernetes Community Leader | CNCF Speaker | Gopher/koder | Father"
+  About = "Earthlander | Product Manager | Free-Style Researcher | Docker & Kubernetes Community Leader | CNCF Speaker | Gopher/koder | Father"
   ProfilePicture = "profile.jpg"
   GithubID = "zanetworker"
   TwitterID = "zanetworker"
