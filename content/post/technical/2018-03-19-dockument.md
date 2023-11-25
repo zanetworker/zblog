@@ -51,7 +51,7 @@ For example, if you type `dockument deps -d "../examples/Dockerfile"`, you will 
 	Required: "true"
 ``` 
 
-On the other hand, to create a markdown DOCKument, you can use `dockument create --dockerfile "../examples/Dockerfile" -o "$HOME/dockumentation.md"` or `dockument create --image "repo/name:tag" -o "$HOME/dockumentation.md"` . The output will be a file similar to the one [here]("https://github.com/zanetworker/dockument/blob/master/examples/dockumentation.md")
+On the other hand, to create a markdown DOCKument, you can use `dockument create --dockerfile "../examples/Dockerfile" -o "$HOME/dockumentation.md"` or `dockument create --image "repo/name:tag" -o "$HOME/dockumentation.md"` . The output will be a file similar to the one [here](https://github.com/zanetworker/dockument/blob/master/examples/dockumentation.md)
 
 
 ### Pre-reqs

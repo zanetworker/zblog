@@ -28,6 +28,7 @@ baseURL = "https://adelzaalouk.me"
   LinkedInID = "adelzaalouk"
   GoogleAnalytics = "UA-90858024-1"
   CNCF="zanetworker"
+  darkMode = true
 
 [[menu.header]]
   identifier = "about"
