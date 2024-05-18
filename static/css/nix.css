@@ -78,11 +78,17 @@ i {
 	color: #333;
 }
 
-.post-link {
+.dark-mode .post-link {
 	float: left;
 	color: rgb(0, 255, 21);
 	font-size: x-large;
 	filter: drop-shadow(0 1px 3px);
+}
+
+.post-link {
+	float: left;
+	color: rgb(0, 255, 21);
+	font-size: x-large;
 }
 
 .post-date {

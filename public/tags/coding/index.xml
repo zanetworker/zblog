@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Coding on </title>
-    <link>/tags/coding/</link>
+    <link>https://adelzaalouk.me/tags/coding/</link>
     <description>Recent content in Coding on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 10 Feb 2017 15:04:23 +0000</lastBuildDate><atom:link href="/tags/coding/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Feb 2017 15:04:23 +0000</lastBuildDate><atom:link href="https://adelzaalouk.me/tags/coding/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GoSayan: Become an expert in Golang in your freetime</title>
-      <link>/post/technical/2017-02-10-gosayan/</link>
+      <link>https://adelzaalouk.me/post/technical/2017-02-10-gosayan/</link>
       <pubDate>Fri, 10 Feb 2017 15:04:23 +0000</pubDate>
       
-      <guid>/post/technical/2017-02-10-gosayan/</guid>
+      <guid>https://adelzaalouk.me/post/technical/2017-02-10-gosayan/</guid>
       <description>I have received many questions about a new project that I have created called GoSayan, so I decided to write a blog post about it.
 What is GoSayan? Needless to say that GoSayan is a project I started to work on as a hobby in my free time.
 So I am a &amp;ldquo;learn by doing&amp;rdquo; kind of person, even when I was learning Golang, I tried coding as many stub projects as I could, however, there is a limit to the amount of knowledge I can acquire because I have another life to live :D.</description>
@@ -19,20 +19,20 @@ So I am a &amp;ldquo;learn by doing&amp;rdquo; kind of person, even when I was l
     
     <item>
       <title>Go Recipes For the Lost</title>
-      <link>/post/technical/2017-02-09-go-mistakes/</link>
+      <link>https://adelzaalouk.me/post/technical/2017-02-09-go-mistakes/</link>
       <pubDate>Thu, 09 Feb 2017 15:04:23 +0000</pubDate>
       
-      <guid>/post/technical/2017-02-09-go-mistakes/</guid>
+      <guid>https://adelzaalouk.me/post/technical/2017-02-09-go-mistakes/</guid>
       <description>Welcome to &amp;ldquo;Go Recipes For the Lost&amp;rdquo; post, this is a live post, it won&amp;rsquo;t ever be done as long as I am writing go code. The intention here is to share with you some fast resolution for common Go coding problems. Let&amp;rsquo;s begin.
 Undefined function even though it is declared in another file! When you would like to use functions defined in another go file, and you are using the &amp;ldquo;run&amp;rdquo; command.</description>
     </item>
     
     <item>
       <title>Why Learn a Functional Programming Language</title>
-      <link>/post/technical/2012-08-11-learn-functional/</link>
+      <link>https://adelzaalouk.me/post/technical/2012-08-11-learn-functional/</link>
       <pubDate>Sat, 11 Aug 2012 15:04:23 +0000</pubDate>
       
-      <guid>/post/technical/2012-08-11-learn-functional/</guid>
+      <guid>https://adelzaalouk.me/post/technical/2012-08-11-learn-functional/</guid>
       <description>Okay, I have to admit I wasn’t a big fan of functional programming languages, but looking at the benefits that it introduces, it might not be a very bad idea to put it under the microscope for a while.
 So, in this blog post I am going to list some of the benefits that are introduced by functional programming language.
   “Polymorphic Type Systems” : Functional programing languages usually lets you use functions for many types (belonging to the same class), thus making use of the concepts of generecity and tragically reducing the software maintenance costs.</description>
@@ -40,10 +40,10 @@ So, in this blog post I am going to list some of the benefits that are introduce
     
     <item>
       <title>Getting Back to C&#43;&#43; | Public, Private, and Protected (PPP) </title>
-      <link>/post/technical/2012-04-15-getting-back-to-c/</link>
+      <link>https://adelzaalouk.me/post/technical/2012-04-15-getting-back-to-c/</link>
       <pubDate>Sun, 15 Apr 2012 15:04:23 +0000</pubDate>
       
-      <guid>/post/technical/2012-04-15-getting-back-to-c/</guid>
+      <guid>https://adelzaalouk.me/post/technical/2012-04-15-getting-back-to-c/</guid>
       <description>I have been away for a while now but every time I think I won’t need to lay a hand on C++ or any object oriented programming language I find my self mandated to do so. So I thought It would be helpful for people like me to look at this post if they got lost and forgot some of the basic concepts.
 In this post, I will talk specifically about the difference between public, private and protected key words.</description>
     </item>

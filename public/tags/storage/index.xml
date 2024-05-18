@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Storage on </title>
-    <link>/tags/storage/</link>
+    <link>https://adelzaalouk.me/tags/storage/</link>
     <description>Recent content in Storage on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 09 Feb 2016 15:04:23 +0000</lastBuildDate><atom:link href="/tags/storage/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Feb 2016 15:04:23 +0000</lastBuildDate><atom:link href="https://adelzaalouk.me/tags/storage/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CloudArray: A Seamless Portal to the Cloud</title>
-      <link>/post/technical/2016-02-09-cloud-array/</link>
+      <link>https://adelzaalouk.me/post/technical/2016-02-09-cloud-array/</link>
       <pubDate>Tue, 09 Feb 2016 15:04:23 +0000</pubDate>
       
-      <guid>/post/technical/2016-02-09-cloud-array/</guid>
+      <guid>https://adelzaalouk.me/post/technical/2016-02-09-cloud-array/</guid>
       <description>&lt;p&gt;The formal definition for CloudArray is:&lt;/p&gt;
 &lt;p&gt;“EMC-Cloud Array is a data storage software technology that easily integrates cloud (object) storage into traditional enterprise IT environments”&lt;/p&gt;
 &lt;p&gt;I am not sure if the definition really reflects what CloudArray does, CloudArray can be considered as a Cloud-Gateway, the reason I think of it this way is because it acts as a middle-man between Applications that talk standard SAN/NAS protocols (iSCSI, NFS, CIFS, and SMB) and public or private cloud providers (e.g., Amazon EC2, OpenStack, ECS, Atmos, Google Cloud, etc.) where most of them are Object-storage based.  CloudArray presents Object storage as local-disks to your hosts and applications.&lt;/p&gt;</description>

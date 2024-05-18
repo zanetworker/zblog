@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NFV on </title>
-    <link>/tags/nfv/</link>
+    <link>https://adelzaalouk.me/tags/nfv/</link>
     <description>Recent content in NFV on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 10 Sep 2016 15:04:23 +0000</lastBuildDate><atom:link href="/tags/nfv/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Sep 2016 15:04:23 +0000</lastBuildDate><atom:link href="https://adelzaalouk.me/tags/nfv/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Neutron-SFC: A Sneak-Peak</title>
-      <link>/post/technical/2016-09-10-sfc-a-sneak-peak/</link>
+      <link>https://adelzaalouk.me/post/technical/2016-09-10-sfc-a-sneak-peak/</link>
       <pubDate>Sat, 10 Sep 2016 15:04:23 +0000</pubDate>
       
-      <guid>/post/technical/2016-09-10-sfc-a-sneak-peak/</guid>
+      <guid>https://adelzaalouk.me/post/technical/2016-09-10-sfc-a-sneak-peak/</guid>
       <description>In today&amp;rsquo;s virtual network architecture, NFV is paving the way to become to defacto standard for providing network services in the cloud. NFV relies on Service Function Chaining (SFC), to stitch services together to provide a service-path for packets to traverse.
 OpenStack, one of the more successful open cloud platforms is considered a good base to start building services for NFV related functions. In this post, we will be having a sneak-peak over the components exposed by neutron-sfc, the service chaining API exposed by OpenStack.</description>
     </item>

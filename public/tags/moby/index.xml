@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Moby on </title>
-    <link>/tags/moby/</link>
+    <link>https://adelzaalouk.me/tags/moby/</link>
     <description>Recent content in Moby on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 03 May 2017 15:04:23 +0000</lastBuildDate><atom:link href="/tags/moby/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 May 2017 15:04:23 +0000</lastBuildDate><atom:link href="https://adelzaalouk.me/tags/moby/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Demystifying Moby: From OCI to Linuxkit</title>
-      <link>/post/technical/2017-05-03-moby-linuxkit/</link>
+      <link>https://adelzaalouk.me/post/technical/2017-05-03-moby-linuxkit/</link>
       <pubDate>Wed, 03 May 2017 15:04:23 +0000</pubDate>
       
-      <guid>/post/technical/2017-05-03-moby-linuxkit/</guid>
+      <guid>https://adelzaalouk.me/post/technical/2017-05-03-moby-linuxkit/</guid>
       <description>OCI, Containerd, runC, Moby, linuxkit are all relatively new components that work together for building containers. In this post we will explain each component and how these components relate to one another.
  Lets Start with the Basics (OCI, runC, Containerd)  So what is the Open Container Initiative (OCI)?   What are runC and Containerd? Demistyfing Moby &amp;amp; The LinuxKit Linuxkit Test-Drive Important References  Lets Start with the Basics (OCI, runC, Containerd) Before jumping in and talking about Moby and Linuxkit, it is important to establish some basic knowledge first, this will make understanding Linuxkit much easier.</description>
     </item>

@@ -2,394 +2,394 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on </title>
-    <link>/tags/</link>
+    <link>https://adelzaalouk.me/tags/</link>
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 29 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://adelzaalouk.me/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>kata</title>
-      <link>/tags/kata/</link>
-      <pubDate>Sun, 29 Nov 2020 00:00:00 +0000</pubDate>
+      <title>misc</title>
+      <link>https://adelzaalouk.me/tags/misc/</link>
+      <pubDate>Tue, 26 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>/tags/kata/</guid>
+      <guid>https://adelzaalouk.me/tags/misc/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>misc</title>
-      <link>/tags/misc/</link>
+      <title>kata</title>
+      <link>https://adelzaalouk.me/tags/kata/</link>
       <pubDate>Sun, 29 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/misc/</guid>
+      <guid>https://adelzaalouk.me/tags/kata/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Containerd</title>
-      <link>/tags/containerd/</link>
+      <link>https://adelzaalouk.me/tags/containerd/</link>
       <pubDate>Sat, 09 May 2020 15:04:23 +0000</pubDate>
       
-      <guid>/tags/containerd/</guid>
+      <guid>https://adelzaalouk.me/tags/containerd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CRI</title>
-      <link>/tags/cri/</link>
+      <link>https://adelzaalouk.me/tags/cri/</link>
       <pubDate>Sat, 09 May 2020 15:04:23 +0000</pubDate>
       
-      <guid>/tags/cri/</guid>
+      <guid>https://adelzaalouk.me/tags/cri/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Kubernetes</title>
-      <link>/tags/kubernetes/</link>
+      <link>https://adelzaalouk.me/tags/kubernetes/</link>
       <pubDate>Sat, 09 May 2020 15:04:23 +0000</pubDate>
       
-      <guid>/tags/kubernetes/</guid>
+      <guid>https://adelzaalouk.me/tags/kubernetes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OCI</title>
-      <link>/tags/oci/</link>
+      <link>https://adelzaalouk.me/tags/oci/</link>
       <pubDate>Sat, 09 May 2020 15:04:23 +0000</pubDate>
       
-      <guid>/tags/oci/</guid>
+      <guid>https://adelzaalouk.me/tags/oci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Containers</title>
-      <link>/tags/containers/</link>
+      <link>https://adelzaalouk.me/tags/containers/</link>
       <pubDate>Sun, 01 Apr 2018 15:04:23 +0000</pubDate>
       
-      <guid>/tags/containers/</guid>
+      <guid>https://adelzaalouk.me/tags/containers/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>/tags/docker/</link>
+      <link>https://adelzaalouk.me/tags/docker/</link>
       <pubDate>Sun, 01 Apr 2018 15:04:23 +0000</pubDate>
       
-      <guid>/tags/docker/</guid>
+      <guid>https://adelzaalouk.me/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Testing</title>
-      <link>/tags/testing/</link>
+      <link>https://adelzaalouk.me/tags/testing/</link>
       <pubDate>Sun, 01 Apr 2018 15:04:23 +0000</pubDate>
       
-      <guid>/tags/testing/</guid>
+      <guid>https://adelzaalouk.me/tags/testing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Microservices</title>
-      <link>/tags/microservices/</link>
+      <link>https://adelzaalouk.me/tags/microservices/</link>
       <pubDate>Fri, 15 Dec 2017 15:04:23 +0000</pubDate>
       
-      <guid>/tags/microservices/</guid>
+      <guid>https://adelzaalouk.me/tags/microservices/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sociology</title>
-      <link>/tags/sociology/</link>
+      <link>https://adelzaalouk.me/tags/sociology/</link>
       <pubDate>Sun, 10 Sep 2017 15:04:23 +0000</pubDate>
       
-      <guid>/tags/sociology/</guid>
+      <guid>https://adelzaalouk.me/tags/sociology/</guid>
       <description></description>
     </item>
     
     <item>
       <title>BPF</title>
-      <link>/tags/bpf/</link>
+      <link>https://adelzaalouk.me/tags/bpf/</link>
       <pubDate>Wed, 06 Sep 2017 15:04:23 +0000</pubDate>
       
-      <guid>/tags/bpf/</guid>
+      <guid>https://adelzaalouk.me/tags/bpf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cilium</title>
-      <link>/tags/cilium/</link>
+      <link>https://adelzaalouk.me/tags/cilium/</link>
       <pubDate>Wed, 06 Sep 2017 15:04:23 +0000</pubDate>
       
-      <guid>/tags/cilium/</guid>
+      <guid>https://adelzaalouk.me/tags/cilium/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Circuits</title>
-      <link>/tags/circuits/</link>
+      <link>https://adelzaalouk.me/tags/circuits/</link>
       <pubDate>Wed, 10 May 2017 15:04:23 +0000</pubDate>
       
-      <guid>/tags/circuits/</guid>
+      <guid>https://adelzaalouk.me/tags/circuits/</guid>
       <description></description>
     </item>
     
     <item>
       <title>IoT</title>
-      <link>/tags/iot/</link>
+      <link>https://adelzaalouk.me/tags/iot/</link>
       <pubDate>Wed, 10 May 2017 15:04:23 +0000</pubDate>
       
-      <guid>/tags/iot/</guid>
+      <guid>https://adelzaalouk.me/tags/iot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sensors</title>
-      <link>/tags/sensors/</link>
+      <link>https://adelzaalouk.me/tags/sensors/</link>
       <pubDate>Wed, 10 May 2017 15:04:23 +0000</pubDate>
       
-      <guid>/tags/sensors/</guid>
+      <guid>https://adelzaalouk.me/tags/sensors/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linuxkit</title>
-      <link>/tags/linuxkit/</link>
+      <link>https://adelzaalouk.me/tags/linuxkit/</link>
       <pubDate>Wed, 03 May 2017 15:04:23 +0000</pubDate>
       
-      <guid>/tags/linuxkit/</guid>
+      <guid>https://adelzaalouk.me/tags/linuxkit/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Moby</title>
-      <link>/tags/moby/</link>
+      <link>https://adelzaalouk.me/tags/moby/</link>
       <pubDate>Wed, 03 May 2017 15:04:23 +0000</pubDate>
       
-      <guid>/tags/moby/</guid>
+      <guid>https://adelzaalouk.me/tags/moby/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Coding</title>
-      <link>/tags/coding/</link>
+      <link>https://adelzaalouk.me/tags/coding/</link>
       <pubDate>Fri, 10 Feb 2017 15:04:23 +0000</pubDate>
       
-      <guid>/tags/coding/</guid>
+      <guid>https://adelzaalouk.me/tags/coding/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Golang</title>
-      <link>/tags/golang/</link>
+      <link>https://adelzaalouk.me/tags/golang/</link>
       <pubDate>Fri, 10 Feb 2017 15:04:23 +0000</pubDate>
       
-      <guid>/tags/golang/</guid>
+      <guid>https://adelzaalouk.me/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Psychology</title>
-      <link>/tags/psychology/</link>
+      <link>https://adelzaalouk.me/tags/psychology/</link>
       <pubDate>Mon, 10 Oct 2016 15:04:23 +0000</pubDate>
       
-      <guid>/tags/psychology/</guid>
+      <guid>https://adelzaalouk.me/tags/psychology/</guid>
       <description></description>
     </item>
     
     <item>
       <title>success</title>
-      <link>/tags/success/</link>
+      <link>https://adelzaalouk.me/tags/success/</link>
       <pubDate>Fri, 07 Oct 2016 15:04:23 +0000</pubDate>
       
-      <guid>/tags/success/</guid>
+      <guid>https://adelzaalouk.me/tags/success/</guid>
       <description></description>
     </item>
     
     <item>
       <title>NFV</title>
-      <link>/tags/nfv/</link>
+      <link>https://adelzaalouk.me/tags/nfv/</link>
       <pubDate>Sat, 10 Sep 2016 15:04:23 +0000</pubDate>
       
-      <guid>/tags/nfv/</guid>
+      <guid>https://adelzaalouk.me/tags/nfv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OpenStack</title>
-      <link>/tags/openstack/</link>
+      <link>https://adelzaalouk.me/tags/openstack/</link>
       <pubDate>Sat, 10 Sep 2016 15:04:23 +0000</pubDate>
       
-      <guid>/tags/openstack/</guid>
+      <guid>https://adelzaalouk.me/tags/openstack/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Happiness</title>
-      <link>/tags/happiness/</link>
+      <link>https://adelzaalouk.me/tags/happiness/</link>
       <pubDate>Mon, 15 Aug 2016 15:04:23 +0000</pubDate>
       
-      <guid>/tags/happiness/</guid>
+      <guid>https://adelzaalouk.me/tags/happiness/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Software-Defined Stack</title>
-      <link>/tags/software-defined-stack/</link>
+      <link>https://adelzaalouk.me/tags/software-defined-stack/</link>
       <pubDate>Thu, 28 Apr 2016 15:04:23 +0000</pubDate>
       
-      <guid>/tags/software-defined-stack/</guid>
+      <guid>https://adelzaalouk.me/tags/software-defined-stack/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>/tags/linux/</link>
+      <link>https://adelzaalouk.me/tags/linux/</link>
       <pubDate>Sun, 24 Apr 2016 15:04:23 +0000</pubDate>
       
-      <guid>/tags/linux/</guid>
+      <guid>https://adelzaalouk.me/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Storage</title>
-      <link>/tags/storage/</link>
+      <link>https://adelzaalouk.me/tags/storage/</link>
       <pubDate>Tue, 09 Feb 2016 15:04:23 +0000</pubDate>
       
-      <guid>/tags/storage/</guid>
+      <guid>https://adelzaalouk.me/tags/storage/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VMware</title>
-      <link>/tags/vmware/</link>
+      <link>https://adelzaalouk.me/tags/vmware/</link>
       <pubDate>Mon, 18 Jan 2016 15:04:23 +0000</pubDate>
       
-      <guid>/tags/vmware/</guid>
+      <guid>https://adelzaalouk.me/tags/vmware/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ACI</title>
-      <link>/tags/aci/</link>
+      <link>https://adelzaalouk.me/tags/aci/</link>
       <pubDate>Sun, 18 Jan 2015 15:04:23 +0000</pubDate>
       
-      <guid>/tags/aci/</guid>
+      <guid>https://adelzaalouk.me/tags/aci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cisco</title>
-      <link>/tags/cisco/</link>
+      <link>https://adelzaalouk.me/tags/cisco/</link>
       <pubDate>Sun, 18 Jan 2015 15:04:23 +0000</pubDate>
       
-      <guid>/tags/cisco/</guid>
+      <guid>https://adelzaalouk.me/tags/cisco/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Virtualization</title>
-      <link>/tags/virtualization/</link>
+      <link>https://adelzaalouk.me/tags/virtualization/</link>
       <pubDate>Wed, 01 Jan 2014 15:04:23 +0000</pubDate>
       
-      <guid>/tags/virtualization/</guid>
+      <guid>https://adelzaalouk.me/tags/virtualization/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SDN</title>
-      <link>/tags/sdn/</link>
+      <link>https://adelzaalouk.me/tags/sdn/</link>
       <pubDate>Mon, 10 Jun 2013 15:04:23 +0000</pubDate>
       
-      <guid>/tags/sdn/</guid>
+      <guid>https://adelzaalouk.me/tags/sdn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Android</title>
-      <link>/tags/android/</link>
+      <link>https://adelzaalouk.me/tags/android/</link>
       <pubDate>Fri, 05 Oct 2012 15:04:23 +0000</pubDate>
       
-      <guid>/tags/android/</guid>
+      <guid>https://adelzaalouk.me/tags/android/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java</title>
-      <link>/tags/java/</link>
+      <link>https://adelzaalouk.me/tags/java/</link>
       <pubDate>Fri, 05 Oct 2012 15:04:23 +0000</pubDate>
       
-      <guid>/tags/java/</guid>
+      <guid>https://adelzaalouk.me/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Functional</title>
-      <link>/tags/functional/</link>
+      <link>https://adelzaalouk.me/tags/functional/</link>
       <pubDate>Sat, 11 Aug 2012 15:04:23 +0000</pubDate>
       
-      <guid>/tags/functional/</guid>
+      <guid>https://adelzaalouk.me/tags/functional/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Haskell</title>
-      <link>/tags/haskell/</link>
+      <link>https://adelzaalouk.me/tags/haskell/</link>
       <pubDate>Sat, 11 Aug 2012 15:04:23 +0000</pubDate>
       
-      <guid>/tags/haskell/</guid>
+      <guid>https://adelzaalouk.me/tags/haskell/</guid>
       <description></description>
     </item>
     
     <item>
       <title>C&#43;&#43;</title>
-      <link>/tags/c&#43;&#43;/</link>
+      <link>https://adelzaalouk.me/tags/c&#43;&#43;/</link>
       <pubDate>Sun, 15 Apr 2012 15:04:23 +0000</pubDate>
       
-      <guid>/tags/c&#43;&#43;/</guid>
+      <guid>https://adelzaalouk.me/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Security</title>
-      <link>/tags/security/</link>
+      <link>https://adelzaalouk.me/tags/security/</link>
       <pubDate>Sun, 13 Nov 2011 15:04:23 +0000</pubDate>
       
-      <guid>/tags/security/</guid>
+      <guid>https://adelzaalouk.me/tags/security/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Wireless</title>
-      <link>/tags/wireless/</link>
+      <link>https://adelzaalouk.me/tags/wireless/</link>
       <pubDate>Sun, 13 Nov 2011 15:04:23 +0000</pubDate>
       
-      <guid>/tags/wireless/</guid>
+      <guid>https://adelzaalouk.me/tags/wireless/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Networking</title>
-      <link>/tags/networking/</link>
+      <link>https://adelzaalouk.me/tags/networking/</link>
       <pubDate>Fri, 07 Oct 2011 15:04:23 +0000</pubDate>
       
-      <guid>/tags/networking/</guid>
+      <guid>https://adelzaalouk.me/tags/networking/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VoIP</title>
-      <link>/tags/voip/</link>
+      <link>https://adelzaalouk.me/tags/voip/</link>
       <pubDate>Sun, 11 Sep 2011 15:04:23 +0000</pubDate>
       
-      <guid>/tags/voip/</guid>
+      <guid>https://adelzaalouk.me/tags/voip/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Oldies</title>
-      <link>/tags/oldies/</link>
+      <link>https://adelzaalouk.me/tags/oldies/</link>
       <pubDate>Mon, 20 Oct 2008 15:04:23 +0000</pubDate>
       
-      <guid>/tags/oldies/</guid>
+      <guid>https://adelzaalouk.me/tags/oldies/</guid>
       <description></description>
     </item>
     

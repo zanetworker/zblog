@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ACI on </title>
-    <link>/tags/aci/</link>
+    <link>https://adelzaalouk.me/tags/aci/</link>
     <description>Recent content in ACI on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 18 Jan 2015 15:04:23 +0000</lastBuildDate><atom:link href="/tags/aci/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Jan 2015 15:04:23 +0000</lastBuildDate><atom:link href="https://adelzaalouk.me/tags/aci/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ACI Policy-based SDN: A Morning Capsule</title>
-      <link>/post/technical/2015-01-18-aci-policy-based-sdn/</link>
+      <link>https://adelzaalouk.me/post/technical/2015-01-18-aci-policy-based-sdn/</link>
       <pubDate>Sun, 18 Jan 2015 15:04:23 +0000</pubDate>
       
-      <guid>/post/technical/2015-01-18-aci-policy-based-sdn/</guid>
+      <guid>https://adelzaalouk.me/post/technical/2015-01-18-aci-policy-based-sdn/</guid>
       <description>IT Manager, Ops, and network administrators suffer today from the complex approaches being followed towards network operations which gives no space for innovation. Additionally, the current box-by-box approaches for configuration and provision can be cumbersome and lack agility to turn up new services quickly to meet demands and Service-Level Agreements (SLA) of internal customers. Adopting a new approach towards network automation is key to addressing these challenges, by automating network operation not only do we reduce operational and management expenses but we also provide investment protection as we adopt the application economy (a software approach that grows much faster).</description>
     </item>
     

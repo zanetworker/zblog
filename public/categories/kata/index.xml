@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kata on </title>
+    <link>https://adelzaalouk.me/categories/kata/</link>
+    <description>Recent content in kata on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 29 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://adelzaalouk.me/categories/kata/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Katacontainers</title>
+      <link>https://adelzaalouk.me/post/technical/2020-11-29-katacontainers/</link>
+      <pubDate>Sun, 29 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://adelzaalouk.me/post/technical/2020-11-29-katacontainers/</guid>
+      <description>A detailed overview of Kata Containers architecture end-to-end.</description>
+    </item>
+    
+    <item>
+      <title>Sandboxed Vs. Vanilla Runtimes</title>
+      <link>https://adelzaalouk.me/post/technical/2021-11-17-sandboxed-vs-vanilla/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://adelzaalouk.me/post/technical/2021-11-17-sandboxed-vs-vanilla/</guid>
+      <description>If you are curious how sandboxed containers look like from the inside compared to normal containers, this thread will be covering the basics.
+ test  @openshift sandboxed containers is used to bootstrap and configure the runtime (aka @katacontainers) for the extra layer of isolation. It is also worth noting, that in all the following snippets, NO other fancy hardening is done (e.g., admission controllers, PSPs, PSA, SELinux,&amp;hellip;). Don&amp;rsquo;t try this at home!</description>
+    </item>
+    
+  </channel>
+</rss>

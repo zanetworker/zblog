@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C&#43;&#43; on </title>
-    <link>/tags/c&#43;&#43;/</link>
+    <link>https://adelzaalouk.me/tags/c&#43;&#43;/</link>
     <description>Recent content in C&#43;&#43; on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 15 Apr 2012 15:04:23 +0000</lastBuildDate><atom:link href="/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Apr 2012 15:04:23 +0000</lastBuildDate><atom:link href="https://adelzaalouk.me/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Back to C&#43;&#43; | Public, Private, and Protected (PPP) </title>
-      <link>/post/technical/2012-04-15-getting-back-to-c/</link>
+      <link>https://adelzaalouk.me/post/technical/2012-04-15-getting-back-to-c/</link>
       <pubDate>Sun, 15 Apr 2012 15:04:23 +0000</pubDate>
       
-      <guid>/post/technical/2012-04-15-getting-back-to-c/</guid>
+      <guid>https://adelzaalouk.me/post/technical/2012-04-15-getting-back-to-c/</guid>
       <description>I have been away for a while now but every time I think I won’t need to lay a hand on C++ or any object oriented programming language I find my self mandated to do so. So I thought It would be helpful for people like me to look at this post if they got lost and forgot some of the basic concepts.
 In this post, I will talk specifically about the difference between public, private and protected key words.</description>
     </item>

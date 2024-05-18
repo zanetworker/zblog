@@ -2,313 +2,329 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>https://adelzaalouk.me/</loc>
+    <lastmod>2023-12-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://adelzaalouk.me/categories/</loc>
+    <lastmod>2023-12-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://adelzaalouk.me/tags/misc/</loc>
+    <lastmod>2023-12-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://adelzaalouk.me/post/technical/2023-12-26-pmf/</loc>
+    <lastmod>2023-12-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://adelzaalouk.me/post/</loc>
+    <lastmod>2023-12-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://adelzaalouk.me/tags/</loc>
+    <lastmod>2023-12-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://adelzaalouk.me/categories/technical/</loc>
+    <lastmod>2023-12-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://adelzaalouk.me/tags/kata/</loc>
     <lastmod>2020-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>https://adelzaalouk.me/categories/kata/</loc>
     <lastmod>2020-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/kabooms/</loc>
+    <loc>https://adelzaalouk.me/kbooms/2020-11-29-katacontainers/</loc>
     <lastmod>2020-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/kata/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2020-11-29-katacontainers/</loc>
     <lastmod>2020-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/kabooms/2020-11-29-katacontainers/</loc>
+    <loc>https://adelzaalouk.me/kbooms/</loc>
     <lastmod>2020-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/misc/</loc>
-    <lastmod>2020-11-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2020-11-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/technical/</loc>
-    <lastmod>2020-11-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/post/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2020-05-11-retro-on-donald-knuth-interview/</loc>
     <lastmod>2020-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2020-05-11-retro-on-donald-knuth-interview/</loc>
+    <loc>https://adelzaalouk.me/post/technical/test/</loc>
     <lastmod>2020-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/containerd/</loc>
+    <loc>https://adelzaalouk.me/tags/containerd/</loc>
     <lastmod>2020-05-09T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/cri/</loc>
+    <loc>https://adelzaalouk.me/tags/cri/</loc>
     <lastmod>2020-05-09T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/kubernetes/</loc>
+    <loc>https://adelzaalouk.me/tags/kubernetes/</loc>
     <lastmod>2020-05-09T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/oci/</loc>
+    <loc>https://adelzaalouk.me/tags/oci/</loc>
     <lastmod>2020-05-09T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2020-03-23-to-cri-or-not-to-cri/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2020-03-23-to-cri-or-not-to-cri/</loc>
     <lastmod>2020-05-09T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/containers/</loc>
+    <loc>https://adelzaalouk.me/tags/containers/</loc>
     <lastmod>2018-04-01T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/docker/</loc>
+    <loc>https://adelzaalouk.me/tags/docker/</loc>
     <lastmod>2018-04-01T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2018-04-01-docktorino/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2018-04-01-docktorino/</loc>
     <lastmod>2018-04-01T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/testing/</loc>
+    <loc>https://adelzaalouk.me/tags/testing/</loc>
     <lastmod>2018-04-01T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2018-03-19-dockument/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2018-03-19-dockument/</loc>
     <lastmod>2018-03-19T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2017-12-15-kubernetes-how-tos/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2017-12-15-kubernetes-how-tos/</loc>
     <lastmod>2017-12-15T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/microservices/</loc>
+    <loc>https://adelzaalouk.me/tags/microservices/</loc>
     <lastmod>2017-12-15T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/categories/life/</loc>
+    <loc>https://adelzaalouk.me/categories/life/</loc>
     <lastmod>2017-09-10T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/life/2016-10-10-smile-your-way-through/</loc>
+    <loc>https://adelzaalouk.me/post/life/2016-10-10-smile-your-way-through/</loc>
     <lastmod>2017-09-10T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/sociology/</loc>
+    <loc>https://adelzaalouk.me/tags/sociology/</loc>
     <lastmod>2017-09-10T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/bpf/</loc>
+    <loc>https://adelzaalouk.me/tags/bpf/</loc>
     <lastmod>2017-09-06T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/cilium/</loc>
+    <loc>https://adelzaalouk.me/tags/cilium/</loc>
     <lastmod>2017-09-06T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2017-09-06-security-bpf-docker-cillium/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2017-09-06-security-bpf-docker-cillium/</loc>
     <lastmod>2017-09-06T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/circuits/</loc>
+    <loc>https://adelzaalouk.me/tags/circuits/</loc>
     <lastmod>2017-05-10T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/iot/</loc>
+    <loc>https://adelzaalouk.me/tags/iot/</loc>
     <lastmod>2017-05-10T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/sensors/</loc>
+    <loc>https://adelzaalouk.me/tags/sensors/</loc>
     <lastmod>2017-05-10T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2017-05-10-pi-sensor/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2017-05-10-pi-sensor/</loc>
     <lastmod>2017-05-10T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2017-05-03-moby-linuxkit/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2017-05-03-moby-linuxkit/</loc>
     <lastmod>2017-05-03T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/linuxkit/</loc>
+    <loc>https://adelzaalouk.me/tags/linuxkit/</loc>
     <lastmod>2017-05-03T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/moby/</loc>
+    <loc>https://adelzaalouk.me/tags/moby/</loc>
     <lastmod>2017-05-03T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2017-02-18-docker-musings/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2017-02-18-docker-musings/</loc>
     <lastmod>2017-02-18T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/coding/</loc>
+    <loc>https://adelzaalouk.me/tags/coding/</loc>
     <lastmod>2017-02-10T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/golang/</loc>
+    <loc>https://adelzaalouk.me/tags/golang/</loc>
     <lastmod>2017-02-10T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2017-02-10-gosayan/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2017-02-10-gosayan/</loc>
     <lastmod>2017-02-10T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2017-02-09-go-mistakes/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2017-02-09-go-mistakes/</loc>
     <lastmod>2017-02-09T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2017-02-17-patterns_for_decomposition/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2017-02-17-patterns_for_decomposition/</loc>
     <lastmod>2017-02-02T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2017-01-27-microservices-in-a-nutshell/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2017-01-27-microservices-in-a-nutshell/</loc>
     <lastmod>2017-01-27T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/psychology/</loc>
+    <loc>https://adelzaalouk.me/tags/psychology/</loc>
     <lastmod>2016-10-10T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/life/2016-10-10-secret-of-solitude/</loc>
+    <loc>https://adelzaalouk.me/post/life/2016-10-10-secret-of-solitude/</loc>
     <lastmod>2016-10-10T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/life/2016-10-07-intrinsic_vs_extrinsic_success/</loc>
+    <loc>https://adelzaalouk.me/post/life/2016-10-07-intrinsic_vs_extrinsic_success/</loc>
     <lastmod>2016-10-07T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/success/</loc>
+    <loc>https://adelzaalouk.me/tags/success/</loc>
     <lastmod>2016-10-07T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2016-10-01-kubeadm-with-flannel/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2016-10-01-kubeadm-with-flannel/</loc>
     <lastmod>2016-10-01T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2016-09-10-sfc-a-sneak-peak/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2016-09-10-sfc-a-sneak-peak/</loc>
     <lastmod>2016-09-10T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/nfv/</loc>
+    <loc>https://adelzaalouk.me/tags/nfv/</loc>
     <lastmod>2016-09-10T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/openstack/</loc>
+    <loc>https://adelzaalouk.me/tags/openstack/</loc>
     <lastmod>2016-09-10T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/happiness/</loc>
+    <loc>https://adelzaalouk.me/tags/happiness/</loc>
     <lastmod>2016-08-15T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/life/2016-08-15-happines-location-independent/</loc>
+    <loc>https://adelzaalouk.me/post/life/2016-08-15-happines-location-independent/</loc>
     <lastmod>2016-08-15T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/software-defined-stack/</loc>
+    <loc>https://adelzaalouk.me/tags/software-defined-stack/</loc>
     <lastmod>2016-04-28T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2016-04-28-openstack-a-brief-networking-tour/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2016-04-28-openstack-a-brief-networking-tour/</loc>
     <lastmod>2016-04-28T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/linux/</loc>
+    <loc>https://adelzaalouk.me/tags/linux/</loc>
     <lastmod>2016-04-24T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2016-04-24-ssh-configuration/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2016-04-24-ssh-configuration/</loc>
     <lastmod>2016-04-24T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2016-04-28-openstack-introduction/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2016-04-28-openstack-introduction/</loc>
     <lastmod>2016-02-28T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2016-02-09-cloud-array/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2016-02-09-cloud-array/</loc>
     <lastmod>2016-02-09T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/storage/</loc>
+    <loc>https://adelzaalouk.me/tags/storage/</loc>
     <lastmod>2016-02-09T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/vmware/</loc>
+    <loc>https://adelzaalouk.me/tags/vmware/</loc>
     <lastmod>2016-01-18T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2016-01-18-vrealize-capsule/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2016-01-18-vrealize-capsule/</loc>
     <lastmod>2016-01-18T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2015-08-22-nsx-capsule/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2015-08-22-nsx-capsule/</loc>
     <lastmod>2015-08-22T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/aci/</loc>
+    <loc>https://adelzaalouk.me/tags/aci/</loc>
     <lastmod>2015-01-18T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2015-01-18-aci-policy-based-sdn/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2015-01-18-aci-policy-based-sdn/</loc>
     <lastmod>2015-01-18T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/cisco/</loc>
+    <loc>https://adelzaalouk.me/tags/cisco/</loc>
     <lastmod>2015-01-18T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/virtualization/</loc>
+    <loc>https://adelzaalouk.me/tags/virtualization/</loc>
     <lastmod>2014-01-01T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2014-01-15-virtualization-intro/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2014-01-15-virtualization-intro/</loc>
     <lastmod>2014-01-01T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2013-08-18-virtualization/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2013-08-18-virtualization/</loc>
     <lastmod>2013-08-18T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2013-06-10-presdn/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2013-06-10-presdn/</loc>
     <lastmod>2013-06-10T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/sdn/</loc>
+    <loc>https://adelzaalouk.me/tags/sdn/</loc>
     <lastmod>2013-06-10T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2013-04-20-sdn-the-map/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2013-04-20-sdn-the-map/</loc>
     <lastmod>2013-04-20T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2013-04-10-sdn-openflow/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2013-04-10-sdn-openflow/</loc>
     <lastmod>2013-04-10T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2013-03-20-sdn-walkthrough/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2013-03-20-sdn-walkthrough/</loc>
     <lastmod>2013-03-20T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2013-03-15-sdn-evolution/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2013-03-15-sdn-evolution/</loc>
     <lastmod>2013-03-15T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/android/</loc>
+    <loc>https://adelzaalouk.me/tags/android/</loc>
     <lastmod>2012-10-05T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/java/</loc>
+    <loc>https://adelzaalouk.me/tags/java/</loc>
     <lastmod>2012-10-05T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2012-10-05-streaming-android/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2012-10-05-streaming-android/</loc>
     <lastmod>2012-10-05T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/functional/</loc>
+    <loc>https://adelzaalouk.me/tags/functional/</loc>
     <lastmod>2012-08-11T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/haskell/</loc>
+    <loc>https://adelzaalouk.me/tags/haskell/</loc>
     <lastmod>2012-08-11T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2012-08-11-learn-functional/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2012-08-11-learn-functional/</loc>
     <lastmod>2012-08-11T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/c&#43;&#43;/</loc>
+    <loc>https://adelzaalouk.me/tags/c&#43;&#43;/</loc>
     <lastmod>2012-04-15T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2012-04-15-getting-back-to-c/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2012-04-15-getting-back-to-c/</loc>
     <lastmod>2012-04-15T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/security/</loc>
+    <loc>https://adelzaalouk.me/tags/security/</loc>
     <lastmod>2011-11-13T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/wireless/</loc>
+    <loc>https://adelzaalouk.me/tags/wireless/</loc>
     <lastmod>2011-11-13T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2011-11-13-wireless-hacking-security/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2011-11-13-wireless-hacking-security/</loc>
     <lastmod>2011-11-13T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2011-10-7-l3-routing-switching/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2011-10-7-l3-routing-switching/</loc>
     <lastmod>2011-10-07T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/networking/</loc>
+    <loc>https://adelzaalouk.me/tags/networking/</loc>
     <lastmod>2011-10-07T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2011-09-29-anatomy-of-a-mac-address/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2011-09-29-anatomy-of-a-mac-address/</loc>
     <lastmod>2011-09-29T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/voip/</loc>
+    <loc>https://adelzaalouk.me/tags/voip/</loc>
     <lastmod>2011-09-11T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2011-09-11-voip-telephony/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2011-09-11-voip-telephony/</loc>
     <lastmod>2011-09-11T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2011-09-06-find-linux-version/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2011-09-06-find-linux-version/</loc>
     <lastmod>2011-09-06T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2011-09-06-wmv-linux/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2011-09-06-wmv-linux/</loc>
     <lastmod>2011-09-06T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2011-09-05-password-router/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2011-09-05-password-router/</loc>
     <lastmod>2011-09-05T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2011-09-03-subnetting/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2011-09-03-subnetting/</loc>
     <lastmod>2011-09-03T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2011-09-03-map-api-key-android/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2011-09-03-map-api-key-android/</loc>
     <lastmod>2011-07-06T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2011-04-09-minicom-on-linux/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2011-04-09-minicom-on-linux/</loc>
     <lastmod>2011-04-09T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2010-06-26-adding-view-from-list-activity/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2010-06-26-adding-view-from-list-activity/</loc>
     <lastmod>2010-06-26T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2010-06-20-background-color/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2010-06-20-background-color/</loc>
     <lastmod>2010-06-20T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2010-05-10-change-clicked-image/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2010-05-10-change-clicked-image/</loc>
     <lastmod>2010-05-10T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/technical/2008-10-20-how-to-be-a-networker/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2008-10-20-how-to-be-a-networker/</loc>
     <lastmod>2008-10-20T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/tags/oldies/</loc>
+    <loc>https://adelzaalouk.me/tags/oldies/</loc>
     <lastmod>2008-10-20T15:04:23+00:00</lastmod>
   </url><url>
-    <loc>/post/life/2017-09-14-will-to-compensate/</loc>
+    <loc>https://adelzaalouk.me/post/life/2017-09-14-will-to-compensate/</loc>
   </url><url>
-    <loc>/about/</loc>
+    <loc>https://adelzaalouk.me/about/</loc>
   </url><url>
-    <loc>/post/technical/2009-01-20-cloud-lte/</loc>
+    <loc>https://adelzaalouk.me/post/technical/2009-01-20-cloud-lte/</loc>
+  </url><url>
+    <loc>https://adelzaalouk.me/publications/</loc>
+  </url><url>
+    <loc>https://adelzaalouk.me/post/technical/2021-11-17-sandboxed-vs-vanilla/</loc>
   </url>
 </urlset>

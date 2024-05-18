@@ -2,25 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on </title>
-    <link>/categories/</link>
+    <link>https://adelzaalouk.me/categories/</link>
     <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 29 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://adelzaalouk.me/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>technical</title>
-      <link>/categories/technical/</link>
+      <link>https://adelzaalouk.me/categories/technical/</link>
+      <pubDate>Tue, 26 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://adelzaalouk.me/categories/technical/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kata</title>
+      <link>https://adelzaalouk.me/categories/kata/</link>
       <pubDate>Sun, 29 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/technical/</guid>
+      <guid>https://adelzaalouk.me/categories/kata/</guid>
       <description></description>
     </item>
     
     <item>
       <title>life</title>
-      <link>/categories/life/</link>
+      <link>https://adelzaalouk.me/categories/life/</link>
       <pubDate>Sun, 10 Sep 2017 15:04:23 +0000</pubDate>
       
-      <guid>/categories/life/</guid>
+      <guid>https://adelzaalouk.me/categories/life/</guid>
       <description></description>
     </item>
     

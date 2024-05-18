@@ -2,46 +2,85 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>misc on </title>
-    <link>/tags/misc/</link>
+    <link>https://adelzaalouk.me/tags/misc/</link>
     <description>Recent content in misc on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 29 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/misc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://adelzaalouk.me/tags/misc/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Katacontainers</title>
-      <link>/kabooms/2020-11-29-katacontainers/</link>
+      <title>PMF Test</title>
+      <link>https://adelzaalouk.me/post/technical/2023-12-26-pmf/</link>
+      <pubDate>Tue, 26 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://adelzaalouk.me/post/technical/2023-12-26-pmf/</guid>
+      <description>https://www.overleaf.com/project/65888c53b0aeafa566740671 When should a startup create a Platform team? And when they do, should they build everything from scratch or buy off-the-shelf solutions? Organizational Maturity
+The initial internal developer platform is usually outsourced: many engineering teams start with a PaaS offering (such as Heroku, Netlify, or the equivalent) to get their engineering team up and running quickly and to benefit from speed execution and proven scalability, at the price of a highly opinionated approach.</description>
+    </item>
+    
+    <item>
+      <title>Kata Containers Kaboom!</title>
+      <link>https://adelzaalouk.me/kbooms/2020-11-29-katacontainers/</link>
       <pubDate>Sun, 29 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/kabooms/2020-11-29-katacontainers/</guid>
+      <guid>https://adelzaalouk.me/kbooms/2020-11-29-katacontainers/</guid>
+      <description>A detailed overview of Kata Containers architecture end-to-end.</description>
+    </item>
+    
+    <item>
+      <title>Katacontainers</title>
+      <link>https://adelzaalouk.me/post/technical/2020-11-29-katacontainers/</link>
+      <pubDate>Sun, 29 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://adelzaalouk.me/post/technical/2020-11-29-katacontainers/</guid>
       <description>A detailed overview of Kata Containers architecture end-to-end.</description>
     </item>
     
     <item>
       <title>Retrospecting Donald Knuth&#39;s Interview (My advice to young people) - A Personal Take</title>
-      <link>/post/technical/2020-05-11-retro-on-donald-knuth-interview/</link>
+      <link>https://adelzaalouk.me/post/technical/2020-05-11-retro-on-donald-knuth-interview/</link>
       <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/technical/2020-05-11-retro-on-donald-knuth-interview/</guid>
+      <guid>https://adelzaalouk.me/post/technical/2020-05-11-retro-on-donald-knuth-interview/</guid>
+      <description>I recently watched an interesting interview from one of the best minds in computer science, Donald Knuth, author of the six-volume series &amp;ldquo;The Art of Computer Programming&amp;rdquo; and it got me thinking a lot. In this post, I will try to share my personal take on some of his quotes, as well as open up the discussion to get more opinions :)
+If you have not already watched it, I really recommend watching the whole thing.</description>
+    </item>
+    
+    <item>
+      <title>Retrospecting Donald Knuth&#39;s Interview (My advice to young people) - A Personal Take</title>
+      <link>https://adelzaalouk.me/post/technical/test/</link>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://adelzaalouk.me/post/technical/test/</guid>
       <description>I recently watched an interesting interview from one of the best minds in computer science, Donald Knuth, author of the six-volume series &amp;ldquo;The Art of Computer Programming&amp;rdquo; and it got me thinking a lot. In this post, I will try to share my personal take on some of his quotes, as well as open up the discussion to get more opinions :)
 If you have not already watched it, I really recommend watching the whole thing.</description>
     </item>
     
     <item>
       <title>How to be a Networker?</title>
-      <link>/post/technical/2008-10-20-how-to-be-a-networker/</link>
+      <link>https://adelzaalouk.me/post/technical/2008-10-20-how-to-be-a-networker/</link>
       <pubDate>Mon, 20 Oct 2008 15:04:23 +0000</pubDate>
       
-      <guid>/post/technical/2008-10-20-how-to-be-a-networker/</guid>
+      <guid>https://adelzaalouk.me/post/technical/2008-10-20-how-to-be-a-networker/</guid>
       <description>Well, Lets say that most of the People have wrong concept of Who is A network Engineer and whose not,in Order to Clarify this Vague concept among people and also to answer the question that almost Most students or young Engineers ask them selves “How to be a Networker ?”, I will First Define who is A newtork Engineer.
 A Network Engineer is A Guy who takes the best of both worlds (Communications and Computer Science) and merge them into one to get into the “Communter Science ” world 😀 ,so A Network Engineer is like a federal spy, he can get into a room full of aliens and never be exposed, also most people think that some Certifications will make you a network Engineer that easily, well I admit that certifications give you quite a good understanding of IT stuff but not Engineering stuff, anyway lets get to the second Question already.</description>
     </item>
     
     <item>
       <title>Cloud Computing &amp; LTE</title>
-      <link>/post/technical/2009-01-20-cloud-lte/</link>
+      <link>https://adelzaalouk.me/post/technical/2009-01-20-cloud-lte/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/post/technical/2009-01-20-cloud-lte/</guid>
+      <guid>https://adelzaalouk.me/post/technical/2009-01-20-cloud-lte/</guid>
       <description>I have been thinking for a while, what would it be like in 3 or 4 years ahead, and I started noticing that everybody is starting to love the “Cloud”, I won’t lie, I love it to :D, It is exponentially increasing, some of the ISP’s have already started using the cloud, it is a pretty neat concept, for some of you who are not familiar with the cloud: Imagine that you are subscribing to a bank and you are no longer keeping your money under you bed :D, well everybody doesn’t now, no body is hiding his money under his bed.</description>
+    </item>
+    
+    <item>
+      <title>Sandboxed Vs. Vanilla Runtimes</title>
+      <link>https://adelzaalouk.me/post/technical/2021-11-17-sandboxed-vs-vanilla/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://adelzaalouk.me/post/technical/2021-11-17-sandboxed-vs-vanilla/</guid>
+      <description>If you are curious how sandboxed containers look like from the inside compared to normal containers, this thread will be covering the basics.
+ test  @openshift sandboxed containers is used to bootstrap and configure the runtime (aka @katacontainers) for the extra layer of isolation. It is also worth noting, that in all the following snippets, NO other fancy hardening is done (e.g., admission controllers, PSPs, PSA, SELinux,&amp;hellip;). Don&amp;rsquo;t try this at home!</description>
     </item>
     
   </channel>
