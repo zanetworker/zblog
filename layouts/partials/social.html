@@ -31,7 +31,7 @@
 {{ with .Site.Params.GithubID }}
 <a href="https://github.com/{{.}}" rel="me" title="GitHub"><i class="fab fa-github fa-3x" style="font-size:48px;color:rgb(15, 15, 15)" aria-hidden="false"></i></a>
 {{ end }}
-{{ with .Site.Params.GitlabId }}
+{{ with .Site.Params.GitlabId }}=
 <a href="https://gitlab.com/{{.}}" rel="me" title="GitLab"><i class="fab fa-gitlab fa-3x" aria-hidden="true"></i></a>
 {{ end }}
 {{ with .Site.Params.CodepenID }}
@@ -39,6 +39,12 @@
 {{ end }}
 {{ with .Site.Params.LinkedInID }}
 <a href="https://linkedin.com/in/{{.}}" rel="me" title="LinkedIn"><i class="fab fa-linkedin  fa-3x" style="font-size:48px;color:rgb(0, 119, 255)" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.SubstackURL }}
+<a href="{{.}}" title="Substack">
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 606 606" aria-hidden="true" style="margin-left: 15px;">    <path style="fill:#ff6719; stroke:none;" d="M35 4L35 75L564 75L564 4L35 4M35 139L35 211L564 211L564 139L35 139M35 274L35 605C56.6208 598.76 78.3422 581.827 98 570.86L230 497.14C246.343 488.022 262.731 478.968 279 469.719C284.318 466.696 293.313 459.172 299.576 459.286C305.748 459.399 314.711 466.977 320 469.999C335.238 478.708 350.615 487.245 366 495.694C412.513 521.239 458.488 547.761 505 573.306C522.985 583.183 543.997 600.423 564 605L564 274L35 274z"/>
+  </svg>
+</a>
 {{ end }}
 {{ with .Site.Params.InstagramID }}
 <a href="https://instagram.com/{{.}}" rel="me" title="Instagram"><i class="fab fa-instagram fa-3x" aria-hidden="true"></i></a>

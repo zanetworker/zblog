@@ -4,14 +4,13 @@ title: About
 permalink: /about/
 ---
 
-My name is Adel Zaalouk, a free-style researcher who cares more about knowledge than titles and I currently work as Product Manager with a technical focus on all things Kubernetes and OpenShift (with passion for data, AI, and ML).
+My name is Adel Zaalouk, a free-style researcher who cares more about knowledge than titles and I currently work as Product Manager with a technical focus on all things Cloud, AI, and Kubernetes, I am also one of the Cloud Native AI working group technical leads.
 
 Throughout my career I wore different hats, in different countries working with different people from a broad spectrum of nationalities. Initially, I started in research with a strong focus on Software-Defined Networking (back in the buzz days), and moved slowly to the industry side, covering / advocating for software-defined concepts across the entire stack.
 
-Nowadays, I work mostly with Kubernetes and containers, paving my way through the cloud-native stack with a researchy attitude. I love tinkering around with new tech, and sharing my learnings. I share my learnings either in the form of blog-posts, publications, talks, or in meet-ups where I get to meet and learn from awesome minded people in the community.
+Nowadays, I work mostly with cloud, control-planes, and AI, paving my way through the AI stack with a researchy attitude. I love tinkering around with new tech, and sharing my learnings. I share my learnings either in the form of blog-posts, publications, talks, or in meet-ups where I get to meet and learn from awesome minded people in the community. These days, I muse alot at ["The Technomist"](https://thetechnomist.com/), a new newsletter I started with the hope of briding the gap between tech and business mindsets.
 
 I also like to organize meetups, so I started quite a few. Truth to be told, some are not active anymore but dear to my heart to shut-down (maybe there is a future to them?).
-
 
 Below you can find some references and pointers to some of my work.
 
@@ -25,6 +24,7 @@ Below you can find some references and pointers to some of my work.
 
 ## Publicly Recorded Talks / Interviews
 
+
 - [Reversing the Gardener Tunnel](https://www.youtube.com/watch?v=wSk-gdf4VJM)
 - [Network Machinery: A United Front for Network Troubleshooting with CRDs - KubeCon Barcelona](https://www.youtube.com/watch?v=JsJoRkmzoa0)
 - [Thinking Cloud Native: Connecting the dots with Gardener - EclipseCon](https://www.youtube.com/watch?v=bfw22WPg99A&t=1558s)
@@ -35,6 +35,14 @@ Below you can find some references and pointers to some of my work.
 - [Ask an OpenShift Admin (Ep 50): Sandboxed containers](https://www.youtube.com/watch?v=RKXIuOUR8q4)
 - [Hosted Control Planes: Bring extra power and more cost control](https://thenewstack.io/hosted-control-planes-bring-extra-power-and-more-cost-control/)
 - [Ask an OpenShift Admin (Ep 84) | Hosted Control Planes](https://www.youtube.com/watch?v=mW2ao7kjVTU)
+- Embarking on your personal AI journey - YouTube
+- OpenShift Commons KubeCon EU Paris: AMA with OpenShift PMs and Engineers - YouTube
+- OpenShift Commons KubeCon EU 2024: OpenShift AI Roadmap Update - YouTube
+- Unlocking new possibilities: The general availability of hosted control planes for self-managed Red Hat OpenShift - redhat.com
+- What's Next: OpenShift Roadmap Update [October-2023] - YouTube
+- [Technical Product Update] What's New: OpenShift 4.12 [Jan-2023] - YouTube
+- Hosted Control Planes Bring Extra Power and More Cost Control - The New Stack
+
 
 ## Publication list
 
